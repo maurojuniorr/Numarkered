@@ -20,6 +20,10 @@
           <Template src="skin:deck.xml">
             <SetVariable name="channel">1</SetVariable>
           </Template>
+          <WidgetGroup>
+            <ObjectName>DecksMiddleGap</ObjectName>
+            <Size>16p,0me</Size>
+          </WidgetGroup>
           <Template src="skin:deck.xml">
             <SetVariable name="channel">2</SetVariable>
           </Template>

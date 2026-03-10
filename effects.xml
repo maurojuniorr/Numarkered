@@ -30,6 +30,56 @@
           </VuMeter>
         </Children>
       </WidgetGroup>
+      <WidgetGroup>
+        <ObjectName>BeatFX_ChannelSelect</ObjectName>
+        <Layout>vertical</Layout>
+        <Children>
+          <Label>
+            <ObjectName>BeatFX_ChannelSelectLabel</ObjectName>
+            <Text>CH SELECT</Text>
+          </Label>
+          <WidgetGroup>
+            <ObjectName>BeatFX_ChannelButtons</ObjectName>
+            <Layout>horizontal</Layout>
+            <Children>
+              <PushButton>
+                <ObjectName>BeatFX_ChannelButton</ObjectName>
+                <Size>0me,20p</Size>
+                <NumberStates>2</NumberStates>
+                <State>
+                  <Number>0</Number>
+                  <Text>1</Text>
+                </State>
+                <State>
+                  <Number>1</Number>
+                  <Text>1</Text>
+                </State>
+                <Connection>
+                  <ConfigKey>[EffectRack1_EffectUnit1],group_[Channel1]_enable</ConfigKey>
+                  <ConnectValueToWidget>true</ConnectValueToWidget>
+                </Connection>
+              </PushButton>
+              <PushButton>
+                <ObjectName>BeatFX_ChannelButton</ObjectName>
+                <Size>0me,20p</Size>
+                <NumberStates>2</NumberStates>
+                <State>
+                  <Number>0</Number>
+                  <Text>2</Text>
+                </State>
+                <State>
+                  <Number>1</Number>
+                  <Text>2</Text>
+                </State>
+                <Connection>
+                  <ConfigKey>[EffectRack1_EffectUnit1],group_[Channel2]_enable</ConfigKey>
+                  <ConnectValueToWidget>true</ConnectValueToWidget>
+                </Connection>
+              </PushButton>
+            </Children>
+          </WidgetGroup>
+        </Children>
+      </WidgetGroup>
       <Template src="skin:effect.xml">
         <SetVariable name="rack">1</SetVariable>
         <SetVariable name="unit">1</SetVariable>

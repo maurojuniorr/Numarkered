@@ -7,9 +7,17 @@
       <Template src="skin:waveform.xml">
         <SetVariable name="channel">1</SetVariable>
       </Template>
+      <WidgetGroup>
+        <ObjectName>Waveforms_DeckGap</ObjectName>
+        <Size>0me,16p</Size>
+      </WidgetGroup>
       <Template src="skin:waveform.xml">
         <SetVariable name="channel">2</SetVariable>
       </Template>
+      <WidgetGroup>
+        <ObjectName>Waveforms_BottomGap</ObjectName>
+        <Size>0me,16p</Size>
+      </WidgetGroup>
     </Children>
   </WidgetGroup>
 </Template>

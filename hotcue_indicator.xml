@@ -1,0 +1,20 @@
+<Template>
+  <PushButton>
+    <ObjectName>Hotcue<Variable name="cue"/></ObjectName>
+    <Size>0me,19p</Size>
+    <NumberStates>2</NumberStates>
+    <State>
+      <Number>0</Number>
+      <Text><Variable name="label"/></Text>
+    </State>
+    <State>
+      <Number>1</Number>
+      <Text><Variable name="label"/></Text>
+    </State>
+    <Connection>
+      <ConfigKey>[Channel<Variable name="channel"/>],hotcue_<Variable name="cue"/>_status</ConfigKey>
+      <ConnectValueToWidget>true</ConnectValueToWidget>
+      <ConnectValueFromWidget>false</ConnectValueFromWidget>
+    </Connection>
+  </PushButton>
+</Template>

@@ -19,6 +19,7 @@ White: #e5e6ea
 
 #Mixxx {
   background-color: black;
+  padding: 4px;
 }
 
 * {
@@ -76,9 +77,9 @@ WPushButton[value="1"]:hover {
 
 #DeckBPMWrapper {
   border: 2px solid #e5e6ea;
-  border-radius: 5px;
-  margin-bottom: 4px;
-  padding-right: 2px;
+  border-radius: 0px;
+  margin-bottom: 2px;
+  padding: 0px 1px;
   qproperty-layoutAlignment: 'AlignRight | AlignVCenter';
 }
 
@@ -112,8 +113,8 @@ WPushButton[value="1"]:hover {
 }
 
 #DeckHeader {
-  background-color: #112f5c;
-  padding: 2px;
+  background-color: #0d274a;
+  padding: 0;
 }
 
 #DeckOverview {
@@ -125,13 +126,30 @@ WPushButton[value="1"]:hover {
 }
 
 #DeckTitleNote {
-  margin: 0 2px;
+  margin: 0 1px 0 2px;
 }
 
 #DeckChannelTitle, #DeckTrackTimeTitle, #DeckTempoTitle {
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+#DeckChannelTitleWrapper {
+  background-color: #0d274a;
+  margin-right: 4px;
+  padding: 2px 4px;
+  qproperty-layoutAlignment: 'AlignLeft | AlignVCenter';
+}
+
+#DeckChannelTitle {
+  margin: 0 1px;
+}
+
+#DeckTitleWrapper {
+  background-color: #112f5c;
+  padding: 2px 2px 2px 0;
+  qproperty-layoutAlignment: 'AlignLeft | AlignVCenter';
 }
 
 #DeckPlayingLeft, #DeckPlayingRight {
@@ -184,30 +202,97 @@ WPushButton[value="1"]:hover {
 /************************************************************************/
 
 #BeatFX_Container {
-  border: 2px solid #32323c;
+  background-color: #1f1f1f;
+  border: 1px solid #5f5f5f;
   margin-left: 4px;
+  min-width: 128px;
+  padding: 3px;
   qproperty-layoutAlignment: 'AlignCenter | AlignTop';
 }
 
 #BeatFX_Header {
-  background-color: #32323c;
-  qproperty-layoutAlignment: 'AlignHCenter | AlignVCenter';
+  background-color: #4a4a4a;
+  border-bottom: 1px solid #2a2a2a;
+  margin-bottom: 3px;
+  padding: 3px 5px 2px 5px;
+  qproperty-layoutAlignment: 'AlignHCenter | AlignTop';
 }
 
 #BeatFX_Title {
-  font-size: 14px;
+  color: #d5d5d5;
+  font-size: 9px;
   font-weight: bold;
+  padding-bottom: 4px;
+  qproperty-alignment: 'AlignHCenter | AlignVCenter';
   text-transform: uppercase;
 }
 
+#BeatFX_ChannelSelect {
+  background-color: #0b0b0b;
+  border: 1px solid #353535;
+  margin-bottom: 4px;
+  padding: 3px;
+}
+
+#BeatFX_ChannelSelectLabel {
+  color: #8e8e8e;
+  font-size: 7px;
+  font-weight: bold;
+  padding-bottom: 2px;
+  text-transform: uppercase;
+}
+
+#BeatFX_ChannelButtons {
+  qproperty-layoutAlignment: 'AlignLeft | AlignTop';
+}
+
+#BeatFX_ChannelButton {
+  background-color: transparent;
+  border: 1px solid #3a3a3a;
+  color: #8f8f8f;
+  font-size: 10px;
+  font-weight: bold;
+  margin-right: 2px;
+  padding: 0px;
+}
+
+#BeatFX_ChannelButton[value="1"] {
+  background-color: #111c28;
+  border: 1px solid #2d85cd;
+  color: #7fbfff;
+}
+
 #BeatFX_Unit[highlight="0"] {
-  padding: 1px;
-  border: 1px solid #32323c;
+  background-color: transparent;
+  border: 1px solid #444444;
+  margin-bottom: 4px;
+  padding: 0;
 }
 
 #BeatFX_Unit[highlight="1"] {
-  padding: 1px;
-  border: 1px solid #2d85cd;
+  background-color: transparent;
+  border: 1px solid #82c0ff;
+  margin-bottom: 4px;
+  padding: 0;
+}
+
+#BeatFX_UnitTop {
+  background-color: #2c5f92;
+  border-bottom: 1px solid #14304a;
+  padding: 2px 4px 3px 4px;
+}
+
+#BeatFX_UnitLabel {
+  color: rgba(255,255,255,0.7);
+  font-size: 7px;
+  font-weight: bold;
+  padding-bottom: 1px;
+  text-transform: uppercase;
+}
+
+#BeatFX_UnitBottom {
+  background-color: #0b0b0b;
+  padding: 3px 3px 2px 3px;
 }
 
 /************************************************************************/
@@ -216,25 +301,152 @@ WPushButton[value="1"]:hover {
 
 WEffectSelector {
   background-color: transparent;
-  color: #2d85cd;
-  font-size: 14px;
+  color: #f5f8fc;
+  font-size: 11px;
   font-weight: bold;
-  padding: 4px;
+  padding: 0px;
   text-transform: uppercase;
 }
 
+#BeatFX_UnitTop WEffectSelector {
+  background-color: #2c5f92;
+  border: 0;
+  padding: 0px;
+}
+
+#BeatFX_UnitTop WEffectSelector::drop-down {
+  background-color: #2c5f92;
+  border: 0;
+}
+
+#BeatFX_UnitTop WEffectSelector::down-arrow {
+  background-color: #2c5f92;
+}
+
+WEffectSelector QAbstractScrollArea,
+WEffectSelector QAbstractItemView {
+  background-color: #0b0b0b;
+  color: #f5f8fc;
+  selection-background-color: #2c5f92;
+  selection-color: #ffffff;
+  border: 1px solid #2f2f2f;
+  outline: none;
+}
+
+WEffectSelector::item:selected,
+WEffectSelector::checked {
+  background-color: #2c5f92;
+  color: #ffffff;
+  border: 0;
+}
+
 #EffectMeter {
-  padding: 0px 1px 0px 1px;
+  padding: 0px;
 }
 
 #EffectToggle {
-  color: gray;
+  background-color: transparent;
+  border: 1px solid #2f2f2f;
+  color: #8c8c8c;
+  font-size: 10px;
   font-weight: bold;
+  margin-top: 3px;
+  padding: 0px;
   text-transform: uppercase;
 }
 
 #EffectToggle[value="1"] {
-  color: #2d85cd;
+  background-color: #111c28;
+  border: 1px solid #2d85cd;
+  color: #7fbfff;
+}
+
+/************************************************************************/
+/*     Hotcues                                                          */
+/************************************************************************/
+
+#HotcueStrip {
+  background-color: #0f0f0f;
+  border-top: 1px solid #252525;
+  border-bottom: 1px solid #252525;
+  margin: 2px 0 6px 0;
+  padding: 1px 2px 2px 2px;
+}
+
+#HotcueBank {
+  qproperty-layoutAlignment: 'AlignTop';
+}
+
+#HotcueBankTitle {
+  border-bottom: 1px solid #6a6a6a;
+  color: #8b8b8b;
+  font-size: 8px;
+  font-weight: bold;
+  margin: 0 1px 1px 1px;
+  padding: 0 0 1px 0;
+  qproperty-alignment: 'AlignHCenter | AlignVCenter';
+  text-transform: uppercase;
+}
+
+#HotcueRow {
+  qproperty-layoutAlignment: 'AlignTop';
+}
+
+#Hotcue1,
+#Hotcue2,
+#Hotcue3,
+#Hotcue4,
+#Hotcue5,
+#Hotcue6,
+#Hotcue7,
+#Hotcue8 {
+  background-color: #1e1e1e;
+  border: 1px solid #303030;
+  color: #3f3f3f;
+  font-size: 9px;
+  font-weight: bold;
+  margin: 1px;
+  padding: 0px;
+}
+
+#Hotcue1[value="1"] {
+  border-top: 2px solid #f44040;
+  color: #f44040;
+}
+
+#Hotcue2[value="1"] {
+  border-top: 2px solid #0ddcf2;
+  color: #0ddcf2;
+}
+
+#Hotcue3[value="1"] {
+  border-top: 2px solid #a5df13;
+  color: #a5df13;
+}
+
+#Hotcue4[value="1"] {
+  border-top: 2px solid #9d4cfd;
+  color: #9d4cfd;
+}
+
+#Hotcue5[value="1"] {
+  border-top: 2px solid #3fec2b;
+  color: #3fec2b;
+}
+
+#Hotcue6[value="1"] {
+  border-top: 2px solid #e6681c;
+  color: #e6681c;
+}
+
+#Hotcue7[value="1"] {
+  border-top: 2px solid #2749c8;
+  color: #7ea1ff;
+}
+
+#Hotcue8[value="1"] {
+  border-top: 2px solid #c7b205;
+  color: #e6d84a;
 }
 
 /************************************************************************/
@@ -242,7 +454,7 @@ WEffectSelector {
 /************************************************************************/
 
 #LibraryWrapper QScrollBar {
-  background-color: gray;
+  background-color: transparent;
 }
 
 #LibraryWrapper QScrollBar::handle:horizontal {
@@ -256,7 +468,8 @@ WEffectSelector {
 
 #LibraryWrapper QScrollBar:vertical {
   border: 0;
-  width: 4px;
+  width: 16px;
+  background-color: red;
 }
 
 #LibraryWrapper QScrollBar::add-page,
@@ -349,59 +562,119 @@ WLabel {
 /************************************************************************/
 
 #WaveformInfo {
-  margin-right: 10px;
+  background-color: #343434;
+  border: 1px solid #7a7a7a;
+  margin-right: 4px;
+  padding: 0;
+  qproperty-layoutAlignment: 'AlignTop';
 }
 
 #WaveformInfo_Header {
-  background-color: #32323c;
-  border-top-right-radius: 10px 25px;
-  padding-right: 2px;
+  background-color: #3c3c3c;
+  border-bottom: 2px solid #2d85cd;
+  min-height: 18px;
+  padding: 2px 5px 1px 5px;
 }
 
 #WaveformInfo_Header[highlight="1"] {
-  border: 2px solid #e5e6ea;
+  border-bottom: 2px solid #6fb7ff;
 }
 
-#WaveformInfo_Title,
-#WaveformInfo_Key,
-#WaveformInfo_Bars {
-  font-size: 16px;
+#WaveformInfo_Title {
+  color: #d8d8d8;
+  font-size: 10px;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-#WaveformInfo_Data_Container,
+#WaveformInfo_Key_Container,
+#WaveformInfo_Bars_Container,
+#WaveformInfo_Loopsize_Container {
+  background-color: #343434;
+  margin: 0;
+  min-height: 20px;
+  padding: 2px 5px;
+}
+
+#WaveformInfo_Bars_Container,
+#WaveformInfo_Loopsize_Container {
+  border-top: 1px solid #6a6a6a;
+}
+
+#WaveformInfo_RowLabel {
+  color: #b1b1b1;
+  font-size: 8px;
+  min-width: 24px;
+  padding-right: 4px;
+  text-transform: uppercase;
+}
+
+#WaveformInfo_Key,
+#WaveformInfo_Bars {
+  font-size: 12px;
+  font-weight: bold;
+}
+
 #WaveformInfo_Key_Container,
 #WaveformInfo_Bars_Container,
 #WaveformInfo_Loopsize_Container {
   qproperty-layoutAlignment: 'AlignLeft | AlignTop';
 }
 
+#WaveformInfo_Fill {
+  qproperty-layoutAlignment: 'AlignTop';
+}
+
+#WaveformInfo_Key {
+  color: #f0f0f0;
+}
+
+#WaveformInfo_Bars {
+  color: #d58927;
+}
+
 #WaveformInfo_Key_Icon {
-  background-color: #e5e6ea;
-  border-radius: 2px;
-  font-size: 14px;
-  margin: 4px;
-  padding: -6px -6px -3px -2px;
+  background-color: #d8e0ea;
+  border-radius: 1px;
+  font-size: 11px;
+  margin-right: 4px;
+  min-width: 14px;
+  padding: -5px -5px -2px -1px;
 }
 
 #WaveformInfo_Loop_Icon {
-  color: white;
-  font-size: 20px;
+  color: #d58927;
+  font-size: 13px;
   font-weight: bold;
-  margin: 2px;
+  margin-right: 4px;
 }
 
 #WaveformInfo_BeatloopSizeSpinBox {
-  margin: 3px;
-  padding: -4px -4px 0px -8px;
+  background-color: transparent;
+  border: 0;
+  margin: 0px;
+  min-height: 16px;
+  min-width: 38px;
+  padding: 0px 2px 0px 2px;
 }
 
 WBeatSpinBox {
-  color: #ffffff;
-  font-size: 14px;
+  color: #d58927;
+  font-size: 11px/11px;
   font-weight: bold;
-  background-color: #000000;
+  background-color: transparent;
+  border: 0;
+  margin: 0px 2px 0px 0px;
+  padding: 0px 2px 0px 2px;
+  selection-background-color: transparent;
+  selection-color: #d58927;
+  text-align: left;
+}
+
+WBeatSpinBox:focus,
+WBeatSpinBox:hover {
+  background-color: transparent;
+  border: 0;
 }
 
 WBeatSpinBox::down-arrow,
@@ -422,12 +695,33 @@ WBeatSpinBox::up-button {
   image: url(skin:icons/quantize.svg) no-repeat center center;
 }
 
+#WaveformInfo_Loopsize_Container WPushButton {
+  background-color: transparent;
+  border: 1px solid #5c5c5c;
+  min-width: 0;
+  margin-left: 1px;
+  padding: 0;
+}
+
+#WaveformInfo_Loopsize_Container WPushButton:hover {
+  border: 1px solid #8b8b8b;
+}
+
+#WaveformInfo_Loopsize_Container WPushButton[value="1"] {
+  background-color: #24384d;
+  border: 1px solid #5da6eb;
+}
+
 /************************************************************************/
 /*     Tabs                                                             */
 /************************************************************************/
 
+#TabControls {
+  background-color: transparent;
+}
+
 #TabControls WPushButton {
-  background-color: black;
+  background-color: transparent;
   font-weight: bold;
   margin: 10px 10%;
   max-width: 250px;

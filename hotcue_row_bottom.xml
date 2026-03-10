@@ -1,0 +1,30 @@
+<Template>
+  <WidgetGroup>
+    <ObjectName>HotcueRow</ObjectName>
+    <Layout>horizontal</Layout>
+    <Size>0me,21p</Size>
+    <SizePolicy>me,min</SizePolicy>
+    <Children>
+      <Template src="skin:hotcue_indicator.xml">
+        <SetVariable name="channel"><Variable name="channel"/></SetVariable>
+        <SetVariable name="cue">5</SetVariable>
+        <SetVariable name="label">E</SetVariable>
+      </Template>
+      <Template src="skin:hotcue_indicator.xml">
+        <SetVariable name="channel"><Variable name="channel"/></SetVariable>
+        <SetVariable name="cue">6</SetVariable>
+        <SetVariable name="label">F</SetVariable>
+      </Template>
+      <Template src="skin:hotcue_indicator.xml">
+        <SetVariable name="channel"><Variable name="channel"/></SetVariable>
+        <SetVariable name="cue">7</SetVariable>
+        <SetVariable name="label">G</SetVariable>
+      </Template>
+      <Template src="skin:hotcue_indicator.xml">
+        <SetVariable name="channel"><Variable name="channel"/></SetVariable>
+        <SetVariable name="cue">8</SetVariable>
+        <SetVariable name="label">H</SetVariable>
+      </Template>
+    </Children>
+  </WidgetGroup>
+</Template>

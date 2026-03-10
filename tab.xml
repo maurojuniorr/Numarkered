@@ -1,7 +1,7 @@
 <Template>
   <PushButton>
     <ObjectName>TabButton<Variable name="tab_name"/></ObjectName>
-    <Size>12me,12me</Size>
+    <Size>12me,16me</Size>
     <NumberStates>2</NumberStates>
     <State>
       <Number>0</Number>

@@ -1,0 +1,20 @@
+<Template>
+  <WidgetGroup>
+    <ObjectName>HotcueBank</ObjectName>
+    <Layout>vertical</Layout>
+    <Size>0me,0me</Size>
+    <SizePolicy>me,min</SizePolicy>
+    <Children>
+      <Label>
+        <ObjectName>HotcueBankTitle</ObjectName>
+        <Text>HOT CUE</Text>
+      </Label>
+      <Template src="skin:hotcue_row.xml">
+        <SetVariable name="channel"><Variable name="channel"/></SetVariable>
+      </Template>
+      <Template src="skin:hotcue_row_bottom.xml">
+        <SetVariable name="channel"><Variable name="channel"/></SetVariable>
+      </Template>
+    </Children>
+  </WidgetGroup>
+</Template>
