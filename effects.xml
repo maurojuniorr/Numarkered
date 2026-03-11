@@ -44,7 +44,7 @@
             <Children>
               <PushButton>
                 <ObjectName>BeatFX_ChannelButton</ObjectName>
-                <Size>0me,20p</Size>
+                <Size>0me,40p</Size>
                 <NumberStates>2</NumberStates>
                 <State>
                   <Number>0</Number>
@@ -61,7 +61,7 @@
               </PushButton>
               <PushButton>
                 <ObjectName>BeatFX_ChannelButton</ObjectName>
-                <Size>0me,20p</Size>
+                <Size>0me,40p</Size>
                 <NumberStates>2</NumberStates>
                 <State>
                   <Number>0</Number>

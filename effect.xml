@@ -44,7 +44,7 @@
 
           <PushButton>
             <ObjectName>EffectToggle</ObjectName>
-            <Size>0me,22p</Size>
+            <Size>0me,44p</Size>
             <NumberStates>2</NumberStates>
             <State>
               <Number>0</Number>
