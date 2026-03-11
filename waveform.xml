@@ -103,7 +103,7 @@
         <ObjectName>Waveform<Variable name="channel"/></ObjectName>
         <Channel><Variable name="channel"/></Channel>
         <BgColor>#000</BgColor>
-        <BeatColor>#40ffffff</BeatColor>
+        <BeatColor>#5a6a78</BeatColor>
         <PlayPosColor>#fff</PlayPosColor>
         <SignalColor>#32323c</SignalColor>
         <SignalLowColor>#004ee4</SignalLowColor>
