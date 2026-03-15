@@ -221,7 +221,7 @@
         <TooltipId>waveform_display</TooltipId>
         <ObjectName>Waveform<Variable name="channel"/></ObjectName>
         <Channel><Variable name="channel"/></Channel>
-        <BgColor>#000000</BgColor>
+        <BgColor>#0a0a0a</BgColor>
         <SignalHighColor>#F6E9D3</SignalHighColor>
         <SignalMidColor>#C95A00</SignalMidColor>
         <SignalLowColor>#004EE4</SignalLowColor>
@@ -230,7 +230,7 @@
         <SignalRGBLowColor></SignalRGBLowColor>
         <SignalColor>#32323C</SignalColor>
         <BeatColor>#5A6A78</BeatColor>
-        <PlayPosColor>#FFFFFF</PlayPosColor>
+        <PlayPosColor>#2a2afa</PlayPosColor>
         <EndOfTrackColor>#EA0000</EndOfTrackColor>
 	<DefaultMark>
           <Align>bottom|right</Align>
