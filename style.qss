@@ -663,20 +663,26 @@ WLabel {
   text-transform: uppercase;
 }
 
+#WaveformInfo_Dummy_Container,
 #WaveformInfo_Key_Container,
 #WaveformInfo_Bars_Container,
+#WaveformInfo_Loopsize_Container,
 #WaveformInfo_Beatjump_Container,
-#WaveformInfo_Loopsize_Container {
+#WaveformInfo_Quantize_Container,
+#WaveformInfo_Beatgrid_Container {
   background-color: #343434;
   margin: 0;
-  min-height: 22px;
+  min-height: 32px;
+  max-height: 32px;
   padding: 2px 5px;
+  qproperty-layoutAlignment: 'AlignLeft | AlignVCenter';
+  border-top: 1px solid #6a6a6a;
 }
 
-#WaveformInfo_Beatjump_Container,
-#WaveformInfo_Bars_Container,
-#WaveformInfo_Loopsize_Container {
-  border-top: 1px solid #6a6a6a;
+#WaveformInfo_Quantize_Container,
+#WaveformInfo_Beatgrid_Container {
+  qproperty-layoutAlignment: 'AlignCenter | AlignVCenter';
+  padding: 4px 0;
 }
 
 #WaveformInfo_RowLabel {
@@ -690,7 +696,7 @@ WLabel {
   margin: 0;
   max-width: 30px;
   min-width: 30px;
-  padding: 0;
+  padding: 2px;
   qproperty-layoutAlignment: 'AlignLeft | AlignVCenter';
 }
 
@@ -704,13 +710,6 @@ WLabel {
 #WaveformInfo_Bars {
   font-size: 14px;
   font-weight: bold;
-}
-
-#WaveformInfo_Key_Container,
-#WaveformInfo_Bars_Container,
-#WaveformInfo_Beatjump_Container,
-#WaveformInfo_Loopsize_Container {
-  qproperty-layoutAlignment: 'AlignLeft | AlignTop';
 }
 
 #WaveformInfo_Fill {
@@ -780,19 +779,27 @@ WBeatSpinBox::up-button {
   image: url(skin:icons/quantize.svg) no-repeat center center;
 }
 
-#WaveformInfo_Loopsize_Container WPushButton {
+#WaveformInfo_BeatlockButton {
+  image: url(skin:icons/bpm_locked.svg) no-repeat center center;
+}
+
+#WaveformInfo_HalfBeatShiftButton {
+  image: url(skin:icons/beats_later.svg) no-repeat center center;
+}
+
+#WaveformInfo_Quantize_Container WPushButton,
+#WaveformInfo_Beatgrid_Container WPushButton {
   background-color: transparent;
   border: 1px solid #5c5c5c;
-  min-width: 0;
-  margin-left: 1px;
-  padding: 0;
+  min-width: 28px;
+  max-width: 28px;
+  min-height: 28px;
+  max-height: 28px;
+  padding: 0 8px;
 }
 
-#WaveformInfo_Loopsize_Container WPushButton:hover {
-  border: 1px solid #8b8b8b;
-}
-
-#WaveformInfo_Loopsize_Container WPushButton[value="1"] {
+#WaveformInfo_Quantize_Container WPushButton[value="1"],
+#WaveformInfo_Beatgrid_Container WPushButton[value="1"] {
   background-color: #24384d;
   border: 1px solid #5da6eb;
 }

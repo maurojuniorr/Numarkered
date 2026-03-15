@@ -34,7 +34,7 @@
               <WidgetGroup>
                 <ObjectName>WaveformInfo_Key_Container</ObjectName>
                 <Layout>horizontal</Layout>
-                <Size>0me,24f</Size>
+                <Size>0me,0me</Size>
                 <Children>
                   <WidgetGroup>
                     <ObjectName>WaveformInfo_LabelCell</ObjectName>
@@ -64,7 +64,7 @@
               <WidgetGroup>
                 <ObjectName>WaveformInfo_Bars_Container</ObjectName>
                 <Layout>horizontal</Layout>
-                <Size>0me,24f</Size>
+                <Size>0me,0me</Size>
                 <Children>
                   <WidgetGroup>
                     <ObjectName>WaveformInfo_LabelCell</ObjectName>
@@ -89,9 +89,38 @@
                 </Children>
               </WidgetGroup>
               <WidgetGroup>
+                <ObjectName>WaveformInfo_Loopsize_Container</ObjectName>
+                <Layout>horizontal</Layout>
+                <Size>0me,0me</Size>
+                <SetVariable name="beatloop_size_chan">[Channel<Variable name="channel"/>], beatloop_size</SetVariable>
+                <Children>
+                  <WidgetGroup>
+                    <ObjectName>WaveformInfo_LabelCell</ObjectName>
+                    <Layout>horizontal</Layout>
+                    <Children>
+                      <Label>
+                        <ObjectName>WaveformInfo_RowLabel</ObjectName>
+                        <Text>LOOP</Text>
+                      </Label>
+                    </Children>
+                  </WidgetGroup>
+                  <WidgetGroup>
+                    <ObjectName>WaveformInfo_ValueCell</ObjectName>
+                    <Layout>horizontal</Layout>
+                    <Children>
+                      <BeatSpinBox>
+                        <ObjectName>WaveformInfo_BeatloopSizeSpinBox</ObjectName>
+                        <TooltipId>beatloop_size</TooltipId>
+                        <Value>[Channel<Variable name="channel"/>],beatloop_size</Value>
+                      </BeatSpinBox>
+                    </Children>
+                  </WidgetGroup>
+                </Children>
+              </WidgetGroup>
+              <WidgetGroup>
                 <ObjectName>WaveformInfo_Beatjump_Container</ObjectName>
                 <Layout>horizontal</Layout>
-                <Size>0me,24f</Size>
+                <Size>0me,0me</Size>
                 <Children>
                   <WidgetGroup>
                     <ObjectName>WaveformInfo_LabelCell</ObjectName>
@@ -117,44 +146,67 @@
                 </Children>
               </WidgetGroup>
               <WidgetGroup>
-                <ObjectName>WaveformInfo_Loopsize_Container</ObjectName>
+                <ObjectName>WaveformInfo_Dummy_Container</ObjectName>
                 <Layout>horizontal</Layout>
-                <Size>0me,26f</Size>
-                <SetVariable name="beatloop_size_chan">[Channel<Variable name="channel"/>], beatloop_size</SetVariable>
+                <Size>0me,0me</Size>
                 <Children>
-                  <WidgetGroup>
-                    <ObjectName>WaveformInfo_LabelCell</ObjectName>
-                    <Layout>horizontal</Layout>
-                    <Children>
-                      <Label>
-                        <ObjectName>WaveformInfo_RowLabel</ObjectName>
-                        <Text>LOOP</Text>
-                      </Label>
-                    </Children>
-                  </WidgetGroup>
+                </Children>
+              </WidgetGroup>
+              <WidgetGroup>
+                <ObjectName>WaveformInfo_Quantize_Container</ObjectName>
+                <Layout>horizontal</Layout>
+                <Size>0me,0me</Size>
+                <Children>
                   <WidgetGroup>
                     <ObjectName>WaveformInfo_ValueCell</ObjectName>
                     <Layout>horizontal</Layout>
                     <Children>
-                      <BeatSpinBox>
-                        <ObjectName>WaveformInfo_BeatloopSizeSpinBox</ObjectName>
-                        <TooltipId>beatloop_size</TooltipId>
-                        <Value>[Channel<Variable name="channel"/>],beatloop_size</Value>
-                      </BeatSpinBox>
-                      <Template src="skin:templates/toggle_button.xml">
-                        <SetVariable name="TooltipId">quantize</SetVariable>
-                        <SetVariable name="ObjectName">WaveformInfo_QuantizeButton</SetVariable>
-                        <SetVariable name="Size">16f,16f</SetVariable>
-                        <SetVariable name="LeftConnectionControl">[Channel<Variable name="channel"/>],quantize</SetVariable>
-                      </Template>
                       <Template src="skin:templates/toggle_button.xml">
                         <SetVariable name="TooltipId">keylock</SetVariable>
                         <SetVariable name="ObjectName">WaveformInfo_KeylockButton</SetVariable>
                         <SetVariable name="Size">16f,16f</SetVariable>
                         <SetVariable name="LeftConnectionControl">[Channel<Variable name="channel"/>],keylock</SetVariable>
                       </Template>
+                      <Template src="skin:templates/toggle_button.xml">
+                        <SetVariable name="TooltipId">quantize</SetVariable>
+                        <SetVariable name="ObjectName">WaveformInfo_QuantizeButton</SetVariable>
+                        <SetVariable name="Size">16f,16f</SetVariable>
+                        <SetVariable name="LeftConnectionControl">[Channel<Variable name="channel"/>],quantize</SetVariable>
+                      </Template>
                     </Children>
                   </WidgetGroup>
+                </Children>
+              </WidgetGroup>
+              <WidgetGroup>
+                <ObjectName>WaveformInfo_Beatgrid_Container</ObjectName>
+                <Layout>horizontal</Layout>
+                <Size>0me,0me</Size>
+                <Children>
+                  <WidgetGroup>
+                    <ObjectName>WaveformInfo_ValueCell</ObjectName>
+                    <Layout>horizontal</Layout>
+                    <Children>
+                      <Template src="skin:templates/toggle_button.xml">
+                        <SetVariable name="TooltipId">beatlock</SetVariable>
+                        <SetVariable name="ObjectName">WaveformInfo_BeatlockButton</SetVariable>
+                        <SetVariable name="Size">16f,16f</SetVariable>
+                        <SetVariable name="LeftConnectionControl">[Channel<Variable name="channel"/>],beatlock</SetVariable>
+                      </Template>
+                      <Template src="skin:templates/toggle_button.xml">
+                        <SetVariable name="TooltipId">halfbeatshift</SetVariable>
+                        <SetVariable name="ObjectName">WaveformInfo_HalfBeatShiftButton</SetVariable>
+                        <SetVariable name="Size">16f,16f</SetVariable>
+                        <SetVariable name="LeftConnectionControl">[Channel<Variable name="channel"/>],beats_translate_half</SetVariable>
+                      </Template>
+                    </Children>
+                  </WidgetGroup>
+                </Children>
+              </WidgetGroup>
+              <WidgetGroup>
+                <ObjectName>WaveformInfo_Dummy_Container</ObjectName>
+                <Layout>horizontal</Layout>
+                <Size>0me,128me</Size>
+                <Children>
                 </Children>
               </WidgetGroup>
               <WidgetGroup>
