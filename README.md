@@ -1,3 +1,5 @@
+After forking I won't continue here, find further development at: https://codeberg.org/schmic/mixxx-pioneered
+
 ![logo](https://github.com/schmic/Pioneered/blob/master/images/pioneered_logo.png?raw=true)
 
 Pioneer inspired theme for smaller screen resolutions. It has been designed to 'extend' a MIDI controller.
