@@ -6,7 +6,7 @@ Slip button: #d73535
 Tabs on top: #c3d541
 Headers: #32323c
 Title bg: #112f5c
-Blue: #2d85cd
+Blue: #00A8E8
 White: #e5e6ea
 
 */
@@ -26,13 +26,18 @@ White: #e5e6ea
   font-family: 'Open Sans', sans-serif;
 }
 
-QMenuBar, QMenuBar::item, QMenu, QMenu::item {
+QMenuBar,
+QMenuBar::item,
+QMenu,
+QMenu::item {
   background-color: black;
   color: gray;
 }
 
-QMenuBar::item:pressed, QMenu::item:selected, QMenu::item:pressed {
-    background-color: rgba(255,255,255,0.2);
+QMenuBar::item:pressed,
+QMenu::item:selected,
+QMenu::item:pressed {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 /************************************************************************/
@@ -52,14 +57,14 @@ WPushButton:hover {
 }
 
 WPushButton[value="1"] {
-  color: #e5e6ea;
-  border: 1px solid #5F5F5F;
-  background-color: #32323c;
+  color: #E8EAED;
+  border: 1px solid #00A8E8;
+  background-color: #2A2D35;
 }
 
 WPushButton[value="1"]:hover {
-  border: 1px solid #4B4B4B;
-  background-color: #30303a;
+  border: 1px solid #0096D6;
+  background-color: #1f2228;
 }
 
 /************************************************************************/
@@ -72,11 +77,11 @@ WPushButton[value="1"]:hover {
 }
 
 #Deck[highlight="1"] {
-  border: 1px solid #e5e6ea;
+  border: 1px solid #00A8E8;
 }
 
 #DeckBPMWrapper {
-  border: 2px solid #e5e6ea;
+  border: 2px solid #00A8E8;
   border-radius: 0px;
   margin-bottom: 2px;
   padding: 0px 1px;
@@ -84,7 +89,7 @@ WPushButton[value="1"]:hover {
 }
 
 #DeckBPM {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 #DeckBPMTitleWrapper {
@@ -107,9 +112,10 @@ WPushButton[value="1"]:hover {
   padding: 0px;
 }
 
-#BPMRangePlusMinus, #RateDisplay {
-    font-size: 12px;
-    font-weight: bold;
+#BPMRangePlusMinus,
+#RateDisplay {
+  font-size: 12px;
+  font-weight: bold;
 }
 
 #DeckHeader {
@@ -121,22 +127,25 @@ WPushButton[value="1"]:hover {
   margin: 50% 0;
 }
 
-#DeckTitle, #DeckTitleNote {
-  font-size: 20px;
+#DeckTitle,
+#DeckTitleNote {
+  font-size: 16px;
 }
 
 #DeckTitleNote {
   margin: 0 1px 0 2px;
 }
 
-#DeckChannelTitle, #DeckTrackTimeTitle, #DeckTempoTitle {
-  font-size: 14px;
+#DeckChannelTitle,
+#DeckTrackTimeTitle,
+#DeckTempoTitle {
+  font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 #DeckChannelTitleWrapper {
-  background-color: #0d274a;
+  background-color: #0F1116;
   margin-right: 4px;
   padding: 2px 4px;
   qproperty-layoutAlignment: 'AlignLeft | AlignVCenter';
@@ -152,7 +161,8 @@ WPushButton[value="1"]:hover {
   qproperty-layoutAlignment: 'AlignLeft | AlignVCenter';
 }
 
-#DeckPlayingLeft, #DeckPlayingRight {
+#DeckPlayingLeft,
+#DeckPlayingRight {
   color: #0d274a;
   font-size: 12px;
   font-weight: bold;
@@ -169,7 +179,7 @@ WPushButton[value="1"]:hover {
 }
 
 #DeckTrackTime {
-  font-size: 36px;
+  font-size: 30px;
 }
 
 #DeckTrackTime[highlight="1"] {
@@ -177,7 +187,7 @@ WPushButton[value="1"]:hover {
 }
 
 #DeckTrackTimeMini {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 #DeckTrackTimeMini[highlight="1"] {
@@ -185,21 +195,23 @@ WPushButton[value="1"]:hover {
 }
 
 #DeckTrackNumberContainer {
-  margin: 0 4px;
+  margin: 3 4px;
   qproperty-layoutAlignment: 'AlignHCenter | AlignTop';
 }
 
-#TrackNumberWrapper, #DeckChannelTitleWrapper {
+#TrackNumberWrapper,
+#DeckChannelTitleWrapper {
   qproperty-layoutAlignment: 'AlignHCenter | AlignVCenter';
 }
 
 #TrackNumberTitle {
   font-size: 12px;
+  font-weight: bold;
   text-transform: uppercase;
 }
 
 #TrackNumber {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -211,7 +223,7 @@ WPushButton[value="1"]:hover {
   background-color: #1f1f1f;
   border: 1px solid #5f5f5f;
   margin-left: 4px;
-  min-width: 128px;
+  min-width: 100px;
   padding: 3px;
   qproperty-layoutAlignment: 'AlignCenter | AlignTop';
 }
@@ -220,12 +232,12 @@ WPushButton[value="1"]:hover {
   background-color: #4a4a4a;
   border-bottom: 1px solid #2a2a2a;
   margin-bottom: 3px;
-  padding: 3px 5px 2px 5px;
+  padding: 3px 5px 3px 5px;
   qproperty-layoutAlignment: 'AlignHCenter | AlignTop';
 }
 
 #BeatFX_Title {
-  color: #d5d5d5;
+  color: #E8EAED;
   font-size: 9px;
   font-weight: bold;
   padding-bottom: 4px;
@@ -252,6 +264,79 @@ WPushButton[value="1"]:hover {
   qproperty-layoutAlignment: 'AlignLeft | AlignTop';
 }
 
+#BeatFX_QuickEffects {
+  background-color: #0b0b0b;
+  border: 1px solid #353535;
+  margin-bottom: 4px;
+  padding: 3px;
+}
+
+#BeatFX_QuickEffectsLabel {
+  color: #8e8e8e;
+  font-size: 7px;
+  font-weight: bold;
+  padding-bottom: 2px;
+  text-transform: uppercase;
+}
+
+#BeatFX_QuickEffectColumns {
+  qproperty-layoutAlignment: 'AlignLeft | AlignTop';
+}
+
+#BeatFX_QuickEffectColumn {
+  qproperty-layoutAlignment: 'AlignTop';
+}
+
+#BeatFX_QuickChannelLabel {
+  color: #8f8f8f;
+  font-size: 10px;
+  font-weight: bold;
+  padding-bottom: 2px;
+  qproperty-alignment: 'AlignLeft | AlignVCenter';
+  text-transform: uppercase;
+}
+
+#QuickFXMeter {
+  padding: 0px;
+}
+
+#BeatFX_QuickSelector {
+  background-color: #00A8E8;
+  border: 0;
+  color: #f5f8fc;
+  font-size: 11px;
+  font-weight: bold;
+  margin-top: 3px;
+  padding: 0px;
+  text-transform: uppercase;
+}
+
+#BeatFX_QuickSelector::drop-down {
+  background-color: #00A8E8;
+  border: 0;
+}
+
+#BeatFX_QuickSelector::down-arrow {
+  background-color: #00A8E8;
+}
+
+#BeatFX_QuickSelector QAbstractScrollArea,
+#BeatFX_QuickSelector QAbstractItemView {
+  background-color: #0b0b0b;
+  color: #f5f8fc;
+  selection-background-color: #00A8E8;
+  selection-color: #ffffff;
+  border: 1px solid #2f2f2f;
+  outline: none;
+}
+
+#BeatFX_QuickSelector::item:selected,
+#BeatFX_QuickSelector::checked {
+  background-color: #00A8E8;
+  color: #ffffff;
+  border: 0;
+}
+
 #BeatFX_ChannelButton {
   background-color: transparent;
   border: 1px solid #3a3a3a;
@@ -263,33 +348,33 @@ WPushButton[value="1"]:hover {
 }
 
 #BeatFX_ChannelButton[value="1"] {
-  background-color: #111c28;
-  border: 1px solid #2d85cd;
-  color: #7fbfff;
+  background-color: #0F1116;
+  border: 1px solid #00A8E8;
+  color: #00A8E8;
 }
 
 #BeatFX_Unit[highlight="0"] {
   background-color: transparent;
-  border: 1px solid #444444;
+  border: 1px solid #2A2D35;
   margin-bottom: 4px;
   padding: 0;
 }
 
 #BeatFX_Unit[highlight="1"] {
   background-color: transparent;
-  border: 1px solid #82c0ff;
+  border: 1px solid #00A8E8;
   margin-bottom: 4px;
   padding: 0;
 }
 
 #BeatFX_UnitTop {
-  background-color: #2c5f92;
-  border-bottom: 1px solid #14304a;
+  background-color: #0096D6;
+  border-bottom: 1px solid #0F1116;
   padding: 2px 4px 3px 4px;
 }
 
 #BeatFX_UnitLabel {
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 7px;
   font-weight: bold;
   padding-bottom: 1px;
@@ -315,25 +400,25 @@ WEffectSelector {
 }
 
 #BeatFX_UnitTop WEffectSelector {
-  background-color: #2c5f92;
+  background-color: #0096D6;
   border: 0;
   padding: 0px;
 }
 
 #BeatFX_UnitTop WEffectSelector::drop-down {
-  background-color: #2c5f92;
+  background-color: #0096D6;
   border: 0;
 }
 
 #BeatFX_UnitTop WEffectSelector::down-arrow {
-  background-color: #2c5f92;
+  background-color: #0096D6;
 }
 
 WEffectSelector QAbstractScrollArea,
 WEffectSelector QAbstractItemView {
-  background-color: #0b0b0b;
-  color: #f5f8fc;
-  selection-background-color: #2c5f92;
+  background-color: #0F1116;
+  color: #E8EAED;
+  selection-background-color: #0096D6;
   selection-color: #ffffff;
   border: 1px solid #2f2f2f;
   outline: none;
@@ -341,7 +426,7 @@ WEffectSelector QAbstractItemView {
 
 WEffectSelector::item:selected,
 WEffectSelector::checked {
-  background-color: #2c5f92;
+  background-color: #0096D6;
   color: #ffffff;
   border: 0;
 }
@@ -362,9 +447,9 @@ WEffectSelector::checked {
 }
 
 #EffectToggle[value="1"] {
-  background-color: #111c28;
-  border: 1px solid #2d85cd;
-  color: #7fbfff;
+  background-color: #0F1116;
+  border: 1px solid #00A8E8;
+  color: #00A8E8;
 }
 
 /************************************************************************/
@@ -504,9 +589,9 @@ WEffectSelector::checked {
 #LibraryWrapper WTrackTableViewHeader::section {
   background-color: #2a3038;
   border: 0;
-  border-bottom: 1px solid #3d4652;
-  border-right: 1px solid #343c47;
-  color: #d7dde5;
+  border-bottom: 1px solid #00A8E8;
+  border-right: 1px solid #1A1D23;
+  color: #E8EAED;
   font-weight: bold;
   margin: 0;
   padding: 4px 8px;
@@ -515,18 +600,18 @@ WEffectSelector::checked {
 
 #LibraryWrapper QTableView,
 #LibraryWrapper WLibraryTextBrowser {
-  alternate-background-color: #20252c;
-  background-color: #1a1e24;
-  border: 1px solid #303844;
-  color: #e7ebf0;
-  gridline-color: #2a313b;
-  selection-background-color: #355b84;
-  selection-color: #f7fbff;
+  alternate-background-color: #1A1D23;
+  background-color: #0F1116;
+  border: 1px solid #2A2D35;
+  color: #E8EAED;
+  gridline-color: #2A2D35;
+  selection-background-color: #0096D6;
+  selection-color: #ffffff;
 }
 
 #LibraryWrapper WLibrarySidebar {
-  alternate-background-color: #222830;
-  background-color: #20252c;
+  alternate-background-color: #1A1D23;
+  background-color: #1A1D23;
   border-left: 0;
   border-right: 1px solid #3a424d;
   color: #c7d0da;
@@ -540,9 +625,9 @@ WEffectSelector::checked {
 #LibraryWrapper QSpinBox,
 #LibraryWrapper QComboBox,
 #LibraryWrapper QComboBox QAbstractScrollArea {
-  background-color: #2a3038;
-  border: 1px solid #44505e;
-  color: #e7ebf0;
+  background-color: #2A2D35;
+  border: 1px solid #00A8E8;
+  color: #E8EAED;
 }
 
 #LibraryBPMButton {
@@ -555,10 +640,12 @@ WEffectSelector::checked {
   padding: 0;
 }
 
-#LibraryBPMButton:checked,
-#LibraryBPMButton:!checked {
+#LibraryBPMButton,
+#LibraryBPMButton:checked {
   image: none;
 }
+
+
 
 #LibraryBPMButton::item {
   background: transparent;
@@ -582,8 +669,8 @@ WLabel {
 
 /* Library Search */
 #SearchBox {
-  background-color: #2c333c;
-  border: 1px solid #4a5563;
+  background-color: #2A2D35;
+  border: 1px solid #00A8E8;
   border-radius: 0;
   color: #e7ebf0;
   font-size: 18px;
@@ -608,13 +695,13 @@ WLabel {
 }
 
 #LibraryPreviewDivider {
-  background-color: #4a5563;
+  background-color: #00A8E8;
   margin: 4px 8px;
 }
 
 #SidebarButton {
-  background-color: #313945;
-  border: 1px solid #4a5563;
+  background-color: #2A2D35;
+  border: 1px solid #00A8E8;
   border-radius: 2px;
   color: #d9e2ec;
   font-size: 15px;
@@ -626,9 +713,11 @@ WLabel {
 #LibraryWrapper WTrackTableView::indicator:unchecked {
   image: url(skin:icons/library_checkbox.svg);
 }
+
 #LibraryWrapper WTrackTableView::indicator:hover {
-  background-color: #4da3ff;
+  background-color: #00A8E8;
 }
+
 #LibraryWrapper WTrackTableView::indicator:checked {
   image: url(skin:icons/library_checkbox_checked.svg);
 }
@@ -646,14 +735,14 @@ WLabel {
 }
 
 #WaveformInfo_Header {
-  background-color: #3c3c3c;
-  border-bottom: 2px solid #2d85cd;
+  background-color: #2A2D35;
+  border-bottom: 2px solid #00A8E8;
   min-height: 18px;
   padding: 2px 5px 1px 5px;
 }
 
 #WaveformInfo_Header[highlight="1"] {
-  border-bottom: 2px solid #6fb7ff;
+  border-bottom: 2px solid #0096D6;
 }
 
 #WaveformInfo_Title {
@@ -800,24 +889,41 @@ WBeatSpinBox::up-button {
 #WaveformInfo_Quantize_Container WPushButton,
 #WaveformInfo_Beatgrid_Container WPushButton {
   background-color: transparent;
-  border: 1px solid #5c5c5c;
-  min-width: 28px;
-  max-width: 28px;
-  min-height: 28px;
-  max-height: 28px;
-  padding: 0 8px;
+  border: 1px solid #2A2D35;
+  min-width: 20px;
+  max-width: 20px;
+  min-height: 20px;
+  max-height: 20px;
+  padding: 3px;
 }
 
 #WaveformInfo_Sync_Container WPushButton[value="1"],
 #WaveformInfo_Quantize_Container WPushButton[value="1"],
 #WaveformInfo_Beatgrid_Container WPushButton[value="1"] {
-  background-color: #24384d;
-  border: 1px solid #5da6eb;
+  background-color: #0F1116;
+  border: 1px solid #00A8E8;
 }
 
 /************************************************************************/
 /*     Tabs                                                             */
 /************************************************************************/
+
+#TopbarTouchShiftButton {
+  background-color: transparent;
+  font-weight: bold;
+  margin: 10px 8px 10px 0;
+  text-transform: uppercase;
+}
+
+#TopbarTouchShiftButton[value="0"] {
+  border: 2px solid gray;
+  color: gray;
+}
+
+#TopbarTouchShiftButton[value="1"] {
+  border: 2px solid #c3d541;
+  color: #c3d541;
+}
 
 #TabControls {
   background-color: transparent;
@@ -826,8 +932,7 @@ WBeatSpinBox::up-button {
 #TabControls WPushButton {
   background-color: transparent;
   font-weight: bold;
-  margin: 10px 10%;
-  max-width: 250px;
+  margin: 10px 8px;
   text-transform: uppercase;
 }
 
@@ -847,7 +952,7 @@ WBeatSpinBox::up-button {
 
 #Sampler {
   background-color: #32323c;
-  border: 2px solid #d73535;
+  border: 2px solid #00A8E8;
   border-radius: 2px;
   color: white;
   font-size: 24px;
@@ -856,7 +961,7 @@ WBeatSpinBox::up-button {
 }
 
 #Sampler[value="1"] {
-  background-color: #d73535;
+  background-color: #00A8E8;
 }
 
 #Sampler_Info {
@@ -865,6 +970,7 @@ WBeatSpinBox::up-button {
   margin: 4px;
 }
 
-#SamplersDeck1, #SamplersDeck2 {
+#SamplersDeck1,
+#SamplersDeck2 {
   margin: 0 4px;
 }

@@ -1,4 +1,15 @@
 <Template>
+  <SetVariable name="BgColor">#000</SetVariable>
+  <SetVariable name="SignalHighColor">blue</SetVariable>
+  <SetVariable name="SignalMidColor">green</SetVariable>
+  <SetVariable name="SignalLowColor">red</SetVariable>
+  <SetVariable name="SignalRGBHighColor">blue</SetVariable>
+  <SetVariable name="SignalRGBMidColor">green</SetVariable>
+  <SetVariable name="SignalRGBLowColor">red</SetVariable>
+  <SetVariable name="SignalColor">#32323c</SetVariable>
+  <SetVariable name="BeatColor">#3a3a3a3a</SetVariable>
+  <SetVariable name="PlayPosColor">#ffffffff</SetVariable>
+  <SetVariable name="EndOfTrackColor">#EA0000</SetVariable>
   <WidgetGroup>
     <ObjectName>Waveform_Channel<Variable name="channel"/></ObjectName>
     <Layout>horizontal</Layout>
@@ -205,13 +216,13 @@
                     <Layout>horizontal</Layout>
                     <Children>
                       <Template src="skin:templates/toggle_button.xml">
-                        <SetVariable name="TooltipId">beatlock</SetVariable>
+                        <SetVariable name="TooltipId">bpmlock</SetVariable>
                         <SetVariable name="ObjectName">WaveformInfo_BeatlockButton</SetVariable>
                         <SetVariable name="Size">16f,16f</SetVariable>
                         <SetVariable name="LeftConnectionControl">[Channel<Variable name="channel"/>],beatlock</SetVariable>
                       </Template>
                       <Template src="skin:templates/toggle_button.xml">
-                        <SetVariable name="TooltipId">halfbeatshift</SetVariable>
+                        <SetVariable name="TooltipId">beats_translate_curpos</SetVariable>
                         <SetVariable name="ObjectName">WaveformInfo_HalfBeatShiftButton</SetVariable>
                         <SetVariable name="Size">16f,16f</SetVariable>
                         <SetVariable name="LeftConnectionControl">[Channel<Variable name="channel"/>],beats_translate_half</SetVariable>
@@ -232,17 +243,17 @@
         <TooltipId>waveform_display</TooltipId>
         <ObjectName>Waveform<Variable name="channel"/></ObjectName>
         <Channel><Variable name="channel"/></Channel>
-        <BgColor>#0a0a0a</BgColor>
-        <SignalHighColor>#F6E9D3</SignalHighColor>
-        <SignalMidColor>#C95A00</SignalMidColor>
-        <SignalLowColor>#004EE4</SignalLowColor>
-        <SignalRGBHighColor></SignalRGBHighColor>
-        <SignalRGBMidColor></SignalRGBMidColor>
-        <SignalRGBLowColor></SignalRGBLowColor>
-        <SignalColor>#32323C</SignalColor>
-        <BeatColor>#5A6A78</BeatColor>
-        <PlayPosColor>#2a2afa</PlayPosColor>
-        <EndOfTrackColor>#EA0000</EndOfTrackColor>
+        <BgColor><Variable name="BgColor"/></BgColor>
+        <SignalHighColor><Variable name="SignalHighColor"/></SignalHighColor>
+        <SignalMidColor><Variable name="SignalMidColor"/></SignalMidColor>
+        <SignalLowColor><Variable name="SignalLowColor"/></SignalLowColor>
+        <SignalRGBHighColor><Variable name="SignalRGBHighColor"/></SignalRGBHighColor>
+        <SignalRGBMidColor><Variable name="SignalRGBMidColor"/></SignalRGBMidColor>
+        <SignalRGBLowColor><Variable name="SignalRGBLowColor"/></SignalRGBLowColor>
+        <SignalColor><Variable name="SignalColor"/></SignalColor>
+        <BeatColor><Variable name="BeatColor"/></BeatColor>
+        <PlayPosColor><Variable name="PlayPosColor"/></PlayPosColor>
+        <EndOfTrackColor><Variable name="EndOfTrackColor"/></EndOfTrackColor>
 	<DefaultMark>
           <Align>bottom|right</Align>
           <Color>#FF0000</Color>

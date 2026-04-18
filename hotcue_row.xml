@@ -8,22 +8,27 @@
       <Template src="skin:hotcue_indicator.xml">
         <SetVariable name="channel"><Variable name="channel"/></SetVariable>
         <SetVariable name="cue">1</SetVariable>
-        <SetVariable name="label">A</SetVariable>
+        <SetVariable name="label">1</SetVariable>
       </Template>
       <Template src="skin:hotcue_indicator.xml">
         <SetVariable name="channel"><Variable name="channel"/></SetVariable>
         <SetVariable name="cue">2</SetVariable>
-        <SetVariable name="label">B</SetVariable>
+        <SetVariable name="label">2</SetVariable>
       </Template>
       <Template src="skin:hotcue_indicator.xml">
         <SetVariable name="channel"><Variable name="channel"/></SetVariable>
         <SetVariable name="cue">3</SetVariable>
-        <SetVariable name="label">C</SetVariable>
+        <SetVariable name="label">3</SetVariable>
       </Template>
       <Template src="skin:hotcue_indicator.xml">
         <SetVariable name="channel"><Variable name="channel"/></SetVariable>
         <SetVariable name="cue">4</SetVariable>
-        <SetVariable name="label">D</SetVariable>
+        <SetVariable name="label">4</SetVariable>
+      </Template>
+      <Template src="skin:hotcue_indicator.xml">
+        <SetVariable name="channel"><Variable name="channel"/></SetVariable>
+        <SetVariable name="cue">5</SetVariable>
+        <SetVariable name="label">5</SetVariable>
       </Template>
     </Children>
   </WidgetGroup>

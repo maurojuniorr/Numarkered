@@ -4,18 +4,24 @@
     A button that has a left-click display control and a right-click control.
   Variables:
     ObjectName: The object name.
-    Size: the button size.
+    Size: the button size (optional, will use MinimumSize/MaximumSize if not provided).
+    MinSize: minimum button size (optional).
+    MaxSize: maximum button size (optional).
     StateXText:
     StateXPressed:
     StateXUnpressed:
 
 Originally taken from the Deere theme included with Mixxx, modified slightly.
+Enhanced for responsiveness.
 -->
 <Template>
   <PushButton>
     <TooltipId><Variable name="TooltipId"/></TooltipId>
     <ObjectName><Variable name="ObjectName"/></ObjectName>
     <Size><Variable name="Size"/></Size>
+    <SizePolicy>f,f</SizePolicy>
+    <MinimumSize>24,24</MinimumSize>
+    <MaximumSize>32,32</MaximumSize>
     <NumberStates>2</NumberStates>
     <State>
       <Number>0</Number>

@@ -18,7 +18,8 @@
             <EffectUnit><Variable name="unit"/></EffectUnit>
             <Effect><Variable name="effect"/></Effect>
             <Elide>right</Elide>
-            <Size>0me,26p</Size>
+            <Size>0me,23p</Size>
+            
           </EffectSelector>
         </Children>
       </WidgetGroup>

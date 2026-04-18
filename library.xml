@@ -26,15 +26,15 @@
                     <TooltipId>waveform_overview</TooltipId>
                     <Group>[PreviewDeck1]</Group>
                     <Size>0me,0me</Size>
-                    <BgColor>#32323c</BgColor>
-                    <SignalHighColor>#D0D0D0</SignalHighColor>
-                    <SignalMidColor>#B0B0B0</SignalMidColor>
-                    <SignalLowColor>#8A8A8A</SignalLowColor>
-                    <SignalRGBHighColor></SignalRGBHighColor>
-                    <SignalRGBMidColor></SignalRGBMidColor>
-                    <SignalRGBLowColor></SignalRGBLowColor>
-                    <SignalColor>#8A8A8A</SignalColor>
-                    <PlayedOverlayColor>#40FFFFFF</PlayedOverlayColor>
+                    <BgColor>#000</BgColor>
+                    <SignalHighColor>#FFFF88</SignalHighColor>
+                    <SignalMidColor>#FFA600</SignalMidColor>
+                    <SignalLowColor>#0055E1</SignalLowColor>
+                    <SignalRGBHighColor>#FFFF88</SignalRGBHighColor>
+                    <SignalRGBMidColor>#FFA600</SignalRGBMidColor>
+                    <SignalRGBLowColor>#0055E1</SignalRGBLowColor>
+                    <SignalColor>#222</SignalColor>
+                    <PlayedOverlayColor>#40ffffff</PlayedOverlayColor>
                     <PlayPosColor>#FFFFFF</PlayPosColor>
                     <EndOfTrackColor>#EA0000</EndOfTrackColor>
                     <ShowCueTimes>false</ShowCueTimes>

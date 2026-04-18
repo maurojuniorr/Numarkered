@@ -12,9 +12,7 @@
       <Template src="skin:hotcue_row.xml">
         <SetVariable name="channel"><Variable name="channel"/></SetVariable>
       </Template>
-      <Template src="skin:hotcue_row_bottom.xml">
-        <SetVariable name="channel"><Variable name="channel"/></SetVariable>
-      </Template>
+     
     </Children>
   </WidgetGroup>
 </Template>
