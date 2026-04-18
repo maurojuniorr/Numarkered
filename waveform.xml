@@ -1,12 +1,13 @@
 <Template>
-  <SetVariable name="BgColor">#000</SetVariable>
-  <SetVariable name="SignalHighColor">blue</SetVariable>
-  <SetVariable name="SignalMidColor">green</SetVariable>
-  <SetVariable name="SignalLowColor">red</SetVariable>
+  <SetVariable name="BgColor">#0F1116</SetVariable>
+  <SetVariable name="SignalHighColor">#00FFFF</SetVariable> 
+  <SetVariable name="SignalMidColor">#00FF44</SetVariable>  
+  <SetVariable name="SignalLowColor">#FF0044</SetVariable>  
+  <SetVariable name="SignalColor">#2A2D35</SetVariable>
   <SetVariable name="SignalRGBHighColor">blue</SetVariable>
   <SetVariable name="SignalRGBMidColor">green</SetVariable>
   <SetVariable name="SignalRGBLowColor">red</SetVariable>
-  <SetVariable name="SignalColor">#32323c</SetVariable>
+  <!-- <SetVariable name="SignalColor">#32323c</SetVariable> -->
   <SetVariable name="BeatColor">#3a3a3a3a</SetVariable>
   <SetVariable name="PlayPosColor">#ffffffff</SetVariable>
   <SetVariable name="EndOfTrackColor">#EA0000</SetVariable>

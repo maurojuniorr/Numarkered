@@ -2,135 +2,88 @@
   <WidgetGroup>
     <ObjectName>BeatFX_Container</ObjectName>
     <Layout>vertical</Layout>
-    <Size>200f,0me</Size>
-    <SizePolicy>min,me</SizePolicy>
+    <Size>180f,0me</Size> <SizePolicy>min,me</SizePolicy>
+
+    <Connection>
+      <ConfigKey>[Skin],show_effects</ConfigKey>
+      <BindProperty>visible</BindProperty>
+    </Connection>
+
     <Children>
-      <WidgetGroup>
+      
+      <!-- <WidgetGroup>
         <ObjectName>BeatFX_Header</ObjectName>
         <Layout>vertical</Layout>
-        <Size>20me,16p</Size>
+        <Size>0me,16p</Size>
         <Children>
-          <Label>
-            <ObjectName>BeatFX_Title</ObjectName>
-            <Text>Effects</Text>
-          </Label>
-        </Children>
-      </WidgetGroup>
-      <!-- <WidgetGroup>
-        <ObjectName>BeatFX_QuickEffects</ObjectName>
-        <Layout>vertical</Layout>
-        <Children>
-          <Label>
-            <ObjectName>BeatFX_QuickEffectsLabel</ObjectName>
-            <Text>QUICK FX</Text>
-          </Label>
-          <WidgetGroup>
-            <ObjectName>BeatFX_QuickEffectColumns</ObjectName>
-            <Layout>horizontal</Layout>
-            <Children>
-              <WidgetGroup>
-                <ObjectName>BeatFX_QuickEffectColumn</ObjectName>
-                <Layout>vertical</Layout>
-                <SizePolicy>me,min</SizePolicy>
-                <Children>
-                  <Label>
-                    <ObjectName>BeatFX_QuickChannelLabel</ObjectName>
-                    <Text>CH 1</Text>
-                  </Label>
-                  <VuMeter>
-                    <ObjectName>QuickFXMeter</ObjectName>
-                    <Size>0me,6max</Size>
-                    <PathBack scalemode="STRETCH">icons/effect_meter_bg.png</PathBack>
-                    <PathVu scalemode="STRETCH">icons/effect_meter_fg.png</PathVu>
-                    <Horizontal>true</Horizontal>
-                    <PeakHoldSize>0</PeakHoldSize>
-                    <PeakHoldTime>0</PeakHoldTime>
-                    <PeakFallTime>0</PeakFallTime>
-                    <PeakFallStep>0</PeakFallStep>
-                    <Connection>
-                      <ConfigKey>[QuickEffectRack1_[Channel1]],super1</ConfigKey>
-                    </Connection>
-                  </VuMeter>
-                  <EffectChainPresetSelector>
-                    <ObjectName>BeatFX_QuickSelector</ObjectName>
-                    <Size>0me,32p</Size>
-                    <EffectUnitGroup>[QuickEffectRack1_[Channel1]]</EffectUnitGroup>
-                  </EffectChainPresetSelector>
-                </Children>
-              </WidgetGroup>
-              <WidgetGroup>
-                <ObjectName>BeatFX_QuickEffectGap</ObjectName>
-                <Size>2p,0me</Size>
-              </WidgetGroup>
-              <WidgetGroup>
-                <ObjectName>BeatFX_QuickEffectColumn</ObjectName>
-                <Layout>vertical</Layout>
-                <SizePolicy>me,min</SizePolicy>
-                <Children>
-                  <Label>
-                    <ObjectName>BeatFX_QuickChannelLabel</ObjectName>
-                    <Text>CH 2</Text>
-                  </Label>
-                  <VuMeter>
-                    <ObjectName>QuickFXMeter</ObjectName>
-                    <Size>0me,6max</Size>
-                    <PathBack scalemode="STRETCH">icons/effect_meter_bg.png</PathBack>
-                    <PathVu scalemode="STRETCH">icons/effect_meter_fg.png</PathVu>
-                    <Horizontal>true</Horizontal>
-                    <PeakHoldSize>0</PeakHoldSize>
-                    <PeakHoldTime>0</PeakHoldTime>
-                    <PeakFallTime>0</PeakFallTime>
-                    <PeakFallStep>0</PeakFallStep>
-                    <Connection>
-                      <ConfigKey>[QuickEffectRack1_[Channel2]],super1</ConfigKey>
-                    </Connection>
-                  </VuMeter>
-                  <EffectChainPresetSelector>
-                    <ObjectName>BeatFX_QuickSelector</ObjectName>
-                    <Size>0me,32p</Size>
-                    <EffectUnitGroup>[QuickEffectRack1_[Channel2]]</EffectUnitGroup>
-                  </EffectChainPresetSelector>
-                </Children>
-              </WidgetGroup>
-            </Children>
-          </WidgetGroup>
+          <Label><ObjectName>BeatFX_Title</ObjectName><Text>EFFECTS</Text></Label>
         </Children>
       </WidgetGroup> -->
+
       <Template src="skin:effect.xml">
         <SetVariable name="rack">1</SetVariable>
         <SetVariable name="unit">1</SetVariable>
         <SetVariable name="effect">1</SetVariable>
       </Template>
+      
+      <WidgetGroup>
+        <ObjectName>BeatFX_BottomControls_U1</ObjectName>
+        <Layout>vertical</Layout>
+        <Children>
+          <WidgetGroup>
+            <ObjectName>BeatFX_MasterSection</ObjectName>
+            <Layout>vertical</Layout>
+            <Children>
+              <!-- <Label><ObjectName>BeatFX_ChannelSelectLabel</ObjectName><Text>FX 1 MASTER</Text></Label> -->
+              <VuMeter>
+                <ObjectName>EffectMeter</ObjectName>
+                <Size>0me,6max</Size>
+                <Connection><ConfigKey>[EffectRack1_EffectUnit1],mix</ConfigKey></Connection>
+              </VuMeter>
+            </Children>
+          </WidgetGroup>
+
+          <WidgetGroup>
+            <ObjectName>BeatFX_ChannelSelect</ObjectName>
+            <Layout>vertical</Layout>
+            <Children>
+              <Label><ObjectName>BeatFX_ChannelSelectLabel</ObjectName><Text>ASSIGN</Text></Label>
+              <WidgetGroup>
+                <ObjectName>BeatFX_ChannelButtons</ObjectName>
+                <Layout>horizontal</Layout>
+                <Children>
+                  <PushButton><Size>0me,25p</Size><NumberStates>2</NumberStates><State><Number>0</Number><Text>1</Text></State><State><Number>1</Number><Text>1</Text></State><Connection><ConfigKey>[EffectRack1_EffectUnit1],group_[Channel1]_enable</ConfigKey><ConnectValueToWidget>true</ConnectValueToWidget></Connection></PushButton>
+                  <PushButton><Size>0me,25p</Size><NumberStates>2</NumberStates><State><Number>0</Number><Text>2</Text></State><State><Number>1</Number><Text>2</Text></State><Connection><ConfigKey>[EffectRack1_EffectUnit1],group_[Channel2]_enable</ConfigKey><ConnectValueToWidget>true</ConnectValueToWidget></Connection></PushButton>
+                  <PushButton><Size>0me,25p</Size><NumberStates>2</NumberStates><State><Number>0</Number><Text>3</Text></State><State><Number>1</Number><Text>3</Text></State><Connection><ConfigKey>[EffectRack1_EffectUnit1],group_[Channel3]_enable</ConfigKey><ConnectValueToWidget>true</ConnectValueToWidget></Connection></PushButton>
+                  <PushButton><Size>0me,25p</Size><NumberStates>2</NumberStates><State><Number>0</Number><Text>4</Text></State><State><Number>1</Number><Text>4</Text></State><Connection><ConfigKey>[EffectRack1_EffectUnit1],group_[Channel4]_enable</ConfigKey><ConnectValueToWidget>true</ConnectValueToWidget></Connection></PushButton>
+                </Children>
+              </WidgetGroup>
+            </Children>
+          </WidgetGroup>
+        </Children>
+      </WidgetGroup>
+
+      <WidgetGroup><Size>0me,8p</Size></WidgetGroup>
+
       <Template src="skin:effect.xml">
         <SetVariable name="rack">1</SetVariable>
         <SetVariable name="unit">2</SetVariable>
-        <SetVariable name="effect">1</SetVariable> </Template>
+        <SetVariable name="effect">1</SetVariable>
+      </Template>
       
       <WidgetGroup>
-        <ObjectName>BeatFX_BottomControls</ObjectName>
+        <ObjectName>BeatFX_BottomControls_U2</ObjectName>
         <Layout>vertical</Layout>
         <Children>
           <WidgetGroup>
             <ObjectName>BeatFX_MasterSection</ObjectName>
             <Layout>vertical</Layout>
             <Children>
-              <Label>
-                <ObjectName>BeatFX_ChannelSelectLabel</ObjectName>
-                <Text>FX1</Text>
-              </Label>
+              <!-- <Label><ObjectName>BeatFX_ChannelSelectLabel</ObjectName><Text>FX 2 MASTER</Text></Label> -->
               <VuMeter>
                 <ObjectName>EffectMeter</ObjectName>
                 <Size>0me,6max</Size>
-                <PathBack scalemode="STRETCH">icons/effect_meter_bg.png</PathBack>
-                <PathVu scalemode="STRETCH">icons/effect_meter_fg.png</PathVu>
-                <Horizontal>true</Horizontal>
-                <PeakHoldSize>0</PeakHoldSize>
-                <PeakHoldTime>0</PeakHoldTime>
-                <PeakFallTime>0</PeakFallTime>
-                <PeakFallStep>0</PeakFallStep>
-                <Connection>
-                  <ConfigKey>[EffectRack1_EffectUnit1],mix</ConfigKey>
-                </Connection>
+                <Connection><ConfigKey>[EffectRack1_EffectUnit2],mix</ConfigKey></Connection>
               </VuMeter>
             </Children>
           </WidgetGroup>
@@ -139,207 +92,22 @@
             <ObjectName>BeatFX_ChannelSelect</ObjectName>
             <Layout>vertical</Layout>
             <Children>
-              <Label>
-                <ObjectName>BeatFX_ChannelSelectLabel</ObjectName>
-                <Text>CH SELECT</Text>
-              </Label>
+              <Label><ObjectName>BeatFX_ChannelSelectLabel</ObjectName><Text>ASSIGN</Text></Label>
               <WidgetGroup>
                 <ObjectName>BeatFX_ChannelButtons</ObjectName>
                 <Layout>horizontal</Layout>
                 <Children>
-                  <PushButton>
-                    <ObjectName>BeatFX_ChannelButton</ObjectName>
-                    <Size>0me,40p</Size>
-                    <NumberStates>2</NumberStates>
-                    <State>
-                      <Number>0</Number>
-                      <Text>1</Text>
-                    </State>
-                    <State>
-                      <Number>1</Number>
-                      <Text>1</Text>
-                    </State>
-                    <Connection>
-                      <ConfigKey>[EffectRack1_EffectUnit1],group_[Channel1]_enable</ConfigKey>
-                      <ConnectValueToWidget>true</ConnectValueToWidget>
-                    </Connection>
-                  </PushButton>
-
-                  <PushButton>
-                    <ObjectName>BeatFX_ChannelButton</ObjectName>
-                    <Size>0me,40p</Size>
-                    <NumberStates>2</NumberStates>
-                    <State>
-                      <Number>0</Number>
-                      <Text>2</Text>
-                    </State>
-                    <State>
-                      <Number>1</Number>
-                      <Text>2</Text>
-                    </State>
-                    <Connection>
-                      <ConfigKey>[EffectRack1_EffectUnit1],group_[Channel2]_enable</ConfigKey>
-                      <ConnectValueToWidget>true</ConnectValueToWidget>
-                    </Connection>
-                  </PushButton>
-                  <PushButton>
-                    <ObjectName>BeatFX_ChannelButton</ObjectName>
-                    <Size>0me,40p</Size>
-                    <NumberStates>2</NumberStates>
-                    <State>
-                      <Number>0</Number>
-                      <Text>3</Text>
-                    </State>
-                    <State>
-                      <Number>1</Number>
-                      <Text>3</Text>
-                    </State>
-                    <Connection>
-                      <ConfigKey>[EffectRack1_EffectUnit1],group_[Channel3]_enable</ConfigKey>
-                      <ConnectValueToWidget>true</ConnectValueToWidget>
-                    </Connection>
-                  </PushButton>
-                  
-                  <PushButton>
-                    <ObjectName>BeatFX_ChannelButton</ObjectName>
-                    <Size>0me,40p</Size>
-                    <NumberStates>2</NumberStates>
-                    <State>
-                      <Number>0</Number>
-                      <Text>4</Text>
-                    </State>
-                    <State>
-                      <Number>1</Number>
-                      <Text>4</Text>
-                    </State>
-                    <Connection>
-                      <ConfigKey>[EffectRack1_EffectUnit1],group_[Channel4]_enable</ConfigKey>
-                      <ConnectValueToWidget>true</ConnectValueToWidget>
-                    </Connection>
-                  </PushButton>
+                  <PushButton><Size>0me,25p</Size><NumberStates>2</NumberStates><State><Number>0</Number><Text>1</Text></State><State><Number>1</Number><Text>1</Text></State><Connection><ConfigKey>[EffectRack1_EffectUnit2],group_[Channel1]_enable</ConfigKey><ConnectValueToWidget>true</ConnectValueToWidget></Connection></PushButton>
+                  <PushButton><Size>0me,25p</Size><NumberStates>2</NumberStates><State><Number>0</Number><Text>2</Text></State><State><Number>1</Number><Text>2</Text></State><Connection><ConfigKey>[EffectRack1_EffectUnit2],group_[Channel2]_enable</ConfigKey><ConnectValueToWidget>true</ConnectValueToWidget></Connection></PushButton>
+                  <PushButton><Size>0me,25p</Size><NumberStates>2</NumberStates><State><Number>0</Number><Text>3</Text></State><State><Number>1</Number><Text>3</Text></State><Connection><ConfigKey>[EffectRack1_EffectUnit2],group_[Channel3]_enable</ConfigKey><ConnectValueToWidget>true</ConnectValueToWidget></Connection></PushButton>
+                  <PushButton><Size>0me,25p</Size><NumberStates>2</NumberStates><State><Number>0</Number><Text>4</Text></State><State><Number>1</Number><Text>4</Text></State><Connection><ConfigKey>[EffectRack1_EffectUnit2],group_[Channel4]_enable</ConfigKey><ConnectValueToWidget>true</ConnectValueToWidget></Connection></PushButton>
                 </Children>
               </WidgetGroup>
             </Children>
           </WidgetGroup>
         </Children>
       </WidgetGroup>
-      <WidgetGroup>
-        <ObjectName>BeatFX_BottomControls2</ObjectName>
-        <Layout>vertical</Layout>
-        <Children>
-          <WidgetGroup>
-            <ObjectName>BeatFX_MasterSection</ObjectName>
-            <Layout>vertical</Layout>
-            <Children>
-              <Label>
-                <ObjectName>BeatFX_ChannelSelectLabel</ObjectName>
-                <Text>FX2</Text>
-              </Label>
-              <VuMeter>
-                <ObjectName>EffectMeter</ObjectName>
-                <Size>0me,6max</Size>
-                <PathBack scalemode="STRETCH">icons/effect_meter_bg.png</PathBack>
-                <PathVu scalemode="STRETCH">icons/effect_meter_fg.png</PathVu>
-                <Horizontal>true</Horizontal>
-                <PeakHoldSize>0</PeakHoldSize>
-                <PeakHoldTime>0</PeakHoldTime>
-                <PeakFallTime>0</PeakFallTime>
-                <PeakFallStep>0</PeakFallStep>
-                <Connection>
-                  <ConfigKey>[EffectRack1_EffectUnit2],mix</ConfigKey>
-                </Connection>
-              </VuMeter>
-            </Children>
-          </WidgetGroup>
 
-          <WidgetGroup>
-            <ObjectName>BeatFX_ChannelSelect</ObjectName>
-            <Layout>vertical</Layout>
-            <Children>
-              <Label>
-                <ObjectName>BeatFX_ChannelSelectLabel</ObjectName>
-                <Text>CH SELECT</Text>
-              </Label>
-              <WidgetGroup>
-                <ObjectName>BeatFX_ChannelButtons</ObjectName>
-                <Layout>horizontal</Layout>
-                <Children>
-                  <PushButton>
-                    <ObjectName>BeatFX_ChannelButton</ObjectName>
-                    <Size>0me,40p</Size>
-                    <NumberStates>2</NumberStates>
-                    <State>
-                      <Number>0</Number>
-                      <Text>1</Text>
-                    </State>
-                    <State>
-                      <Number>1</Number>
-                      <Text>1</Text>
-                    </State>
-                    <Connection>
-                      <ConfigKey>[EffectRack1_EffectUnit2],group_[Channel1]_enable</ConfigKey>
-                      <ConnectValueToWidget>true</ConnectValueToWidget>
-                    </Connection>
-                  </PushButton>
-
-                  <PushButton>
-                    <ObjectName>BeatFX_ChannelButton</ObjectName>
-                    <Size>0me,40p</Size>
-                    <NumberStates>2</NumberStates>
-                    <State>
-                      <Number>0</Number>
-                      <Text>2</Text>
-                    </State>
-                    <State>
-                      <Number>1</Number>
-                      <Text>2</Text>
-                    </State>
-                    <Connection>
-                      <ConfigKey>[EffectRack1_EffectUnit2],group_[Channel2]_enable</ConfigKey>
-                      <ConnectValueToWidget>true</ConnectValueToWidget>
-                    </Connection>
-                  </PushButton>
-                  <PushButton>
-                    <ObjectName>BeatFX_ChannelButton</ObjectName>
-                    <Size>0me,40p</Size>
-                    <NumberStates>2</NumberStates>
-                    <State>
-                      <Number>0</Number>
-                      <Text>3</Text>
-                    </State>
-                    <State>
-                      <Number>1</Number>
-                      <Text>3</Text>
-                    </State>
-                    <Connection>
-                      <ConfigKey>[EffectRack1_EffectUnit2],group_[Channel3]_enable</ConfigKey>
-                      <ConnectValueToWidget>true</ConnectValueToWidget>
-                    </Connection>
-                  </PushButton>
-                  
-                  <PushButton>
-                    <ObjectName>BeatFX_ChannelButton</ObjectName>
-                    <Size>0me,40p</Size>
-                    <NumberStates>2</NumberStates>
-                    <State>
-                      <Number>0</Number>
-                      <Text>4</Text>
-                    </State>
-                    <State>
-                      <Number>1</Number>
-                      <Text>4</Text>
-                    </State>
-                    <Connection>
-                      <ConfigKey>[EffectRack1_EffectUnit2],group_[Channel4]_enable</ConfigKey>
-                      <ConnectValueToWidget>true</ConnectValueToWidget>
-                    </Connection>
-                  </PushButton>
-                </Children>
-              </WidgetGroup>
-            </Children>
-          </WidgetGroup>
-        </Children>
-      </WidgetGroup>
     </Children>
   </WidgetGroup>
 </Template>

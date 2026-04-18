@@ -1,9 +1,9 @@
 <skin>
 	<manifest>
-		<title>Pioneered</title>
-		<author>Sven Boekelder</author>
-		<version>0.5.0</version>
-		<description>Pioneer inspired theme for smaller screen resolutions</description>
+		<title>Numarkered</title>
+		<author>Mauro Junior / Sven Boekelder</author>
+		<version>2.5.0</version>
+		<description>Numark inspired theme for smaller screen resolutions</description>
 		<language>*</language>
 		<license>GPL</license>
 		<attributes>
@@ -15,12 +15,13 @@
 			<attribute persist="true" config_key="[VinylControl],show_vinylcontrol">0</attribute>
 			<attribute persist="true" config_key="[Skin],show_preview_decks">0</attribute>
 			<attribute persist="true" config_key="[Skin],show_library_coverart">0</attribute>
+			<attribute persist="true" config_key="[Skin],show_effects">0</attribute>
 		</attributes>
 	</manifest>
 
 	<ObjectName>Mixxx</ObjectName>
 	<Style src="skin:style.qss"/>
-	<MinimumSize>480,420</MinimumSize>
+	<MinimumSize>800,480</MinimumSize>
 	<SizePolicy>me,me</SizePolicy>
 	<Layout>vertical</Layout>
 

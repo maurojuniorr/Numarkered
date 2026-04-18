@@ -2,20 +2,33 @@
   <WidgetGroup>
     <ObjectName>Overview</ObjectName>
     <Layout>vertical</Layout>
-    <Size>0me,0me</Size>
+    <SizePolicy>me,me</SizePolicy>
     <Children>
+      
       <WidgetGroup>
-        <ObjectName>Waveforms_Container</ObjectName>
+        <ObjectName>Waveforms_And_FX</ObjectName>
         <Layout>horizontal</Layout>
+        <SizePolicy>me,me</SizePolicy>
         <Children>
-          <Template src="skin:waveforms.xml"></Template>
+          
+          <WidgetGroup>
+            <ObjectName>Waveforms_Container</ObjectName>
+            <Layout>vertical</Layout>
+            <SizePolicy>me,me</SizePolicy> <Children>
+              <Template src="skin:waveforms.xml"></Template>
+            </Children>
+          </WidgetGroup>
+
           <Template src="skin:effects.xml"></Template>
+          
         </Children>
       </WidgetGroup>
+
       <WidgetGroup>
         <ObjectName>Decks</ObjectName>
         <Layout>horizontal</Layout>
-        <Size>0me,150max</Size>
+        <SizePolicy>me,min</SizePolicy>
+        <MaximumSize>-1,150</MaximumSize>
         <Children>
           <Template src="skin:deck.xml">
             <SetVariable name="channel">1</SetVariable>
@@ -29,6 +42,7 @@
           </Template>
         </Children>
       </WidgetGroup>
+
     </Children>
   </WidgetGroup>
 </Template>

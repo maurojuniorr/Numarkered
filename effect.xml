@@ -10,7 +10,8 @@
         <Children>
           <Label>
             <ObjectName>BeatFX_UnitLabel</ObjectName>
-            <Text>Effect <Variable name="effect"/></Text>
+            <Text>FX <Variable name="unit"/></Text>
+            
           </Label>
           <EffectSelector>
             <ObjectName>EffectSelector</ObjectName>
@@ -18,10 +19,15 @@
             <EffectUnit><Variable name="unit"/></EffectUnit>
             <Effect><Variable name="effect"/></Effect>
             <Elide>right</Elide>
-            <Size>0me,23p</Size>
+            <Size>0me,10p</Size> 
+            
+            <MaximumSize>-1,23</MaximumSize>
+            
+            <MinimumSize>-1,23</MinimumSize>
             
           </EffectSelector>
         </Children>
+        
       </WidgetGroup>
 
       <WidgetGroup>
@@ -45,7 +51,7 @@
 
           <PushButton>
             <ObjectName>EffectToggle</ObjectName>
-            <Size>0me,44p</Size>
+            <Size>0me,28p</Size>
             <NumberStates>2</NumberStates>
             <State>
               <Number>0</Number>
