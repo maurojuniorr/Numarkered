@@ -1,13 +1,14 @@
-/* Engine DJ / Numark Colours (Neon on Graphite):
+/* Engine DJ / Numark Colours (Clean Hardware Look):
 
 Play button: #00FF44
 Cue button: #FF5500
 Slip/Alert button: #FF0044
 Tabs on top (Active): #00FF44
 Headers: #32323c
-Blue (Neon Cyan): #00FFFF
-White: #FFFFFF
-Graphite/Dark Gray Backgrounds: #2A2D35, #1f1f1f, #343434
+Highlight/Accent: #00FFFF
+White (Main Text): #FFFFFF
+Subtitles/Labels: #7A8694
+Graphite/Dark Gray Backgrounds: #121417, #0B0D0F, #2A2D35
 
 */
 
@@ -18,8 +19,8 @@ Graphite/Dark Gray Backgrounds: #2A2D35, #1f1f1f, #343434
 /* END */
 
 #Mixxx {
-  background-color: #0F1116;
-  /* Fundo base ligeiramente mais claro que preto puro */
+  background-color: #0B0D0F;
+  /* Fundo base preto profundo */
   padding: 4px;
 }
 
@@ -60,7 +61,7 @@ WPushButton:hover {
 
 WPushButton[value="1"] {
   color: #00FFFF;
-  /* Texto Ciano Neon */
+  /* Texto Ciano Neon para botão ativo */
   border: 1px solid #00FFFF;
   /* Borda Ciano Neon */
   background-color: #1f1f1f;
@@ -77,31 +78,31 @@ WPushButton[value="1"]:hover {
 /************************************************************************/
 
 #Deck {
-  background-color: #1f1f1f;
-  /* Painel Grafite */
-  border: 1px solid #32323c;
+  background-color: #121417;
+  /* Painel Grafite Hardware */
+  border: 1px solid #252A30;
   border-radius: 2px;
 }
 
 #Deck[highlight="1"] {
-  border: 1px solid #00FFFF;
-  /* Ciano Neon */
+  border: 1px solid #7A8694;
+  /* Deck Ativo */
 }
 
 #DeckBPMWrapper {
-  border: 2px solid #00FFFF;
-  /* Ciano Neon */
-  border-radius: 0px;
-  background-color: #111111;
+  border: 1px solid #252A30;
+  /* Borda sutil de hardware */
+  background-color: transparent;
   margin-bottom: 2px;
   padding: 0px 1px;
   qproperty-layoutAlignment: 'AlignRight | AlignTop';
 }
 
 #DeckBPM {
-  color: #A0AAB5;
-  /* Mudou de Ciano para igual ao título TEMPO */
+  color: #FFFFFF;
+  /* Branco Puro e Nítido */
   font-size: 18px;
+  font-weight: bold;
 }
 
 #DeckBPMTitleWrapper {
@@ -110,7 +111,7 @@ WPushButton[value="1"]:hover {
 }
 
 #DeckBPMTitle {
-  color: #A0AAB5;
+  color: #7A8694;
   font-size: 8px;
   font-weight: bold;
 }
@@ -121,14 +122,14 @@ WPushButton[value="1"]:hover {
 }
 
 #DeckBPMRangePercent {
-  background-color: #222222;
-  border: 1px solid #00FFFF;
+  background-color: transparent;
+  border: 1px solid #252A30;
+  /* Borda sutil combinando com BPM */
   padding: 0px;
-  /* A MÁGICA DO CENTRO: Isso vai forçar o ± e o 8% a ficarem no meio da caixinha */
   qproperty-layoutAlignment: 'AlignHCenter | AlignTop';
 }
 
-/* Regra nova para colar o +0.0% no topo */
+/* Regra para colar o +0.0% no topo */
 #RateDisplay1,
 #RateDisplay2,
 #RateDisplay3,
@@ -139,16 +140,15 @@ WPushButton[value="1"]:hover {
 #BPMRangePlusMinus,
 #RateDisplay {
   color: #FFFFFF;
-  /* Mudou de Verde para Branco */
+  /* Branco Puro */
   font-size: 12px;
   font-weight: bold;
 }
 
-/* Nova regra para forçar a cor branca na porcentagem do Pitch (+0.0%) */
 WNumberRate,
 #BPMPercent {
   color: #FFFFFF;
-  /* border: 1px solid #00FFFF; */
+  /* Branco Puro, sem sombras espaciais */
   font-size: 14px;
   font-weight: bold;
 }
@@ -156,7 +156,7 @@ WNumberRate,
 #DeckHeader {
   background-color: #2A2D35;
   /* Grafite Médio */
-  border-bottom: 1px solid #00FFFF;
+  border-bottom: 1px solid #00FF44;
   padding: 0;
 }
 
@@ -171,14 +171,16 @@ WNumberRate,
 }
 
 #DeckTitleNote {
-  color: #00FFFF;
+  color: #00FF44;
   margin: 0 1px 0 2px;
 }
 
+/* Subtítulos Muted Engine OS */
 #DeckChannelTitle,
 #DeckTrackTimeTitle,
-#DeckTempoTitle {
-  color: #A0AAB5;
+#DeckTempoTitle,
+#TrackNumberTitle {
+  color: #7A8694;
   font-size: 12px;
   font-weight: bold;
   padding: 0px;
@@ -214,7 +216,7 @@ WNumberRate,
 #DeckPlayingLeft[highlight="1"],
 #DeckPlayingRight[highlight="1"] {
   color: #00FF44;
-  /* Play rodando = Verde Neon */
+  /* Play rodando = Verde Neon Engine */
 }
 
 #DeckTrackTimeWrapper {
@@ -223,11 +225,11 @@ WNumberRate,
 
 #DeckTrackTime {
   color: #FFFFFF;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 #DeckTrackTime[highlight="1"] {
-  color: #FF0044;
+  color: #FFFFFF;
   /* Alerta de fim = Vermelho Neon */
 }
 
@@ -237,7 +239,7 @@ WNumberRate,
 }
 
 #DeckTrackTimeMini[highlight="1"] {
-  color: #FF0044;
+  color: #FFFFFF;
 }
 
 #DeckTrackNumberContainer {
@@ -248,13 +250,6 @@ WNumberRate,
 #TrackNumberWrapper,
 #DeckChannelTitleWrapper {
   qproperty-layoutAlignment: 'AlignHCenter | AlignVCenter';
-}
-
-#TrackNumberTitle {
-  color: #A0AAB5;
-  font-size: 12px;
-  font-weight: bold;
-  text-transform: uppercase;
 }
 
 #TrackNumber {
@@ -316,7 +311,6 @@ WNumberRate,
 
 #BeatFX_ChannelButton {
   background-color: #2a2a2a;
-  /* Botão apagado cinza */
   border: 1px solid #3a3a3a;
   color: #8f8f8f;
   font-size: 10px;
@@ -329,7 +323,6 @@ WNumberRate,
   background-color: #111111;
   border: 1px solid #00FFFF;
   color: #00FFFF;
-  /* Botão aceso Ciano Neon */
 }
 
 #BeatFX_Unit[highlight="0"] {
@@ -342,21 +335,18 @@ WNumberRate,
 #BeatFX_Unit[highlight="1"] {
   background-color: transparent;
   border: 1px solid #00FFFF;
-  /* Destaque Ciano Neon */
   margin-bottom: 4px;
   padding: 0;
 }
 
 #BeatFX_UnitTop {
   background-color: #2A2D35;
-  /* Grafite em vez de azul opaco */
   border-bottom: 1px solid #1A1D23;
   padding: 2px 4px 3px 4px;
 }
 
 #BeatFX_UnitLabel {
   color: #00FFFF;
-  /* Texto FX1/FX2 Ciano Neon */
   font-size: 7px;
   font-weight: bold;
   padding-bottom: 1px;
@@ -384,7 +374,6 @@ WEffectSelector {
 #BeatFX_UnitTop WEffectSelector {
   background-color: transparent;
   color: #00FFFF;
-  /* Nome do Efeito em Ciano Neon */
   border: 0;
   padding: 0px;
 }
@@ -395,7 +384,6 @@ WEffectSelector {
 
 #BeatFX_UnitTop WEffectSelector::down-arrow {
   image: none;
-  /* Limpa a seta velha */
 }
 
 WEffectSelector QAbstractScrollArea,
@@ -404,7 +392,6 @@ WEffectSelector QAbstractItemView {
   color: #FFFFFF;
   selection-background-color: #00FFFF;
   selection-color: #000000;
-  /* Texto preto quando selecionado em fundo Ciano */
   border: 1px solid #00FFFF;
   outline: none;
 }
@@ -434,7 +421,6 @@ WEffectSelector::checked {
 #EffectToggle[value="1"] {
   background-color: #111111;
   border: 1px solid #00FFFF;
-  /* Ciano Neon */
   color: #00FFFF;
 }
 
@@ -489,35 +475,29 @@ WEffectSelector::checked {
   background-color: #111;
 }
 
-/* Ciano */
 #Hotcue2[value="1"] {
   border-top: 2px solid #00FF44;
   color: #00FF44;
   background-color: #111;
 }
 
-/* Verde */
 #Hotcue3[value="1"] {
   border-top: 2px solid #FF5500;
   color: #FF5500;
   background-color: #111;
 }
 
-/* Laranja */
 #Hotcue4[value="1"] {
   border-top: 2px solid #FF0044;
   color: #FF0044;
   background-color: #111;
 }
 
-/* Vermelho */
 #Hotcue5[value="1"] {
   border-top: 2px solid #9d4cfd;
   color: #9d4cfd;
   background-color: #111;
 }
-
-/* Roxo */
 
 /************************************************************************/
 /* Library                                                          */
@@ -569,7 +549,6 @@ WEffectSelector::checked {
   background-color: #2A2D35;
   border: 0;
   border-bottom: 2px solid #00FFFF;
-  /* Ciano Neon */
   border-right: 1px solid #111111;
   color: #FFFFFF;
   font-weight: bold;
@@ -582,12 +561,10 @@ WEffectSelector::checked {
 #LibraryWrapper WLibraryTextBrowser {
   alternate-background-color: #1f1f1f;
   background-color: #161616;
-  /* Um pouco mais escuro que grafite para contraste */
   border: 1px solid #353535;
   color: #FFFFFF;
   gridline-color: #353535;
   selection-background-color: #00FFFF;
-  /* Ciano Neon */
   selection-color: #000000;
 }
 
@@ -616,7 +593,6 @@ WEffectSelector::checked {
 #SearchBox {
   background-color: #111111;
   border: 1px solid #00FFFF;
-  /* Ciano Neon */
   border-radius: 0;
   color: #FFFFFF;
   font-size: 18px;
@@ -661,7 +637,6 @@ WEffectSelector::checked {
 
 #WaveformInfo {
   background-color: #343434;
-  /* Fundo Grafite */
   border: 1px solid #555555;
   margin-right: 4px;
   padding: 0;
@@ -671,14 +646,12 @@ WEffectSelector::checked {
 #WaveformInfo_Header {
   background-color: #2A2D35;
   border-bottom: 2px solid #00FFFF;
-  /* Ciano Neon */
   min-height: 18px;
   padding: 2px 5px 1px 5px;
 }
 
 #WaveformInfo_Header[highlight="1"] {
   border-bottom: 2px solid #00FF44;
-  /* Verde Neon quando a música toca */
 }
 
 #WaveformInfo_Title {
@@ -740,17 +713,14 @@ WEffectSelector::checked {
 
 #WaveformInfo_Key {
   color: #00FFFF;
-  /* Key Info Ciano Neon */
 }
 
 #WaveformInfo_Bars {
   color: #00FF44;
-  /* Bars Info Verde Neon */
 }
 
 WBeatSpinBox {
   color: #FF5500;
-  /* Laranja Engine */
   font-size: 13px/13px;
   font-weight: bold;
   background-color: transparent;
@@ -779,7 +749,6 @@ WBeatSpinBox {
 #WaveformInfo_Beatgrid_Container WPushButton[value="1"] {
   background-color: #111111;
   border: 1px solid #00FFFF;
-  /* Bordas dos botões de utilidade = Ciano */
 }
 
 /************************************************************************/
@@ -800,7 +769,6 @@ WBeatSpinBox {
 
 #TopbarTouchShiftButton[value="1"] {
   border: 2px solid #00FF44;
-  /* Verde Neon */
   color: #00FF44;
 }
 
@@ -822,7 +790,6 @@ WBeatSpinBox {
 
 #TabControls WPushButton[value="1"] {
   border: 2px solid #00FF44;
-  /* Abas ativas Verde Neon Engine */
   color: #00FF44;
 }
 
@@ -844,7 +811,6 @@ WBeatSpinBox {
   border: 2px solid #00FFFF;
   background-color: #111111;
   color: #00FFFF;
-  /* Acento Ciano para Samplers ativos */
 }
 
 #Sampler_Info {

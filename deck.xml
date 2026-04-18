@@ -196,18 +196,19 @@
             <Layout>vertical</Layout>
             <SizePolicy>f,min</SizePolicy>
             <MaximumSize>80,-1</MaximumSize>
+            <Align>top</Align> 
             <Children>   
               <Label>
                 <ObjectName>DeckTempoTitle</ObjectName> 
                 <Text>PITCH</Text>
                 <SizePolicy>me,min</SizePolicy>
-                <Size>-1,14p</Size> 
+                <Size>-1,24p</Size> 
                 <Align>left</Align>
               </Label>           
               <WidgetGroup>
                 <ObjectName>DeckBPMRangePercent</ObjectName>
-                                <Layout>horizontal</Layout>
-<SizePolicy>me,min</SizePolicy>
+                <Layout>horizontal</Layout>
+                <SizePolicy>me,min</SizePolicy>
                 <Size>-1,16p</Size>
                 <Children>
                   <Label>
@@ -249,11 +250,10 @@
             <Layout>vertical</Layout>
             <SizePolicy>f,min</SizePolicy>
             <MaximumSize>90,-1</MaximumSize>
-            <Children>
+            <Align>top</Align> <Children>
               <Label>
                 <ObjectName>DeckTempoTitle</ObjectName>
-                <Text>TEMPO</Text>
-                <SizePolicy>me,min</SizePolicy>
+                <Text>TEMPO</Text> <SizePolicy>me,min</SizePolicy>
                 <Size>-1,14p</Size>
                 <Align>left</Align>
               </Label>
