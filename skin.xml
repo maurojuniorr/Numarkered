@@ -7,7 +7,7 @@
 		<language>*</language>
 		<license>GPL</license>
 		<attributes>
-			<attribute config_key="[App],num_decks">2</attribute>
+			<attribute config_key="[App],num_decks">4</attribute>
 			<attribute config_key="[App],num_samplers">16</attribute>
 			<attribute persist="true" config_key="[Skin],show_maximized_library">0</attribute>
 			<attribute persist="true" config_key="[Master],skin_settings">0</attribute>
@@ -18,6 +18,16 @@
 			<attribute persist="true" config_key="[Skin],show_effects">0</attribute>
 		</attributes>
 	</manifest>
+	<HotcueColorPalette>
+		<Color>#f44040</Color> 
+		<Color>#0ddcf2</Color> 
+		<Color>#a5df13</Color> 
+		<Color>#9d4cfd</Color> 
+		<Color>#3fec2b</Color> 
+		<Color>#e6681c</Color> 
+		<Color>#2749c8</Color> 
+		<Color>#c7b205</Color> 
+	</HotcueColorPalette>
 
 	<ObjectName>Mixxx</ObjectName>
 	<Style src="skin:style.qss"/>

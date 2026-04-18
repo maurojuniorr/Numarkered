@@ -488,8 +488,8 @@ WEffectSelector::checked {
 }
 
 #Hotcue4[value="1"] {
-  border-top: 2px solid #FF0044;
-  color: #FF0044;
+  border-top: 2px solid #FFFF00;
+  color: #FFFF00;
   background-color: #111;
 }
 
@@ -645,7 +645,7 @@ WEffectSelector::checked {
 
 #WaveformInfo_Header {
   background-color: #2A2D35;
-  border-bottom: 2px solid #00FFFF;
+  border-bottom: 2px solid #FF5500;
   min-height: 18px;
   padding: 2px 5px 1px 5px;
 }
@@ -661,27 +661,32 @@ WEffectSelector::checked {
   text-transform: uppercase;
 }
 
+/* 1. Linhas de Informação (Key e Loop/Jump) -> Teto rebaixado para 24px */
 #WaveformInfo_Key_Container,
-#WaveformInfo_Bars_Container,
-#WaveformInfo_Loopsize_Container,
-#WaveformInfo_Sync_Container,
-#WaveformInfo_Beatjump_Container,
-#WaveformInfo_Quantize_Container,
-#WaveformInfo_Beatgrid_Container {
+#WaveformInfo_Loopsize_Container {
   background-color: #343434;
-  margin: 0;
-  min-height: 32px;
-  max-height: 32px;
-  padding: 2px 5px;
+  margin: 0px;
+  /* VAR: Margem zero para não roubar espaço vertical */
+  min-height: 23px;
+  /* VAR: Baixámos de 30px para 24px */
+  max-height: 23px;
+  padding: 1px 2px;
   qproperty-layoutAlignment: 'AlignLeft | AlignVCenter';
   border-top: 1px solid #454545;
 }
 
+/* 2. Linhas de Botões de Hardware (Sync e Quantize) -> Teto rebaixado para 28px */
 #WaveformInfo_Sync_Container,
-#WaveformInfo_Quantize_Container,
-#WaveformInfo_Beatgrid_Container {
-  qproperty-layoutAlignment: 'AlignCenter | AlignVCenter';
-  padding: 4px 0;
+#WaveformInfo_Quantize_Container {
+  background-color: #343434;
+  margin: 0px;
+  /* VAR: Margem zero! */
+  min-height: 28px;
+  /* VAR: Baixámos de 34px para 28px (apenas 2px de folga para os botões de 26px) */
+  max-height: 28px;
+  padding: 1px 0px;
+  qproperty-layoutAlignment: 'AlignHCenter | AlignVCenter';
+  border-top: 1px solid #454545;
 }
 
 #WaveformInfo_RowLabel {
@@ -705,50 +710,98 @@ WEffectSelector::checked {
   qproperty-layoutAlignment: 'AlignLeft | AlignVCenter';
 }
 
-#WaveformInfo_Key,
-#WaveformInfo_Bars {
+/* VAR: Limpo o código morto do Bars */
+#WaveformInfo_Key {
   font-size: 14px;
   font-weight: bold;
-}
-
-#WaveformInfo_Key {
-  color: #00FFFF;
-}
-
-#WaveformInfo_Bars {
   color: #00FF44;
 }
 
+/* Ajuste para os números do Loop e Jump não cortarem */
 WBeatSpinBox {
   color: #FF5500;
-  font-size: 13px/13px;
+  font-size: 13px;
   font-weight: bold;
   background-color: transparent;
   border: 0;
-  margin: 0px 2px 0px 0px;
-  padding: 0px 2px 0px 2px;
-  selection-background-color: transparent;
-  selection-color: #FF5500;
-  text-align: left;
+  margin: 0;
+  /* VAR: Zera o padding da direita para o número não ser empurrado e cortado */
+  padding: 0px 0px 0px 2px;
+  qproperty-alignment: 'AlignRight | AlignVCenter';
+  min-width: 40px;
+  /* Garante um espaço mínimo para números largos */
 }
 
-#WaveformInfo_Sync_Container WPushButton,
-#WaveformInfo_Quantize_Container WPushButton,
-#WaveformInfo_Beatgrid_Container WPushButton {
+
+
+/* ---------------------------------------------------- */
+/* ÍCONES E BOTÕES DA MATRIZ 3x2 (A MÁGICA ESTÁ AQUI)   */
+/* ---------------------------------------------------- */
+
+#WaveformInfo_KeylockButton {
+  image: url(skin:icons/keylock.svg);
+}
+
+#WaveformInfo_QuantizeButton {
+  image: url(skin:icons/quantize.svg);
+}
+
+#WaveformInfo_BeatlockButton {
+  image: url(skin:icons/bpm_locked.svg);
+}
+
+#WaveformInfo_HalfBeatShiftButton {
+  image: url(skin:icons/beats_later.svg);
+}
+
+#WaveformInfo_SyncButton {
+  image: url(skin:icons/sync.svg);
+}
+
+#WaveformInfo_SyncLeaderButton {
+  image: url(skin:icons/sync_leader.svg);
+}
+
+/* Os 6 Botões de Hardware (Tamanho cravado, nunca encolhem nem encavalam) */
+#WaveformInfo_SyncButton,
+#WaveformInfo_SyncLeaderButton,
+#WaveformInfo_KeylockButton,
+#WaveformInfo_QuantizeButton,
+#WaveformInfo_BeatlockButton,
+#WaveformInfo_HalfBeatShiftButton {
   background-color: #2a2a2a;
   border: 1px solid #4a4a4a;
-  min-width: 20px;
-  max-width: 20px;
-  min-height: 20px;
-  max-height: 20px;
-  padding: 3px;
+
+  /* A MURALHA: 26x26 cravados! (Não mexe aqui) */
+  min-width: 26px !important;
+  max-width: 26px !important;
+  min-height: 26px !important;
+  max-height: 26px !important;
+
+  border-radius: 3px;
+  margin: 0px 4px;
+  padding: 0px;
+
+  /* O AJUSTE FINO: Diminuímos o SVG de 18px para 15px! */
+  qproperty-iconSize: 15px 15px;
 }
 
-#WaveformInfo_Sync_Container WPushButton[value="1"],
-#WaveformInfo_Quantize_Container WPushButton[value="1"],
-#WaveformInfo_Beatgrid_Container WPushButton[value="1"] {
+/* Highlight de TODOS os 6 botões (Armadura à prova de falhas) */
+#WaveformInfo_SyncButton[value="1"],
+#WaveformInfo_SyncButton[highlight="1"],
+#WaveformInfo_SyncLeaderButton[value="1"],
+#WaveformInfo_SyncLeaderButton[highlight="1"],
+#WaveformInfo_SyncLeaderButton:checked,
+#WaveformInfo_KeylockButton[value="1"],
+#WaveformInfo_KeylockButton[highlight="1"],
+#WaveformInfo_QuantizeButton[value="1"],
+#WaveformInfo_QuantizeButton[highlight="1"],
+#WaveformInfo_BeatlockButton[value="1"],
+#WaveformInfo_BeatlockButton[highlight="1"],
+#WaveformInfo_HalfBeatShiftButton[value="1"],
+#WaveformInfo_HalfBeatShiftButton[highlight="1"] {
   background-color: #111111;
-  border: 1px solid #00FFFF;
+  border: 1px solid #00FF44;
 }
 
 /************************************************************************/

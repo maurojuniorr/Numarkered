@@ -322,35 +322,35 @@
             </Mark>
             <Mark>
               <Control>hotcue_1_position</Control>
-              <Text>A</Text>
+              <Text>1</Text>
               <Color>#00FFFF</Color>
               <TextColor>#00FFFF</TextColor>
               <Align>top</Align>
             </Mark>
             <Mark>
               <Control>hotcue_2_position</Control>
-              <Text>B</Text>
+              <Text>2</Text>
               <Color>#00FF44</Color>
               <TextColor>#00FF44</TextColor>
               <Align>top</Align>
             </Mark>
             <Mark>
               <Control>hotcue_3_position</Control>
-              <Text>C</Text>
+              <Text>3</Text>
               <Color>#FF5500</Color>
               <TextColor>#FF5500</TextColor>
               <Align>top</Align>
             </Mark>
             <Mark>
               <Control>hotcue_4_position</Control>
-              <Text>D</Text>
-              <Color>#FF0044</Color>
-              <TextColor>#FF0044</TextColor>
+              <Text>4</Text>
+              <Color>#FFFF00</Color>
+              <TextColor>#FFFF00</TextColor>
               <Align>top</Align>
             </Mark>
             <Mark>
               <Control>hotcue_5_position</Control>
-              <Text>E</Text>
+              <Text>5</Text>
               <Color>#9d4cfd</Color>
               <TextColor>#9d4cfd</TextColor>
               <Align>top</Align>

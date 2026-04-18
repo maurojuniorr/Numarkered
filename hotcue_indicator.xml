@@ -11,8 +11,14 @@
       <Number>1</Number>
       <Text><Variable name="label"/></Text>
     </State>
+    
     <Connection>
-      <ConfigKey>[Channel<Variable name="channel"/>],hotcue_<Variable name="cue"/>_status</ConfigKey>
+      <ConfigKey>[Channel<Variable name="channel"/>],hotcue_<Variable name="cue"/>_activate</ConfigKey>
+      <ButtonState>LeftButton</ButtonState>
+    </Connection>
+    
+    <Connection>
+      <ConfigKey>[Channel<Variable name="channel"/>],hotcue_<Variable name="cue"/>_enabled</ConfigKey>
       <ConnectValueToWidget>true</ConnectValueToWidget>
       <ConnectValueFromWidget>false</ConnectValueFromWidget>
     </Connection>

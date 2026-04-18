@@ -19,10 +19,12 @@
       <WidgetGroup>
         <ObjectName>WaveformInfo</ObjectName>
         <Layout>vertical</Layout>
-        <Size>112f,0me</Size>
-        <SizePolicy>min,min</SizePolicy>
+        <Size>140f,0me</Size>
+        <MinimumSize>140,-1</MinimumSize>
+        <SizePolicy>f,min</SizePolicy>
         <Align>top</Align>
         <Children>
+          
           <WidgetGroup>
             <ObjectName>WaveformInfo_Header</ObjectName>
             <Layout>horizontal</Layout>
@@ -38,11 +40,13 @@
               <BindProperty>highlight</BindProperty>
             </Connection>
           </WidgetGroup>
+
           <WidgetGroup>
             <ObjectName>WaveformInfo_Data_Container</ObjectName>
             <Layout>vertical</Layout>
             <Size>0me,0me</Size>
             <Children>
+              
               <WidgetGroup>
                 <ObjectName>WaveformInfo_Key_Container</ObjectName>
                 <Layout>horizontal</Layout>
@@ -73,173 +77,127 @@
                   </WidgetGroup>
                 </Children>
               </WidgetGroup>
-              <WidgetGroup>
-                <ObjectName>WaveformInfo_Bars_Container</ObjectName>
-                <Layout>horizontal</Layout>
-                <Size>0me,0me</Size>
-                <Children>
-                  <WidgetGroup>
-                    <ObjectName>WaveformInfo_LabelCell</ObjectName>
-                    <Layout>horizontal</Layout>
-                    <Children>
-                      <Label>
-                        <ObjectName>WaveformInfo_RowLabel</ObjectName>
-                        <Text>BARS</Text>
-                      </Label>
-                    </Children>
-                  </WidgetGroup>
-                  <WidgetGroup>
-                    <ObjectName>WaveformInfo_ValueCell</ObjectName>
-                    <Layout>horizontal</Layout>
-                    <Children>
-                      <Label>
-                        <ObjectName>WaveformInfo_Bars</ObjectName>
-                        <Text>--.-</Text>
-                      </Label>
-                    </Children>
-                  </WidgetGroup>
-                </Children>
-              </WidgetGroup>
+
               <WidgetGroup>
                 <ObjectName>WaveformInfo_Loopsize_Container</ObjectName>
                 <Layout>horizontal</Layout>
-                <Size>0me,0me</Size>
-                <SetVariable name="beatloop_size_chan">[Channel<Variable name="channel"/>], beatloop_size</SetVariable>
+                <Size>140f,0me</Size>
+                <SizePolicy>f,min</SizePolicy>
                 <Children>
                   <WidgetGroup>
-                    <ObjectName>WaveformInfo_LabelCell</ObjectName>
                     <Layout>horizontal</Layout>
-                    <Children>
+                    <SizePolicy>me,min</SizePolicy> <Children>
                       <Label>
                         <ObjectName>WaveformInfo_RowLabel</ObjectName>
                         <Text>LOOP</Text>
+                        <Size>30f,0me</Size>
                       </Label>
-                    </Children>
-                  </WidgetGroup>
-                  <WidgetGroup>
-                    <ObjectName>WaveformInfo_ValueCell</ObjectName>
-                    <Layout>horizontal</Layout>
-                    <Children>
                       <BeatSpinBox>
                         <ObjectName>WaveformInfo_BeatloopSizeSpinBox</ObjectName>
                         <TooltipId>beatloop_size</TooltipId>
                         <Value>[Channel<Variable name="channel"/>],beatloop_size</Value>
-                      </BeatSpinBox>
+                        <SizePolicy>me,min</SizePolicy> </BeatSpinBox>
                     </Children>
                   </WidgetGroup>
-                </Children>
-              </WidgetGroup>
-              <WidgetGroup>
-                <ObjectName>WaveformInfo_Beatjump_Container</ObjectName>
-                <Layout>horizontal</Layout>
-                <Size>0me,0me</Size>
-                <Children>
+                  
                   <WidgetGroup>
-                    <ObjectName>WaveformInfo_LabelCell</ObjectName>
                     <Layout>horizontal</Layout>
+                    <SizePolicy>me,min</SizePolicy>
                     <Children>
                       <Label>
                         <ObjectName>WaveformInfo_RowLabel</ObjectName>
-                        <Text>JMP</Text>
+                        <Text>JUMP</Text>
+                        <Size>30f,0me</Size>
                       </Label>
-                    </Children>
-                  </WidgetGroup>
-                  <WidgetGroup>
-                    <ObjectName>WaveformInfo_ValueCell</ObjectName>
-                    <Layout>horizontal</Layout>
-                    <Children>
                       <BeatSpinBox>
                         <ObjectName>WaveformInfo_BeatjumpSizeSpinBox</ObjectName>
                         <TooltipId>beatjump_size</TooltipId>
                         <Value>[Channel<Variable name="channel"/>],beatjump_size</Value>
+                        <SizePolicy>me,min</SizePolicy>
                       </BeatSpinBox>
                     </Children>
                   </WidgetGroup>
                 </Children>
               </WidgetGroup>
+
               <WidgetGroup>
                 <ObjectName>WaveformInfo_Sync_Container</ObjectName>
                 <Layout>horizontal</Layout>
-                <Size>0me,0me</Size>
+                <SizePolicy>me,min</SizePolicy>
+                <Align>center</Align>
                 <Children>
-                  <WidgetGroup>
-                    <ObjectName>WaveformInfo_ValueCell</ObjectName>
-                    <Layout>horizontal</Layout>
-                    <Children>
-                      <Template src="skin:templates/toggle_button.xml">
-                        <SetVariable name="TooltipId">sync_enabled</SetVariable>
-                        <SetVariable name="ObjectName">WaveformInfo_SyncButton</SetVariable>
-                        <SetVariable name="Size">16f,16f</SetVariable>
-                        <SetVariable name="LeftConnectionControl">[Channel<Variable name="channel"/>],sync_enabled</SetVariable>
-                      </Template>
-                      <Template src="skin:templates/toggle_button.xml">
-                        <SetVariable name="TooltipId">sync_leader</SetVariable>
-                        <SetVariable name="ObjectName">WaveformInfo_SyncLeaderButton</SetVariable>
-                        <SetVariable name="Size">16f,16f</SetVariable>
-                        <SetVariable name="LeftConnectionControl">[Channel<Variable name="channel"/>],sync_leader</SetVariable>
-                      </Template>
-                    </Children>
-                  </WidgetGroup>
+                  <Template src="skin:templates/toggle_button.xml">
+                    <SetVariable name="TooltipId">sync_enabled</SetVariable>
+                    <SetVariable name="ObjectName">WaveformInfo_SyncButton</SetVariable>
+                    <SetVariable name="Size">22f,22f</SetVariable>
+                    <SetVariable name="LeftConnectionControl">[Channel<Variable name="channel"/>],sync_enabled</SetVariable>
+                  </Template>
+
+                  <PushButton>
+                    <TooltipId>sync_leader</TooltipId>
+                    <ObjectName>WaveformInfo_SyncLeaderButton</ObjectName>
+                    <Size>22f,22f</Size>
+                    <NumberStates>2</NumberStates>
+                    <State><Number>0</Number></State>
+                    <State><Number>1</Number></State>
+                    <Connection>
+                      <ConfigKey>[Channel<Variable name="channel"/>],sync_leader</ConfigKey>
+                      <ButtonState>LeftButton</ButtonState>
+                    </Connection>
+                    <Connection>
+                      <ConfigKey>[Channel<Variable name="channel"/>],sync_leader</ConfigKey>
+                      <BindProperty>highlight</BindProperty>
+                    </Connection>
+                  </PushButton>
+
+                  <Template src="skin:templates/toggle_button.xml">
+                    <SetVariable name="TooltipId">keylock</SetVariable>
+                    <SetVariable name="ObjectName">WaveformInfo_KeylockButton</SetVariable>
+                    <SetVariable name="Size">22f,22f</SetVariable>
+                    <SetVariable name="LeftConnectionControl">[Channel<Variable name="channel"/>],keylock</SetVariable>
+                  </Template>
                 </Children>
               </WidgetGroup>
+
               <WidgetGroup>
                 <ObjectName>WaveformInfo_Quantize_Container</ObjectName>
                 <Layout>horizontal</Layout>
-                <Size>0me,0me</Size>
+                <SizePolicy>me,min</SizePolicy>
+                <Align>center</Align>
                 <Children>
-                  <WidgetGroup>
-                    <ObjectName>WaveformInfo_ValueCell</ObjectName>
-                    <Layout>horizontal</Layout>
-                    <Children>
-                      <Template src="skin:templates/toggle_button.xml">
-                        <SetVariable name="TooltipId">keylock</SetVariable>
-                        <SetVariable name="ObjectName">WaveformInfo_KeylockButton</SetVariable>
-                        <SetVariable name="Size">16f,16f</SetVariable>
-                        <SetVariable name="LeftConnectionControl">[Channel<Variable name="channel"/>],keylock</SetVariable>
-                      </Template>
-                      <Template src="skin:templates/toggle_button.xml">
-                        <SetVariable name="TooltipId">quantize</SetVariable>
-                        <SetVariable name="ObjectName">WaveformInfo_QuantizeButton</SetVariable>
-                        <SetVariable name="Size">16f,16f</SetVariable>
-                        <SetVariable name="LeftConnectionControl">[Channel<Variable name="channel"/>],quantize</SetVariable>
-                      </Template>
-                    </Children>
-                  </WidgetGroup>
+                  <Template src="skin:templates/toggle_button.xml">
+                    <SetVariable name="TooltipId">quantize</SetVariable>
+                    <SetVariable name="ObjectName">WaveformInfo_QuantizeButton</SetVariable>
+                    <SetVariable name="Size">22f,22f</SetVariable>
+                    <SetVariable name="LeftConnectionControl">[Channel<Variable name="channel"/>],quantize</SetVariable>
+                  </Template>
+                  
+                  <Template src="skin:templates/toggle_button.xml">
+                    <SetVariable name="TooltipId">bpmlock</SetVariable>
+                    <SetVariable name="ObjectName">WaveformInfo_BeatlockButton</SetVariable>
+                    <SetVariable name="Size">22f,22f</SetVariable>
+                    <SetVariable name="LeftConnectionControl">[Channel<Variable name="channel"/>],beatlock</SetVariable>
+                  </Template>
+                  
+                  <Template src="skin:templates/toggle_button.xml">
+                    <SetVariable name="TooltipId">beats_translate_curpos</SetVariable>
+                    <SetVariable name="ObjectName">WaveformInfo_HalfBeatShiftButton</SetVariable>
+                    <SetVariable name="Size">22f,22f</SetVariable>
+                    <SetVariable name="LeftConnectionControl">[Channel<Variable name="channel"/>],beats_translate_half</SetVariable>
+                  </Template>
                 </Children>
               </WidgetGroup>
-              <WidgetGroup>
-                <ObjectName>WaveformInfo_Beatgrid_Container</ObjectName>
-                <Layout>horizontal</Layout>
-                <Size>0me,0me</Size>
-                <Children>
-                  <WidgetGroup>
-                    <ObjectName>WaveformInfo_ValueCell</ObjectName>
-                    <Layout>horizontal</Layout>
-                    <Children>
-                      <Template src="skin:templates/toggle_button.xml">
-                        <SetVariable name="TooltipId">bpmlock</SetVariable>
-                        <SetVariable name="ObjectName">WaveformInfo_BeatlockButton</SetVariable>
-                        <SetVariable name="Size">16f,16f</SetVariable>
-                        <SetVariable name="LeftConnectionControl">[Channel<Variable name="channel"/>],beatlock</SetVariable>
-                      </Template>
-                      <Template src="skin:templates/toggle_button.xml">
-                        <SetVariable name="TooltipId">beats_translate_curpos</SetVariable>
-                        <SetVariable name="ObjectName">WaveformInfo_HalfBeatShiftButton</SetVariable>
-                        <SetVariable name="Size">16f,16f</SetVariable>
-                        <SetVariable name="LeftConnectionControl">[Channel<Variable name="channel"/>],beats_translate_half</SetVariable>
-                      </Template>
-                    </Children>
-                  </WidgetGroup>
-                </Children>
-              </WidgetGroup>
+
               <WidgetGroup>
                 <ObjectName>WaveformInfo_Fill</ObjectName>
                 <SizePolicy>me,me</SizePolicy>
               </WidgetGroup>
+              
             </Children>
           </WidgetGroup>
         </Children>
       </WidgetGroup>
+
       <Visual>
         <TooltipId>waveform_display</TooltipId>
         <ObjectName>Waveform<Variable name="channel"/></ObjectName>
@@ -255,74 +213,50 @@
         <BeatColor><Variable name="BeatColor"/></BeatColor>
         <PlayPosColor><Variable name="PlayPosColor"/></PlayPosColor>
         <EndOfTrackColor><Variable name="EndOfTrackColor"/></EndOfTrackColor>
-	<DefaultMark>
-          <Align>bottom|right</Align>
-          <Color>#FF0000</Color>
-          <TextColor>#FFFFFF</TextColor>
-         <Text> %1 </Text>
-        </DefaultMark>
+        
+     
+        
         <Mark>
           <Control>cue_point</Control>
           <Text>CUE</Text>
           <Color>#ff6000</Color>
           <TextColor>#ff6000</TextColor>
-          <Align>bottom</Align>
+          <Align>bottom|left</Align>
         </Mark>
         <Mark>
           <Control>hotcue_1_position</Control>
-          <Text>A</Text>
-          <Color>#f44040</Color>
-          <TextColor>#f44040</TextColor>
-          <Align>top</Align>
+          <Text>1</Text>
+          <Color>#00FFFF</Color>
+          <TextColor>#00ffff</TextColor>
+          <Align>top|right</Align>
         </Mark>
         <Mark>
           <Control>hotcue_2_position</Control>
-          <Text>B</Text>
-          <Color>#0ddcf2</Color>
-          <TextColor>#0ddcf2</TextColor>
-          <Align>top</Align>
+          <Text>2</Text>
+          <Color>#00FF44</Color>
+          <TextColor>#00FF44</TextColor>
+          <Align>top|right</Align>
         </Mark>
         <Mark>
           <Control>hotcue_3_position</Control>
-          <Text>C</Text>
-          <Color>#a5df13</Color>
-          <TextColor>#a5df13</TextColor>
-          <Align>top</Align>
+          <Text>3</Text>
+          <Color>#FF5500</Color>
+          <TextColor>#FF5500</TextColor>
+          <Align>top|right</Align>
         </Mark>
         <Mark>
           <Control>hotcue_4_position</Control>
-          <Text>D</Text>
-          <Color>#9d4cfd</Color>
-          <TextColor>#9d4cfd</TextColor>
-          <Align>top</Align>
+          <Text>4</Text>
+          <Color>#FFFF00</Color>
+          <TextColor>#FFFF00</TextColor>
+          <Align>top|right</Align>
         </Mark>
         <Mark>
           <Control>hotcue_5_position</Control>
-          <Text>E</Text>
-          <Color>#3fec2b</Color>
-          <TextColor>#3fec2b</TextColor>
-          <Align>top</Align>
-        </Mark>
-        <Mark>
-          <Control>hotcue_6_position</Control>
-          <Text>F</Text>
-          <Color>#e6681c</Color>
-          <TextColor>#e6681c</TextColor>
-          <Align>top</Align>
-        </Mark>
-        <Mark>
-          <Control>hotcue_7_position</Control>
-          <Text>G</Text>
-          <Color>#2749c8</Color>
-          <TextColor>#2749c8</TextColor>
-          <Align>top</Align>
-        </Mark>
-        <Mark>
-          <Control>hotcue_8_position</Control>
-          <Text>H</Text>
-          <Color>#c7b205</Color>
-          <TextColor>#c7b205</TextColor>
-          <Align>top</Align>
+          <Text>5</Text>
+          <Color>#9d4cfd</Color>
+          <TextColor>#9d4cfd</TextColor>
+          <Align>top|right</Align>
         </Mark>
 
         <Mark>
