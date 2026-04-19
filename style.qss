@@ -113,7 +113,7 @@ WPushButton[value="1"]:hover {
 
 /* Borda Externa Verde */
 #Deck[highlight="0"] {
-  border: 1px solid #00FF44 !important;
+  border: 1px solid #8f8f8f !important;
 }
 
 /* Linha Interna (Header) Verde - A que você circulou */
@@ -146,7 +146,7 @@ WPushButton[value="1"]:hover {
 
 /* Borda Externa Vermelha */
 #Deck[highlight="1"] {
-  border: 1px solid #FF0000 !important;
+  border: 1px solid #8f8f8f !important;
 }
 
 /* Linha Interna (Header) Vermelha - A que você circulou */
@@ -560,7 +560,6 @@ WEffectSelector::checked {
   /* Linhas mais escuras para não poluir a visão */
   selection-background-color: #00FFFF;
   selection-color: #000000;
-  margin-right: 4px;
 }
 
 /* ===================================================

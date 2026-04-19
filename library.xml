@@ -65,7 +65,7 @@
                         <ObjectName>Library</ObjectName>
                     </Library>
                 </Children>
-            </WidgetGroup>
+              </WidgetGroup>
 
             </Children>
           </WidgetGroup>
@@ -73,8 +73,9 @@
       </WidgetGroup>
 
       <WidgetGroup>
-        <ObjectName>Decks</ObjectName> <Layout>horizontal</Layout>
-        <Size>0me,85max</Size>
+        <ObjectName>Decks</ObjectName> 
+        <Layout>horizontal</Layout>
+        <Size>0me,65max</Size>
         <Children>
           
           <WidgetGroup>
@@ -83,7 +84,12 @@
             <Children>
               <WidgetGroup>
                 <Layout>horizontal</Layout>
-                <Children><Template src="skin:deck.xml"><SetVariable name="channel">1</SetVariable></Template></Children>
+                <Children>
+                  <Template src="skin:deck.xml">
+                    <SetVariable name="channel">1</SetVariable>
+                    <SetVariable name="side">left</SetVariable>
+                  </Template>
+                </Children>
                 <Connection>
                   <ConfigKey>[Skin],layer_left</ConfigKey>
                   <BindProperty>visible</BindProperty>
@@ -92,7 +98,12 @@
               </WidgetGroup>
               <WidgetGroup>
                 <Layout>horizontal</Layout>
-                <Children><Template src="skin:deck.xml"><SetVariable name="channel">3</SetVariable></Template></Children>
+                <Children>
+                  <Template src="skin:deck.xml">
+                    <SetVariable name="channel">3</SetVariable>
+                    <SetVariable name="side">left</SetVariable>
+                  </Template>
+                </Children>
                 <Connection>
                   <ConfigKey>[Skin],layer_left</ConfigKey>
                   <BindProperty>visible</BindProperty>
@@ -102,12 +113,21 @@
           </WidgetGroup>
 
           <WidgetGroup>
+            <Size>4f,0me</Size> <SizePolicy>f,me</SizePolicy>
+          </WidgetGroup>
+
+          <WidgetGroup>
             <Layout>stacked</Layout>
             <SizePolicy>me,me</SizePolicy>
             <Children>
               <WidgetGroup>
                 <Layout>horizontal</Layout>
-                <Children><Template src="skin:deck.xml"><SetVariable name="channel">2</SetVariable></Template></Children>
+                <Children>
+                  <Template src="skin:deck.xml">
+                    <SetVariable name="channel">2</SetVariable>
+                    <SetVariable name="side">right</SetVariable>
+                  </Template>
+                </Children>
                 <Connection>
                   <ConfigKey>[Skin],layer_right</ConfigKey>
                   <BindProperty>visible</BindProperty>
@@ -116,7 +136,12 @@
               </WidgetGroup>
               <WidgetGroup>
                 <Layout>horizontal</Layout>
-                <Children><Template src="skin:deck.xml"><SetVariable name="channel">4</SetVariable></Template></Children>
+                <Children>
+                  <Template src="skin:deck.xml">
+                    <SetVariable name="channel">4</SetVariable>
+                    <SetVariable name="side">right</SetVariable>
+                  </Template>
+                </Children>
                 <Connection>
                   <ConfigKey>[Skin],layer_right</ConfigKey>
                   <BindProperty>visible</BindProperty>
