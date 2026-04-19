@@ -1,14 +1,16 @@
 # Numarkered
 
-![logo](https://raw.githubusercontent.com/schmic/Pioneered/master/images/pioneered_logo.png)
+<!-- ![logo](https://raw.githubusercontent.com/schmic/Pioneered/master/images/pioneered_logo.png) -->
 
 This project is a fork of [schmic/Pioneered](https://github.com/schmic/Pioneered), which is originally a fork of [timewasternl/Pioneered](https://github.com/timewasternl/Pioneered).
 
 **Numarkered** is an Engine DJ / Numark inspired theme for Mixxx, meticulously optimized for smaller screen resolutions like 5-inch Raspberry Pi displays (WVGA 800x480). It has been designed to act as a standalone screen extending the **Numark NS6** 4-channel MIDI controller.
 
-## Screenshot
+## Screenshots
 
 ![skin_preview](skin_preview.png)
+
+![skin_preview](skin_preview2.png)
 
 ## Features
 

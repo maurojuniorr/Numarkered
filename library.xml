@@ -75,7 +75,10 @@
       <WidgetGroup>
         <ObjectName>Decks</ObjectName> 
         <Layout>horizontal</Layout>
-        <Size>0me,65max</Size>
+        <Size>0me,65f</Size>
+        <SizePolicy>me,f</SizePolicy>
+        <MinimumSize>-1,65</MinimumSize>
+        <MaximumSize>-1,65</MaximumSize>
         <Children>
           
           <WidgetGroup>

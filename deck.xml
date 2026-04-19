@@ -38,13 +38,15 @@
           <WidgetGroup>
             <ObjectName>DeckChannelTitleWrapper</ObjectName>
             <Layout>horizontal</Layout>
-            <SizePolicy>min,f</SizePolicy>
+            <SizePolicy>f,f</SizePolicy>
+            <Size>100f,28f</Size>
+            <MinimumSize>100,28</MinimumSize>
+            <MaximumSize>100,28</MaximumSize>
             <Children>
               <Label>
                 <ObjectName>DeckPlayingLeft</ObjectName>
                 <Text>((</Text>
-                <SizePolicy>me,f</SizePolicy> 
-                <Alignment>center</Alignment>
+                <SizePolicy>f,f</SizePolicy>
                 <Connection>
                   <ConfigKey>[Channel<Variable name="channel"/>],play</ConfigKey>
                   <BindProperty>highlight</BindProperty>
@@ -64,23 +66,25 @@
                 </State>
                 <Connection>
                   <ConfigKey>[Skin],layer_<Variable name="side"/></ConfigKey>
+                  <EmitOnPressAndRelease>true</EmitOnPressAndRelease>
                   <ButtonState>LeftButton</ButtonState>
                 </Connection>
                 <Connection>
                   <ConfigKey>[Skin],layer_<Variable name="side"/></ConfigKey>
-                  <BindProperty>value</BindProperty>
+                  <BindProperty>highlight</BindProperty>
                 </Connection>
               </PushButton>
               <Label>
                 <ObjectName>DeckPlayingRight</ObjectName>
                 <Text>))</Text>
-                <SizePolicy>me,f</SizePolicy> 
-                <Alignment>center</Alignment>
+                <SizePolicy>f,f</SizePolicy>
                 <Connection>
                   <ConfigKey>[Channel<Variable name="channel"/>],play</ConfigKey>
                   <BindProperty>highlight</BindProperty>
                 </Connection>
               </Label>
+              
+              
             </Children>
           </WidgetGroup>
 
@@ -109,6 +113,7 @@
               </TrackProperty>
             </Children>
           </WidgetGroup>
+
         </Children>
       </WidgetGroup>
 
@@ -226,7 +231,6 @@
               <WidgetGroup>
                 <ObjectName>DeckBPMRangePercent</ObjectName>
                 <Layout>horizontal</Layout>
-                <!-- <SizePolicy>me,min</SizePolicy> -->
                 <Size>15,16p</Size>
                 <MinimumSize>15,-1</MinimumSize>
                 <Children>
@@ -276,8 +280,12 @@
                 <Children>
                   <NumberBpm>
                     <ObjectName>DeckBPM</ObjectName>
-                    <SizePolicy>me,min</SizePolicy>
+                    <TooltipId>visual_bpm</TooltipId>
+                    <SizePolicy>me,me</SizePolicy>
                     <Channel><Variable name="channel"/></Channel>
+                    <Connection>
+                      <ConfigKey>[Channel<Variable name="channel"/>],visual_bpm</ConfigKey>
+                    </Connection>
                   </NumberBpm>
                   <WidgetGroup>
                     <ObjectName>DeckBPMTitleWrapper</ObjectName>

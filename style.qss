@@ -85,6 +85,7 @@ WPushButton[value="1"]:hover {
   border-radius: 2px;
   /* Borda padrão hardware */
   border: 2px solid #252A30;
+  margin-top: 4px;
 }
 
 #DeckHeader {
@@ -113,7 +114,7 @@ WPushButton[value="1"]:hover {
 
 /* Borda Externa Verde */
 #Deck[highlight="0"] {
-  border: 1px solid #8f8f8f !important;
+  border: 1px solid #424242 !important;
 }
 
 /* Linha Interna (Header) Verde - A que você circulou */
@@ -130,7 +131,7 @@ WPushButton[value="1"]:hover {
 #Deck[highlight="0"] #DeckPlayingLeft[highlight="1"],
 #Deck[highlight="0"] #DeckPlayingRight[highlight="1"] {
   color: #00FF44 !important;
-  qproperty-alignment: 'AlignCenter';
+  /* qproperty-alignment: 'AlignCenter'; */
 }
 
 /* Botão Deck 1/2 Branco */
@@ -146,7 +147,7 @@ WPushButton[value="1"]:hover {
 
 /* Borda Externa Vermelha */
 #Deck[highlight="1"] {
-  border: 1px solid #8f8f8f !important;
+  border: 1px solid #424242 !important;
 }
 
 /* Linha Interna (Header) Vermelha - A que você circulou */
@@ -163,7 +164,7 @@ WPushButton[value="1"]:hover {
 #Deck[highlight="1"] #DeckPlayingLeft[highlight="1"],
 #Deck[highlight="1"] #DeckPlayingRight[highlight="1"] {
   color: #FF0000 !important;
-  qproperty-alignment: 'AlignCenter';
+  /* qproperty-alignment: 'AlignCenter'; */
 }
 
 /* Botão Deck 3/4 Vermelho */
@@ -248,7 +249,7 @@ WNumberRate,
   border: 1px solid #4a4a4a;
   margin-left: 4px;
   min-width: 100px;
-  padding: 3px;
+  border-radius: 2px;
   qproperty-layoutAlignment: 'AlignCenter | AlignTop';
 }
 
@@ -270,23 +271,32 @@ WNumberRate,
   text-transform: uppercase;
 }
 
-#BeatFX_ChannelSelect {
-  background-color: #1a1a1a;
-  border: 1px solid #353535;
+#BeatFX_MasterSection {
+
   margin-bottom: 4px;
   padding: 3px;
 }
 
+#BeatFX_ChannelSelect {
+  background-color: #1a1a1a;
+  border: 1px solid #353535;
+  margin-bottom: 4px;
+  /* padding: 3px; */
+}
+
 #BeatFX_ChannelSelectLabel {
-  color: #8e8e8e;
-  font-size: 7px;
+  color: #00FF44;
+  font-size: 10px;
   font-weight: bold;
   padding-bottom: 2px;
+  margin-bottom: 2px;
   text-transform: uppercase;
 }
 
 #BeatFX_ChannelButtons {
-  qproperty-layoutAlignment: 'AlignLeft | AlignTop';
+  qproperty-layoutAlignment: 'AlignCenter | AlignTop';
+  padding: 3px;
+  margin-right: 2px;
 }
 
 #BeatFX_ChannelButton {
@@ -322,20 +332,30 @@ WNumberRate,
 #BeatFX_UnitTop {
   background-color: #2A2D35;
   border-bottom: 1px solid #1A1D23;
-  padding: 2px 4px 3px 4px;
+  /* padding: 2px 4px 3px 4px; */
 }
 
 #BeatFX_UnitLabel {
-  color: #00FFFF;
-  font-size: 7px;
+  color: #00FF44;
+  font-size: 10px;
   font-weight: bold;
   padding-bottom: 1px;
   text-transform: uppercase;
+  margin-left: 0;
+
 }
 
 #BeatFX_UnitBottom {
   background-color: #1f1f1f;
   padding: 3px 3px 2px 3px;
+}
+
+#BeatFX_BottomControls_U1 {
+  margin-left: 0;
+}
+
+#BeatFX_BottomControls_U2 {
+  margin-left: 0;
 }
 
 /************************************************************************/
@@ -348,14 +368,16 @@ WEffectSelector {
   font-size: 11px;
   font-weight: bold;
   padding: 0px;
+  margin-left: 3px;
   text-transform: uppercase;
 }
 
 #BeatFX_UnitTop WEffectSelector {
   background-color: transparent;
-  color: #00FFFF;
+  color: #ffffff;
   border: 0;
   padding: 0px;
+
 }
 
 #BeatFX_UnitTop WEffectSelector::drop-down {
@@ -394,6 +416,7 @@ WEffectSelector::checked {
   font-size: 10px;
   font-weight: bold;
   margin-top: 3px;
+  margin-bottom: 3px;
   padding: 0px;
   text-transform: uppercase;
 }
@@ -418,6 +441,7 @@ WEffectSelector::checked {
 
 #HotcueBank {
   qproperty-layoutAlignment: 'AlignTop';
+  background-color: #1a1a1a;
 }
 
 #HotcueBankTitle {
@@ -710,6 +734,7 @@ WEffectSelector::checked {
   border: 1px solid #555555;
   margin-right: 4px;
   padding: 0;
+  border-radius: 2px;
   qproperty-layoutAlignment: 'AlignTop';
 }
 
