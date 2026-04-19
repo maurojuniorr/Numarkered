@@ -3,105 +3,52 @@
     <SizePolicy>me,e</SizePolicy>
     <Layout>vertical</Layout>
     <Children>
+      
       <WidgetGroup>
-        <ObjectName>LibraryWrapper</ObjectName>
-        <Layout>vertical</Layout>
-        <Size>0me,0me</Size>
+        <ObjectName>LibraryWrapper</ObjectName> <Layout>vertical</Layout>
+        <Size>0me,40p</Size>
         <Children>
+          
           <WidgetGroup>
-            <ObjectName>SidebarContainer</ObjectName>
+            <ObjectName>SidebarContainer</ObjectName> 
             <Layout>horizontal</Layout>
-            <Size>0me,40max</Size>
+            <Size>0me,30max</Size>
             <Children>
-              <WidgetGroup>
-                <ObjectName>LibraryPreviewSeekContainer</ObjectName>
-                <Layout>vertical</Layout>
-                <Size>240p,40max</Size>
-                <SizePolicy>min,min</SizePolicy>
-                <MinimumSize>240,40</MinimumSize>
-                <MaximumSize>240,40</MaximumSize>
-                <Children>
-                  <Overview>
-                    <ObjectName>LibraryPreviewSeek</ObjectName>
-                    <TooltipId>waveform_overview</TooltipId>
-                    <Group>[PreviewDeck1]</Group>
-                    <Size>0me,0me</Size>
-                    <BgColor>#000</BgColor>
-                    <SignalHighColor>#FFFF88</SignalHighColor>
-                    <SignalMidColor>#FFA600</SignalMidColor>
-                    <SignalLowColor>#0055E1</SignalLowColor>
-                    <SignalRGBHighColor>#FFFF88</SignalRGBHighColor>
-                    <SignalRGBMidColor>#FFA600</SignalRGBMidColor>
-                    <SignalRGBLowColor>#0055E1</SignalRGBLowColor>
-                    <SignalColor>#222</SignalColor>
-                    <PlayedOverlayColor>#40ffffff</PlayedOverlayColor>
-                    <PlayPosColor>#FFFFFF</PlayPosColor>
-                    <EndOfTrackColor>#EA0000</EndOfTrackColor>
-                    <ShowCueTimes>false</ShowCueTimes>
-                    <Connection>
-                      <ConfigKey>[PreviewDeck1],playposition</ConfigKey>
-                      <EmitOnDownPress>false</EmitOnDownPress>
-                    </Connection>
-                  </Overview>
-                </Children>
-              </WidgetGroup>
-              <WidgetGroup>
-                <ObjectName>LibraryPreviewDivider</ObjectName>
-                <Size>2p,40max</Size>
-                <SizePolicy>min,min</SizePolicy>
-              </WidgetGroup>
+              
+              
               <SearchBox>
                 <ObjectName>SearchBox</ObjectName>
-                <Size>0me,40max</Size>
+                <Size>0me,30max</Size>
+                <SizePolicy>me,me</SizePolicy> 
               </SearchBox>
+              
               <PushButton>
                 <ObjectName>SidebarButton</ObjectName>
-                <Size>80p,40p</Size>
+                <Size>80p,30p</Size>
                 <NumberStates>2</NumberStates>
-                <State>
-                  <Number>0</Number>
-                  <Text>Show &#8612;</Text>
-                </State>
-                <State>
-                  <Number>1</Number>
-                  <Text>Hide &#8614;</Text>
-                </State>
+                <State><Number>0</Number><Text>Sidebar</Text></State>
+                <State><Number>1</Number><Text>Sidebar</Text></State>
                 <Connection>
                   <ConfigKey>[Sidebar],sidebar_visible</ConfigKey>
                 </Connection>
               </PushButton>
             </Children>
           </WidgetGroup>
+
           <WidgetGroup>
-            <SizePolicy>me,me</SizePolicy>
             <Layout>horizontal</Layout>
             <Size>0me,0me</Size>
             <Children>
+              
               <WidgetGroup>
-                <ObjectName>LibraryWrapper</ObjectName>
+                <ObjectName>SidebarWrapper</ObjectName> 
                 <Layout>horizontal</Layout>
-                <Children>
-                  <Library>
-                    <ObjectName>Library</ObjectName>
-                    <Size>0me,0me</Size>
-                    <BgColor>#000</BgColor>
-                    <FgColor>#75001a</FgColor>
-                    <TrackTableBackgroundColorOpacity>0.4</TrackTableBackgroundColorOpacity>
-                  </Library>
-                </Children>
-                <Connection>
-                  <ConfigKey>[Sidebar],sidebar_visible</ConfigKey>
-                  <BindProperty>visible</BindProperty>
-                  <Transform><Not/></Transform>
-                </Connection>
-              </WidgetGroup>
-              <WidgetGroup>
-                <ObjectName>SidebarWrapper</ObjectName>
-                <Layout>horizontal</Layout>
+                <Size>190me,0me</Size>
+                <SizePolicy>max,me</SizePolicy>
+                <MaximumSize>190,9999</MaximumSize>
                 <Children>
                   <LibrarySidebar>
                     <ObjectName>LibrarySidebar</ObjectName>
-                    <Size>0me,0me</Size>
                   </LibrarySidebar>
                 </Children>
                 <Connection>
@@ -109,23 +56,78 @@
                   <BindProperty>visible</BindProperty>
                 </Connection>
               </WidgetGroup>
+
+              <WidgetGroup>
+                <ObjectName>LibraryTableContainer</ObjectName>
+                <Layout>horizontal</Layout>
+                <SizePolicy>me,me</SizePolicy> <Children>
+                    <Library>
+                        <ObjectName>Library</ObjectName>
+                    </Library>
+                </Children>
+            </WidgetGroup>
+
             </Children>
           </WidgetGroup>
         </Children>
       </WidgetGroup>
+
       <WidgetGroup>
-        <ObjectName>Decks</ObjectName>
-        <Layout>horizontal</Layout>
+        <ObjectName>Decks</ObjectName> <Layout>horizontal</Layout>
         <Size>0me,85max</Size>
         <Children>
-          <Template src="skin:deck.xml">
-            <SetVariable name="channel">1</SetVariable>
-          </Template>
-          <Template src="skin:deck.xml">
-            <SetVariable name="channel">2</SetVariable>
-          </Template>
+          
+          <WidgetGroup>
+            <Layout>stacked</Layout>
+            <SizePolicy>me,me</SizePolicy>
+            <Children>
+              <WidgetGroup>
+                <Layout>horizontal</Layout>
+                <Children><Template src="skin:deck.xml"><SetVariable name="channel">1</SetVariable></Template></Children>
+                <Connection>
+                  <ConfigKey>[Skin],layer_left</ConfigKey>
+                  <BindProperty>visible</BindProperty>
+                  <Transform><Not/></Transform>
+                </Connection>
+              </WidgetGroup>
+              <WidgetGroup>
+                <Layout>horizontal</Layout>
+                <Children><Template src="skin:deck.xml"><SetVariable name="channel">3</SetVariable></Template></Children>
+                <Connection>
+                  <ConfigKey>[Skin],layer_left</ConfigKey>
+                  <BindProperty>visible</BindProperty>
+                </Connection>
+              </WidgetGroup>
+            </Children>
+          </WidgetGroup>
+
+          <WidgetGroup>
+            <Layout>stacked</Layout>
+            <SizePolicy>me,me</SizePolicy>
+            <Children>
+              <WidgetGroup>
+                <Layout>horizontal</Layout>
+                <Children><Template src="skin:deck.xml"><SetVariable name="channel">2</SetVariable></Template></Children>
+                <Connection>
+                  <ConfigKey>[Skin],layer_right</ConfigKey>
+                  <BindProperty>visible</BindProperty>
+                  <Transform><Not/></Transform>
+                </Connection>
+              </WidgetGroup>
+              <WidgetGroup>
+                <Layout>horizontal</Layout>
+                <Children><Template src="skin:deck.xml"><SetVariable name="channel">4</SetVariable></Template></Children>
+                <Connection>
+                  <ConfigKey>[Skin],layer_right</ConfigKey>
+                  <BindProperty>visible</BindProperty>
+                </Connection>
+              </WidgetGroup>
+            </Children>
+          </WidgetGroup>
+          
         </Children>
       </WidgetGroup>
+
     </Children>
   </WidgetGroup>
 </Template>

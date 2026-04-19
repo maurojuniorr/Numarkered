@@ -482,37 +482,17 @@ WEffectSelector::checked {
 /************************************************************************/
 /* Library                                                          */
 /************************************************************************/
-
+/* ===================================================
+   📜 BARRA DE ROLAGEM (Mais fina, tipo macOS)
+   =================================================== */
 #LibraryWrapper QScrollBar {
-  background-color: #1f1f1f;
-}
-
-#LibraryWrapper QScrollBar::handle:horizontal {
-  background-color: #4a4a4a;
-  border: 0;
-  border-radius: 0;
+  background-color: transparent;
+  /* Fundo transparente limpa o visual */
 }
 
 #LibraryWrapper QScrollBar:horizontal {
   height: 0;
   width: 0;
-}
-
-#LibraryWrapper QScrollBar:vertical {
-  border: 0;
-  width: 32px;
-  background-color: #1f1f1f;
-}
-
-#LibraryWrapper QScrollBar::handle:vertical {
-  background-color: #4a4a4a;
-  border: 2px solid #1f1f1f;
-  min-height: 24px;
-}
-
-#LibraryWrapper QScrollBar::add-page,
-#LibraryWrapper QScrollBar::sub-page {
-  background-color: #1f1f1f;
 }
 
 #LibraryWrapper QScrollBar::add-line,
@@ -521,6 +501,38 @@ WEffectSelector::checked {
   width: 0;
 }
 
+#LibraryWrapper QScrollBar::add-page,
+#LibraryWrapper QScrollBar::sub-page {
+  background-color: transparent;
+}
+
+/* Barra Vertical Fina e Arredondada */
+#LibraryWrapper QScrollBar:vertical {
+  border: 0;
+  width: 14px;
+  /* Reduzido do gigante 32px para um tamanho elegante */
+  background-color: transparent;
+}
+
+#LibraryWrapper QScrollBar::handle:vertical {
+  background-color: #3a3a3a;
+  /* Mais discreto que o 4a4a4a */
+  border-radius: 6px;
+  /* Cantos arredondados na barra! */
+  margin: 2px;
+  /* Dá um respiro das bordas */
+  min-height: 30px;
+}
+
+/* Brilha quando o rato passa por cima da barra */
+#LibraryWrapper QScrollBar::handle:vertical:hover {
+  background-color: #00FFFF;
+}
+
+
+/* ===================================================
+     🎵 TABELA DE MÚSICAS E SIDEBAR
+     =================================================== */
 #LibraryWrapper WTrackTableViewHeader {
   color: #FFFFFF;
 }
@@ -539,25 +551,46 @@ WEffectSelector::checked {
 
 #LibraryWrapper QTableView,
 #LibraryWrapper WLibraryTextBrowser {
-  alternate-background-color: #1f1f1f;
-  background-color: #161616;
+  alternate-background-color: #1a1a1a;
+  /* Suavizado o contraste */
+  background-color: #121212;
   border: 1px solid #353535;
   color: #FFFFFF;
-  gridline-color: #353535;
+  gridline-color: #252525;
+  /* Linhas mais escuras para não poluir a visão */
   selection-background-color: #00FFFF;
   selection-color: #000000;
+  margin-right: 4px;
+}
+
+/* ===================================================
+   🎯 FOCO VISUAL: TABELA DE MÚSICAS E SIDEBAR
+   =================================================== */
+
+/* Quando a lista de músicas principal estiver selecionada/ativa */
+#LibraryWrapper QTableView:focus,
+#LibraryWrapper WLibraryTextBrowser:focus {
+  border: 1px solid #00FFFF;
+}
+
+/* Quando a área das pastas (Sidebar) estiver selecionada/ativa */
+#LibraryWrapper WLibrarySidebar:focus {
+  /* Substitui a borda normal pela borda ciano brilhante */
+  border: 1px solid #00FFFF;
 }
 
 #LibraryWrapper WLibrarySidebar {
-  alternate-background-color: #1f1f1f;
-  background-color: #1f1f1f;
+  alternate-background-color: #1a1a1a;
+  background-color: #1a1a1a;
   border-left: 0;
   border-right: 1px solid #353535;
-  color: #c7d0da;
-  font-weight: bold;
+  color: #ffffff;
+  /* font-weight: bold; */
   selection-background-color: #00FFFF;
   selection-color: #000000;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
+  /* padding-left: 5px; */
+  /* Descola o texto da borda esquerda */
 }
 
 #LibraryWrapper QPushButton,
@@ -565,26 +598,59 @@ WEffectSelector::checked {
 #LibraryWrapper QComboBox,
 #LibraryWrapper QComboBox QAbstractScrollArea {
   background-color: #2A2D35;
-  border: 1px solid #00FFFF;
+  border: 1px solid #353535;
+  border-radius: 2px;
   color: #FFFFFF;
 }
 
-/* Library Search */
+/* ===================================================
+   🔍 BARRA DE PESQUISA (SEARCHBOX) - ID Direto
+   =================================================== */
+
+/* Estilo padrão (quando você não está a digitar) */
 #SearchBox {
   background-color: #111111;
-  border: 1px solid #00FFFF;
-  border-radius: 0;
+  /* border: 1px solid #353535; */
+  /* Borda cinza escura */
+  border-radius: 12px;
+  /* Formato arredondado (pílula) */
   color: #FFFFFF;
-  font-size: 18px;
+  font-size: 12px;
   font-weight: bold;
-  padding: 4px 10px;
+  padding: 4px 12px;
+  min-height: 22px;
+
   text-transform: uppercase;
 }
 
-/* Sidebar (hide/show) */
+/* Estado de Foco: A Mágica acontece quando você clica nela! */
+#SearchBox:focus {
+  border: 1px solid #00FFFF;
+  /* Borda acende em ciano */
+  /* background-color: #1a1a1a; */
+  /* Fundo clareia um pouquinho para dar destaque */
+}
+
+#SearchBox:drop-down {
+
+  /* border: 1px solid #00FFFF; */
+  color: ffffff;
+  /* Divisória fina e elegante */
+  border-radius: 12px;
+  margin: 4px;
+}
+
+#SearchBox::down-arrow {
+  image: url(skin:icons/down_arrow.svg);
+}
+
+/* ===================================================
+     🔘 BOTÕES E HEADER
+     =================================================== */
 #SidebarContainer {
-  background-color: #2A2D35;
+  background-color: #111111;
   border-bottom: 1px solid #111111;
+  margin-bottom: 4px;
 }
 
 #LibraryPreviewSeekContainer {
@@ -601,14 +667,39 @@ WEffectSelector::checked {
   margin: 4px 8px;
 }
 
+/* Botão Sidebar Refinado */
 #SidebarButton {
   background-color: #2a2a2a;
   border: 1px solid #00FFFF;
+  /* Borda neutra */
   border-radius: 2px;
-  color: #00FFFF;
-  font-size: 15px;
+  /* Cantos bem redondinhos! */
+  color: #c7d0da;
+  font-size: 11px;
+  /* Fonte reduzida para ficar profissional */
   font-weight: bold;
-  margin: 4px;
+  margin-left: 4px;
+  padding: 4px 10px;
+}
+
+#SidebarButton[value="1"] {
+  background-color: #00FFFF;
+  border: 1px solid #2a2a2a;
+  /* Borda neutra */
+  border-radius: 2px;
+  /* Cantos bem redondinhos! */
+  color: #2a2a2a;
+  font-size: 11px;
+  /* Fonte reduzida para ficar profissional */
+  font-weight: bold;
+  /* margin: 4px; */
+  padding: 4px 10px;
+}
+
+
+#SidebarButton:checked {
+  background-color: #00FF44;
+  color: #000000;
 }
 
 /************************************************************************/
