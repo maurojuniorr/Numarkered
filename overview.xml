@@ -10,17 +10,16 @@
         <Layout>horizontal</Layout>
         <SizePolicy>me,me</SizePolicy>
         <Children>
-          
           <WidgetGroup>
             <ObjectName>Waveforms_Container</ObjectName>
             <Layout>vertical</Layout>
-            <SizePolicy>me,me</SizePolicy> <Children>
+            <SizePolicy>me,me</SizePolicy> 
+            <Children>
               <Template src="skin:waveforms.xml"></Template>
             </Children>
           </WidgetGroup>
 
           <Template src="skin:effects.xml"></Template>
-          
         </Children>
       </WidgetGroup>
 
@@ -30,16 +29,19 @@
         <SizePolicy>me,min</SizePolicy>
         <MaximumSize>-1,150</MaximumSize>
         <Children>
-          <Template src="skin:deck.xml">
-            <SetVariable name="channel">1</SetVariable>
-          </Template>
-          <WidgetGroup>
-            <ObjectName>DecksMiddleGap</ObjectName>
-            <Size>16p,0me</Size>
-          </WidgetGroup>
-          <Template src="skin:deck.xml">
-            <SetVariable name="channel">2</SetVariable>
-          </Template>
+          <WidgetStack currentpage="[Skin],layer_left">
+            <Children>
+              <Template src="skin:deck.xml"><SetVariable name="channel">1</SetVariable><SetVariable name="side">left</SetVariable></Template>
+              <Template src="skin:deck.xml"><SetVariable name="channel">3</SetVariable><SetVariable name="side">left</SetVariable></Template>
+            </Children>
+          </WidgetStack>
+          <WidgetGroup><Size>16p,0me</Size></WidgetGroup>
+          <WidgetStack currentpage="[Skin],layer_right">
+            <Children>
+              <Template src="skin:deck.xml"><SetVariable name="channel">2</SetVariable><SetVariable name="side">right</SetVariable></Template>
+              <Template src="skin:deck.xml"><SetVariable name="channel">4</SetVariable><SetVariable name="side">right</SetVariable></Template>
+            </Children>
+          </WidgetStack>
         </Children>
       </WidgetGroup>
 

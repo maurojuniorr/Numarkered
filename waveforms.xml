@@ -4,20 +4,39 @@
     <Layout>vertical</Layout>
     <Size>0me,0me</Size>
     <Children>
-      <Template src="skin:waveform.xml">
-        <SetVariable name="channel">1</SetVariable>
-      </Template>
+
+      <WidgetStack currentpage="[Skin],layer_left">
+        <Children>
+          <Template src="skin:waveform.xml">
+            <SetVariable name="channel">1</SetVariable>
+          </Template>
+          <Template src="skin:waveform.xml">
+            <SetVariable name="channel">3</SetVariable>
+          </Template>
+        </Children>
+      </WidgetStack>
+
       <WidgetGroup>
         <ObjectName>Waveforms_DeckGap</ObjectName>
         <Size>0me,4p</Size>
       </WidgetGroup>
-      <Template src="skin:waveform.xml">
-        <SetVariable name="channel">2</SetVariable>
-      </Template>
+
+      <WidgetStack currentpage="[Skin],layer_right">
+        <Children>
+          <Template src="skin:waveform.xml">
+            <SetVariable name="channel">2</SetVariable>
+          </Template>
+          <Template src="skin:waveform.xml">
+            <SetVariable name="channel">4</SetVariable>
+          </Template>
+        </Children>
+      </WidgetStack>
+
       <WidgetGroup>
         <ObjectName>Waveforms_BottomGap</ObjectName>
         <Size>0me,1p</Size>
       </WidgetGroup>
+      
     </Children>
   </WidgetGroup>
 </Template>

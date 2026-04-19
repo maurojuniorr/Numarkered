@@ -2,7 +2,7 @@
   <WidgetGroup>
     <ObjectName>BeatFX_Container</ObjectName>
     <Layout>vertical</Layout>
-    <Size>180f,0me</Size> <SizePolicy>min,me</SizePolicy>
+    <Size>150f,0me</Size> <SizePolicy>min,me</SizePolicy>
 
     <Connection>
       <ConfigKey>[Skin],show_effects</ConfigKey>

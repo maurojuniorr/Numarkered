@@ -74,187 +74,167 @@ WPushButton[value="1"]:hover {
 }
 
 /************************************************************************/
-/* Deck                                                             */
+/* 1. ESTRUTURA BASE (SEM CORES FIXAS DE CHARME)                        */
+/************************************************************************/
+/************************************************************************/
+/* 1. ESTRUTURA BASE E DECORAÇÃO (LETRAS BRANCAS VOLTARAM!)             */
 /************************************************************************/
 
 #Deck {
   background-color: #121417;
-  /* Painel Grafite Hardware */
-  border: 1px solid #252A30;
   border-radius: 2px;
-}
-
-#Deck[highlight="1"] {
-  border: 1px solid #7A8694;
-  /* Deck Ativo */
-}
-
-#DeckBPMWrapper {
-  border: 1px solid #252A30;
-  /* Borda sutil de hardware */
-  background-color: transparent;
-  margin-bottom: 2px;
-  padding: 0px 1px;
-  qproperty-layoutAlignment: 'AlignRight | AlignTop';
-}
-
-#DeckBPM {
-  color: #FFFFFF;
-  /* Branco Puro e Nítido */
-  font-size: 18px;
-  font-weight: bold;
-}
-
-#DeckBPMTitleWrapper {
-  padding: 0 2px;
-  qproperty-layoutAlignment: 'AlignRight | AlignVCenter';
-}
-
-#DeckBPMTitle {
-  color: #7A8694;
-  font-size: 8px;
-  font-weight: bold;
-}
-
-#TrackBPMRangeContainer {
-  padding: 5px;
-  qproperty-layoutAlignment: 'AlignHCenter | AlignTop';
-}
-
-#DeckBPMRangePercent {
-  background-color: transparent;
-  border: 1px solid #252A30;
-  /* Borda sutil combinando com BPM */
-  padding: 0px;
-  qproperty-layoutAlignment: 'AlignHCenter | AlignTop';
-}
-
-/* Regra para colar o +0.0% no topo */
-#RateDisplay1,
-#RateDisplay2,
-#RateDisplay3,
-#RateDisplay4 {
-  qproperty-layoutAlignment: 'AlignHCenter | AlignTop';
-}
-
-#BPMRangePlusMinus,
-#RateDisplay {
-  color: #FFFFFF;
-  /* Branco Puro */
-  font-size: 12px;
-  font-weight: bold;
-}
-
-WNumberRate,
-#BPMPercent {
-  color: #FFFFFF;
-  /* Branco Puro, sem sombras espaciais */
-  font-size: 14px;
-  font-weight: bold;
+  /* Borda padrão hardware */
+  border: 2px solid #252A30;
 }
 
 #DeckHeader {
   background-color: #2A2D35;
-  /* Grafite Médio */
-  border-bottom: 1px solid #00FF44;
   padding: 0;
+  /* Borda invisível por padrão, as layers pintam abaixo */
+  border-bottom: 1px solid transparent;
 }
 
-#DeckOverview {
-  margin: 50% 0;
-}
-
-#DeckTitle,
-#DeckTitleNote {
-  color: #FFFFFF;
+#DeckTitle {
+  color: #FFFFFF !important;
+  /* AS LETRAS DO NOME DA MÚSICA VOLTARAM! */
   font-size: 16px;
+  font-weight: bold;
 }
 
 #DeckTitleNote {
-  color: #00FF44;
   margin: 0 1px 0 2px;
+  font-size: 16px;
+  /* Cor inicial neutra */
 }
 
-/* Subtítulos Muted Engine OS */
-#DeckChannelTitle,
+/************************************************************************/
+/* 🟢 LAYER A (DECKS 1 E 2) - TEMA VERDE ENGINE                         */
+/************************************************************************/
+
+/* Borda Externa Verde */
+#Deck[highlight="0"] {
+  border: 1px solid #00FF44 !important;
+}
+
+/* Linha Interna (Header) Verde - A que você circulou */
+#Deck[highlight="0"] #DeckHeader {
+  border-bottom: 1px solid #00FF44 !important;
+}
+
+/* Nota Musical Verde - A que você circulou */
+#Deck[highlight="0"] #DeckTitleNote {
+  color: #00FF44 !important;
+}
+
+/* Brackets de Play (( )) Verdes */
+#Deck[highlight="0"] #DeckPlayingLeft[highlight="1"],
+#Deck[highlight="0"] #DeckPlayingRight[highlight="1"] {
+  color: #00FF44 !important;
+  qproperty-alignment: 'AlignCenter';
+}
+
+/* Botão Deck 1/2 Branco */
+#DeckChannelTitle[value="0"] {
+  border: 1px solid #FFFFFF !important;
+  color: #FFFFFF !important;
+  margin: 4px;
+}
+
+/************************************************************************/
+/* 🔴 LAYER B (DECKS 3 E 4) - TEMA VERMELHO NUMARK                      */
+/************************************************************************/
+
+/* Borda Externa Vermelha */
+#Deck[highlight="1"] {
+  border: 1px solid #FF0000 !important;
+}
+
+/* Linha Interna (Header) Vermelha - A que você circulou */
+#Deck[highlight="1"] #DeckHeader {
+  border-bottom: 1px solid #FF0000 !important;
+}
+
+/* Nota Musical Vermelha - A que você circulou */
+#Deck[highlight="1"] #DeckTitleNote {
+  color: #FF0000 !important;
+}
+
+/* Brackets de Play (( )) Vermelhos */
+#Deck[highlight="1"] #DeckPlayingLeft[highlight="1"],
+#Deck[highlight="1"] #DeckPlayingRight[highlight="1"] {
+  color: #FF0000 !important;
+  qproperty-alignment: 'AlignCenter';
+}
+
+/* Botão Deck 3/4 Vermelho */
+#DeckChannelTitle[value="1"] {
+  border: 1px solid #FF0000 !important;
+  color: #FF4444 !important;
+  background-color: #111111 !important;
+  margin: 4px;
+}
+
+/************************************************************************/
+/* 🛠️ LABELS E RESTANTE DA SKIN (TUDO DE VOLTA)                         */
+/************************************************************************/
+
 #DeckTrackTimeTitle,
 #DeckTempoTitle,
+#DeckTrackTimeMini,
+#DeckBPMTitle {
+  color: #7A8694 !important;
+  /* LABELS CINZA DE VOLTA */
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* 🚨 ESTADO DE ALERTA: Pisca quando faltam 30s (ou o tempo que definiu no Mixxx) */
+#DeckTrackTime[highlight="1"],
+#DeckTrackTimeMini[highlight="1"] {
+  color: #FF0000 !important;
+  /* Cor do alerta: Vermelho */
+}
+
 #TrackNumberTitle {
-  color: #7A8694;
+  color: #7A8694 !important;
+  /* LABELS CINZA DE VOLTA */
   font-size: 12px;
   font-weight: bold;
-  padding: 0px;
+  padding-top: 2px;
   text-transform: uppercase;
 }
 
-#DeckChannelTitleWrapper {
-  background-color: #111111;
-  margin-right: 4px;
-  padding: 2px 4px;
-  qproperty-layoutAlignment: 'AlignLeft | AlignVCenter';
-}
-
-#DeckChannelTitle {
-  color: #FFFFFF;
-  margin: 0 1px;
-}
-
-#DeckTitleWrapper {
-  background-color: transparent;
-  padding: 2px 2px 2px 0;
-  qproperty-layoutAlignment: 'AlignLeft | AlignVCenter';
-}
-
-#DeckPlayingLeft,
-#DeckPlayingRight {
-  color: #555555;
-  font-size: 12px;
+#DeckBPM {
+  color: #FFFFFF !important;
+  font-size: 18px;
   font-weight: bold;
-  text-transform: uppercase;
-}
-
-#DeckPlayingLeft[highlight="1"],
-#DeckPlayingRight[highlight="1"] {
-  color: #00FF44;
-  /* Play rodando = Verde Neon Engine */
-}
-
-#DeckTrackTimeWrapper {
-  qproperty-layoutAlignment: 'AlignLeft | AlignVCenter';
 }
 
 #DeckTrackTime {
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   font-size: 25px;
 }
 
-#DeckTrackTime[highlight="1"] {
-  color: #FFFFFF;
-  /* Alerta de fim = Vermelho Neon */
-}
-
-#DeckTrackTimeMini {
-  color: #FFFFFF;
-  font-size: 16px;
-}
-
-#DeckTrackTimeMini[highlight="1"] {
-  color: #FFFFFF;
-}
-
-#DeckTrackNumberContainer {
-  margin: 3 4px;
-  qproperty-layoutAlignment: 'AlignHCenter | AlignTop';
-}
-
-#TrackNumberWrapper,
-#DeckChannelTitleWrapper {
-  qproperty-layoutAlignment: 'AlignHCenter | AlignVCenter';
-}
-
 #TrackNumber {
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   font-size: 16px;
+  font-weight: bold;
+}
+
+#DeckBPMWrapper,
+#DeckBPMRangePercent {
+  border: 1px solid #252A30;
+  background-color: transparent;
+  margin: 2px 0px;
+}
+
+#BPMRangePlusMinus,
+#RateDisplay,
+WNumberRate,
+#BPMPercent {
+  color: #FFFFFF;
+  font-size: 14px;
   font-weight: bold;
 }
 
@@ -442,7 +422,7 @@ WEffectSelector::checked {
 
 #HotcueBankTitle {
   border-bottom: 1px solid #6a6a6a;
-  color: #8b8b8b;
+  color: #ffffff;
   font-size: 8px;
   font-weight: bold;
   margin: 0 1px 1px 1px;

@@ -8,6 +8,8 @@
 		<license>GPL</license>
 		<attributes>
 			<attribute config_key="[App],num_decks">4</attribute>
+			<attribute persist="true" config_key="[Skin],layer_left">0</attribute>
+			<attribute persist="true" config_key="[Skin],layer_right">0</attribute>
 			<attribute config_key="[App],num_samplers">16</attribute>
 			<attribute persist="true" config_key="[Skin],show_maximized_library">0</attribute>
 			<attribute persist="true" config_key="[Master],skin_settings">0</attribute>
