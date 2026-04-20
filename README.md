@@ -1,6 +1,4 @@
-# Numarkered
-
-<!-- ![logo](https://raw.githubusercontent.com/schmic/Pioneered/master/images/pioneered_logo.png) -->
+![logo](https://raw.githubusercontent.com/maurojuniorr/Numarkered/master/images/numarkered_logo.png)
 
 This project is a fork of [schmic/Pioneered](https://github.com/schmic/Pioneered), which is originally a fork of [timewasternl/Pioneered](https://github.com/timewasternl/Pioneered).
 

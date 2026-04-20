@@ -38,20 +38,27 @@
 	<Layout>vertical</Layout>
 
 	<LaunchImageStyle>
-	  QLabel {
-	    image: url(skin:/images/pioneered_logo.png);
-	    margin-bottom: 12px;
-	  }
+      QLabel {
+        /* O caminho para a sua nova logo (salve o SVG na pasta images da skin) */
+        image: url(skin:/images/numarkered_logo.svg);
+        
+        /* 🛡️ A Trava do VAR: Mantém a proporção exata 10:1 para não amassar a fonte */
+        min-width: 220px;
+        min-height: 22px;
+        
+        margin-bottom: 12px;
+      }
 
-		QProgressBar {
-	    background-color: #32323c;
-			max-height: 4px;
-	  }
+      QProgressBar {
+        background-color: #32323c;
+        max-height: 4px;
+      }
 
-	  QProgressBar::chunk {
-	    background-color: #6ee128;
-	  }
-	</LaunchImageStyle>
+      QProgressBar::chunk {
+        /* Fundo atualizado para o Ciano da sua nova identidade visual! */
+        background-color: #00FF44; 
+      }
+    </LaunchImageStyle>
 
 	<Children>
 		<SingletonDefinition>
