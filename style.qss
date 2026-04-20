@@ -28,6 +28,9 @@ Graphite/Dark Gray Backgrounds: #121417, #0B0D0F, #2A2D35
   font-family: 'Open Sans', sans-serif;
 }
 
+/* ==================================================
+   MENUS E DROPDOWNS (BLINDADO PELO VAR)
+   ================================================== */
 QMenuBar,
 QMenuBar::item,
 QMenu,
@@ -36,11 +39,45 @@ QMenu::item {
   color: #c7d0da;
 }
 
+/* Força bruta: O texto não passa daqui! */
+QMenu::item {
+  padding: 6px 24px 6px 36px;
+  /* Aumentei o espaço de 28 para 36 para garantir a distância */
+  margin: 0px;
+}
+
 QMenuBar::item:pressed,
 QMenu::item:selected,
 QMenu::item:pressed {
   background-color: rgba(0, 255, 255, 0.2);
-  /* Highlight em Ciano Neon */
+}
+
+/* ==================================================
+      CUSTOMIZAÇÃO DAS CHECKBOXES NOS MENUS
+      ================================================== */
+QMenu::indicator {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #555555;
+  border-radius: 2px;
+  background-color: #0F1116;
+
+  /* A JOGADA: Posiciona a caixa e empurra o texto */
+  position: absolute;
+  left: 8px;
+  /* Cola a caixinha à esquerda */
+  top: 6px;
+  /* Alinha a caixinha verticalmente */
+}
+
+QMenu::indicator:checked {
+  background-color: #00FFFF;
+  border: 1px solid #00FFFF;
+  image: url(skin:icons/check_cyan.svg);
+}
+
+QMenu::indicator:hover {
+  border: 1px solid #00FFFF;
 }
 
 /************************************************************************/
@@ -79,6 +116,21 @@ WPushButton[value="1"]:hover {
 /************************************************************************/
 /* 1. ESTRUTURA BASE E DECORAÇÃO (LETRAS BRANCAS VOLTARAM!)             */
 /************************************************************************/
+#SpinnyContainer {
+  background-color: #0F1116;
+  /* Fundo preto/cinza muito escuro */
+  border: 1px solid #1A1C23;
+  /* Borda subtil para destacar do deck */
+  border-radius: 2px;
+  /* Cantos arredondados estilo Serato */
+  /* padding: 2px; */
+  /* Espaço para o disco não bater nas paredes */
+}
+
+#InfoAndOverviewTower {
+  margin-bottom: 2px;
+  margin-right: 2px;
+}
 
 #Deck {
   background-color: #121417;
@@ -442,6 +494,9 @@ WEffectSelector::checked {
 #HotcueBank {
   qproperty-layoutAlignment: 'AlignTop';
   background-color: #1a1a1a;
+  padding-left: 1px;
+  padding-right: 1px;
+
 }
 
 #HotcueBankTitle {
@@ -596,6 +651,22 @@ WEffectSelector::checked {
   border: 1px solid #00FFFF;
 }
 
+QTreeView::item:selected,
+QListView::item:selected,
+WTrackTableView::item:selected {
+  background-color: #00FFFF;
+  color: #000000;
+}
+
+QTreeView,
+QListView,
+WTrackTableView,
+WSearchLineEdit QListView {
+  selection-background-color: #00FFFF;
+  selection-color: #000000;
+  /* Texto preto para dar contraste e leitura perfeita em cima do ciano */
+}
+
 /* Quando a área das pastas (Sidebar) estiver selecionada/ativa */
 #LibraryWrapper WLibrarySidebar:focus {
   /* Substitui a borda normal pela borda ciano brilhante */
@@ -614,7 +685,10 @@ WEffectSelector::checked {
   /* text-transform: uppercase; */
   /* padding-left: 5px; */
   /* Descola o texto da borda esquerda */
+
 }
+
+
 
 #LibraryWrapper QPushButton,
 #LibraryWrapper QSpinBox,
@@ -707,7 +781,7 @@ WEffectSelector::checked {
 
 #SidebarButton[value="1"] {
   background-color: #00FFFF;
-  border: 1px solid #2a2a2a;
+  border: 1px solid #00FFFF;
   /* Borda neutra */
   border-radius: 2px;
   /* Cantos bem redondinhos! */

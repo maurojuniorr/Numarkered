@@ -1,0 +1,142 @@
+<Template>
+  <WidgetGroup>
+    <ObjectName>Deck</ObjectName>
+    <Layout>vertical</Layout>
+    <Size>380me,50me</Size>
+    
+    <Connection>
+      <ConfigKey>[Skin],layer_<Variable name="side"/></ConfigKey>
+      <BindProperty>highlight</BindProperty>
+    </Connection>
+   
+    <Children>
+
+      <WidgetGroup>
+        <ObjectName>DeckHeader</ObjectName>
+        <Connection>
+          <ConfigKey>[Skin],layer_<Variable name="side"/></ConfigKey>
+          <BindProperty>highlight</BindProperty>
+        </Connection>
+        <Layout>horizontal</Layout>
+        <SizePolicy>me,f</SizePolicy>
+        <MaximumSize>-1,28</MaximumSize>
+        <Children>
+          <WidgetGroup>
+            <ObjectName>DeckChannelTitleWrapper</ObjectName>
+            <Layout>horizontal</Layout>
+            <SizePolicy>f,f</SizePolicy>
+            <Size>100f,28f</Size>
+            <MinimumSize>100,28</MinimumSize>
+            <MaximumSize>100,28</MaximumSize>
+            <Children>
+              <Label>
+                <ObjectName>DeckPlayingLeft</ObjectName>
+                <Text>((</Text>
+                                <SizePolicy>f,f</SizePolicy>
+                                <Connection>
+                  <ConfigKey>[Channel<Variable name="channel"/>],play</ConfigKey>
+                  <BindProperty>highlight</BindProperty>
+                </Connection>
+              </Label>
+              <PushButton>
+                <ObjectName>DeckChannelTitle</ObjectName>
+                <Size>60f,22f</Size>
+                                <NumberStates>2</NumberStates> 
+                <State>
+                  <Number>0</Number>
+                  <Text>DECK <Variable name="channel"/></Text>
+                </State>
+                <State>
+                  <Number>1</Number>
+                  <Text>DECK <Variable name="channel"/></Text>
+                </State>
+                <Connection>
+                  <ConfigKey>[Skin],layer_<Variable name="side"/></ConfigKey>
+                  <EmitOnPressAndRelease>true</EmitOnPressAndRelease>
+                  <ButtonState>LeftButton</ButtonState>
+                </Connection>
+                <Connection>
+                  <ConfigKey>[Skin],layer_<Variable name="side"/></ConfigKey>
+                  <BindProperty>highlight</BindProperty>
+                </Connection>
+              </PushButton>
+              <Label>
+                <ObjectName>DeckPlayingRight</ObjectName>
+                <Text>))</Text>
+                                <SizePolicy>f,f</SizePolicy>
+                                <Connection>
+                  <ConfigKey>[Channel<Variable name="channel"/>],play</ConfigKey>
+                  <BindProperty>highlight</BindProperty>
+                </Connection>
+              </Label>
+            </Children>
+          </WidgetGroup>
+
+          <WidgetGroup>
+            <ObjectName>DeckTitleWrapper</ObjectName>
+            <Layout>horizontal</Layout>
+            <SizePolicy>me,f</SizePolicy>
+            <Children>
+              <Label>
+                <ObjectName>DeckTitleNote</ObjectName>
+                <Connection>
+                  <ConfigKey>[Skin],layer_<Variable name="side"/></ConfigKey>
+                  <BindProperty>highlight</BindProperty>
+                </Connection>
+                <Text>♪</Text>
+                <SizePolicy>f,f</SizePolicy>
+              </Label>
+              <TrackProperty>
+                <ObjectName>DeckTitle</ObjectName>
+                <TooltipId>track_title</TooltipId>
+                <Size>380me,-1</Size>
+                <Scrolling>true</Scrolling>
+                <Property>title</Property>
+                <Channel><Variable name="channel"/></Channel>
+                <Elide>right</Elide>
+              </TrackProperty>
+            </Children>
+          </WidgetGroup>
+
+        </Children>
+      </WidgetGroup>
+
+      <WidgetGroup>
+        <ObjectName>DeckOverviewContainer</ObjectName>
+        <Layout>vertical</Layout>
+        <SizePolicy>me,me</SizePolicy>
+        <MinimumSize>-1,20</MinimumSize>
+        <MaximumSize>-1,50</MaximumSize>
+        <Children>
+          <Overview>
+            <ObjectName>DeckOverview</ObjectName>
+            <SizePolicy>me,me</SizePolicy>
+            <Channel><Variable name="channel"/></Channel>
+            <BgColor>#0F1116</BgColor>
+            <SignalHighColor>#00FFFF</SignalHighColor>
+            <SignalMidColor>#00FF44</SignalMidColor>
+            <SignalLowColor>#FF0044</SignalLowColor>
+            <PlayedOverlayColor>#40FFFFFF</PlayedOverlayColor>
+            <PlayPosColor>#FFFFFF</PlayPosColor>
+            <EndOfTrackColor>#EF4444</EndOfTrackColor>
+            <Mark><Control>cue_point</Control><Color>#FF6B35</Color></Mark>
+            <Mark><Control>hotcue_1_position</Control><Text>1</Text><Color>#00FFFF</Color></Mark>
+            <Mark><Control>hotcue_2_position</Control><Text>2</Text><Color>#00FF44</Color></Mark>
+            <Mark><Control>hotcue_3_position</Control><Text>3</Text><Color>#FF5500</Color></Mark>
+            <Mark><Control>hotcue_4_position</Control><Text>4</Text><Color>#FFFF00</Color></Mark>
+            <Mark><Control>hotcue_5_position</Control><Text>5</Text><Color>#9d4cfd</Color></Mark>
+            <MarkRange>
+              <StartControl>loop_start_position</StartControl>
+              <EndControl>loop_end_position</EndControl>
+              <EnabledControl>loop_enabled</EnabledControl>
+              <Color>#10B981</Color>
+              <Opacity>0.8</Opacity>
+            </MarkRange>
+          </Overview>
+        </Children>
+        
+        </WidgetGroup>
+
+    </Children>
+  </WidgetGroup>
+</Template>

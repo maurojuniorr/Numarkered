@@ -35,7 +35,7 @@
               <Template src="skin:deck.xml"><SetVariable name="channel">3</SetVariable><SetVariable name="side">left</SetVariable></Template>
             </Children>
           </WidgetStack>
-          <WidgetGroup><Size>16p,0me</Size></WidgetGroup>
+          <WidgetGroup><Size>4p,0me</Size></WidgetGroup>
           <WidgetStack currentpage="[Skin],layer_right">
             <Children>
               <Template src="skin:deck.xml"><SetVariable name="channel">2</SetVariable><SetVariable name="side">right</SetVariable></Template>

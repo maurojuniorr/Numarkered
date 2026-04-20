@@ -46,8 +46,8 @@
               <Label>
                 <ObjectName>DeckPlayingLeft</ObjectName>
                 <Text>((</Text>
-                <SizePolicy>f,f</SizePolicy>
-                <Connection>
+                                <SizePolicy>f,f</SizePolicy>
+                                <Connection>
                   <ConfigKey>[Channel<Variable name="channel"/>],play</ConfigKey>
                   <BindProperty>highlight</BindProperty>
                 </Connection>
@@ -55,7 +55,7 @@
               <PushButton>
                 <ObjectName>DeckChannelTitle</ObjectName>
                 <Size>60f,22f</Size>
-                <NumberStates>2</NumberStates> 
+                                <NumberStates>2</NumberStates> 
                 <State>
                   <Number>0</Number>
                   <Text>DECK <Variable name="channel"/></Text>
@@ -77,14 +77,12 @@
               <Label>
                 <ObjectName>DeckPlayingRight</ObjectName>
                 <Text>))</Text>
-                <SizePolicy>f,f</SizePolicy>
-                <Connection>
+                                <SizePolicy>f,f</SizePolicy>
+                                <Connection>
                   <ConfigKey>[Channel<Variable name="channel"/>],play</ConfigKey>
                   <BindProperty>highlight</BindProperty>
                 </Connection>
               </Label>
-              
-              
             </Children>
           </WidgetGroup>
 
@@ -120,231 +118,234 @@
       <WidgetGroup>
         <ObjectName>DeckInfo</ObjectName>
         <Layout>horizontal</Layout>
-        <SizePolicy>me,min</SizePolicy>
+        <SizePolicy>me,me</SizePolicy>
         <Children>
+          <WidgetGroup><Size>1f,0me</Size><SizePolicy>f,me</SizePolicy></WidgetGroup>
+
           <WidgetGroup>
-            <ObjectName>DeckTrackNumberContainer</ObjectName>
+            <ObjectName>SpinnyContainer</ObjectName>
             <Layout>vertical</Layout>
             <SizePolicy>f,me</SizePolicy>
-            <MaximumSize>80,-1</MaximumSize>
+            <Size>69f,69f</Size>
+            <MinimumSize>69,69</MinimumSize>
+            <MaximumSize>69,69</MaximumSize>
+            <Alignment>center</Alignment>
             <Children>
+              <Spinny>
+                <ObjectName>DeckSpinny</ObjectName>
+                <Channel><Variable name="channel"/></Channel>
+                <Size>65f,65f</Size>
+                <MinimumSize>65,65</MinimumSize>
+                <MaximumSize>65,65</MaximumSize>
+                <SizePolicy>f,f</SizePolicy>
+                
+                <PathBackground scalemode="STRETCH_ASPECT">skin:icons/spinny_bg.svg</PathBackground>
+                <PathMask scalemode="STRETCH_ASPECT">skin:icons/spinny_mask.svg</PathMask>
+                <PathForeground>skin:icons/spinny_fg.svg</PathForeground>
+                <ShowCoverControl>[Skin],show_coverart</ShowCoverControl>
+              </Spinny>
+            </Children>
+          </WidgetGroup>
+
+          <WidgetGroup><Size>2f,0me</Size><SizePolicy>f,me</SizePolicy></WidgetGroup>
+
+          <WidgetGroup>
+            <ObjectName>InfoAndOverviewTower</ObjectName>
+            <Layout>vertical</Layout>
+            <SizePolicy>me,me</SizePolicy>
+            <Children>
+
               <WidgetGroup>
-                <ObjectName>TrackNumberContainer</ObjectName>
-                <Layout>vertical</Layout>
-                <SizePolicy>me,me</SizePolicy>
+                <ObjectName>DeckDataRow</ObjectName>
+                <Layout>horizontal</Layout>
+                <SizePolicy>me,min</SizePolicy>
                 <Children>
                   <WidgetGroup>
-                    <ObjectName>TrackNumberTitleWrapper</ObjectName>
-                    <Layout>horizontal</Layout>
-                    <Size>-1,14f</Size>
+                    <ObjectName>TrackTimeContainer</ObjectName>
+                    <Layout>vertical</Layout>
+                    <SizePolicy>me,me</SizePolicy>
                     <Children>
                       <Label>
-                        <ObjectName>TrackNumberTitle</ObjectName>
-                        <Text>Track</Text>
-                        <Size>-1,14p</Size>
-                        <SizePolicy>me,min</SizePolicy>
+                        <ObjectName>DeckTrackTimeTitle</ObjectName>
+                        <Text>Time</Text>
+                        <SizePolicy>me,f</SizePolicy>
                       </Label>
+                      <WidgetGroup>
+                        <ObjectName>DeckTrackTimeWrapper</ObjectName>
+                        <Layout>horizontal</Layout>
+                        <SizePolicy>me,me</SizePolicy>
+                        <Align>left</Align>
+                        <Children>
+                          <SizeAwareStack>
+                            <SizePolicy>me,me</SizePolicy>
+                            <Children>
+                              <NumberPos>
+                                <ObjectName>DeckTrackTimeMini</ObjectName>
+                                <MaximumSize>150,-1</MaximumSize>
+                                <SizePolicy>me,me</SizePolicy>
+                                <NumberOfDigits>6</NumberOfDigits>
+                                <Channel><Variable name="channel"/></Channel>
+                                <Connection>
+                                  <ConfigKey>[Channel<Variable name="channel"/>],end_of_track</ConfigKey>
+                                  <BindProperty>highlight</BindProperty>
+                                </Connection>
+                              </NumberPos>
+                              <NumberPos>
+                                <ObjectName>DeckTrackTime</ObjectName>
+                                <SizePolicy>me,me</SizePolicy>
+                                <NumberOfDigits>6</NumberOfDigits>
+                                <Channel><Variable name="channel"/></Channel>
+                                <Connection>
+                                  <ConfigKey>[Channel<Variable name="channel"/>],end_of_track</ConfigKey>
+                                  <BindProperty>highlight</BindProperty>
+                                </Connection>
+                              </NumberPos>
+                            </Children>
+                          </SizeAwareStack>
+                        </Children>
+                      </WidgetGroup>
                     </Children>
                   </WidgetGroup>
+                  
                   <WidgetGroup>
-                    <ObjectName>TrackNumberWrapper</ObjectName>
-                    <Layout>horizontal</Layout>
-                    <SizePolicy>me,me</SizePolicy>
-                    <Children>
-                      <Label><SizePolicy>me,me</SizePolicy></Label>
-                      <TrackProperty>
-                        <ObjectName>TrackNumber</ObjectName>
-                        <SizePolicy>f,me</SizePolicy>
-                        <Property>tracknumber</Property>
-                        <Channel><Variable name="channel"/></Channel>
-                        <Elide>right</Elide>
-                      </TrackProperty>
-                      <Label><SizePolicy>me,me</SizePolicy></Label>
+                    <ObjectName>TrackBPMRangeContainer</ObjectName>
+                    <Layout>vertical</Layout>
+                    <SizePolicy>f,min</SizePolicy>
+                    <MaximumSize>90,-1</MaximumSize>
+                    <Align>top</Align> 
+                    <Children> 
+                      <Label>
+                        <ObjectName>DeckTempoTitle</ObjectName> 
+                        <Text>PITCH</Text>
+                        <SizePolicy>me,min</SizePolicy>
+                        <Size>-1,14p</Size> 
+                        <Align>left</Align>
+                      </Label>           
+                      <WidgetGroup>
+                        <ObjectName>DeckBPMRangePercent</ObjectName>
+                        <Layout>horizontal</Layout>
+                        <Size>15,16p</Size>
+                        <MinimumSize>15,-1</MinimumSize>
+                        <Children>
+                          <Label><ObjectName>BPMRangePlusMinus</ObjectName><Text>±</Text><SizePolicy>f,min</SizePolicy></Label>
+                          <RateRange>
+                            <ObjectName>RateDisplay</ObjectName>
+                            <SizePolicy>me,min</SizePolicy>
+                            <Channel><Variable name="channel" /></Channel>
+                            <Display>range</Display>
+                          </RateRange>
+                        </Children>
+                      </WidgetGroup>
+                      <WidgetGroup>
+                        <ObjectName>RateDisplay<Variable name="channel"/></ObjectName>
+                        <Layout>horizontal</Layout>
+                        <SizePolicy>me,min</SizePolicy>
+                        <Children>
+                          <NumberRate>
+                            <SizePolicy>me,min</SizePolicy>
+                            <Channel><Variable name="channel"/></Channel>
+                            <NumberOfDigits>1</NumberOfDigits>
+                          </NumberRate>
+                          <Label><ObjectName>BPMPercent</ObjectName><Text>%</Text><SizePolicy>f,min</SizePolicy></Label>
+                        </Children>
+                      </WidgetGroup>
                     </Children>
                   </WidgetGroup>
-                </Children>
-              </WidgetGroup>
-            </Children>
-          </WidgetGroup>
-          
-          <WidgetGroup>
-            <ObjectName>TrackTimeContainer</ObjectName>
-            <Layout>vertical</Layout>
-            <SizePolicy>me,me</SizePolicy>
-            <Children>
-              <Label>
-                <ObjectName>DeckTrackTimeTitle</ObjectName>
-                <Text>Time</Text>
-                <SizePolicy>me,f</SizePolicy>
-              </Label>
-              <WidgetGroup>
-                <ObjectName>DeckTrackTimeWrapper</ObjectName>
-                <Layout>horizontal</Layout>
-                <SizePolicy>me,me</SizePolicy>
-                <Align>left</Align>
-                <Children>
-                  <SizeAwareStack>
-                    <SizePolicy>me,me</SizePolicy>
-                    <Children>
-                      <NumberPos>
-                        <ObjectName>DeckTrackTimeMini</ObjectName>
-                        <MaximumSize>150,-1</MaximumSize>
-                        <SizePolicy>me,me</SizePolicy>
-                        <NumberOfDigits>6</NumberOfDigits>
-                        <Channel><Variable name="channel"/></Channel>
-                        <Connection>
-                          <ConfigKey>[Channel<Variable name="channel"/>],end_of_track</ConfigKey>
-                          <BindProperty>highlight</BindProperty>
-                        </Connection>
-                      </NumberPos>
-                      <NumberPos>
-                        <ObjectName>DeckTrackTime</ObjectName>
-                        <SizePolicy>me,me</SizePolicy>
-                        <NumberOfDigits>6</NumberOfDigits>
-                        <Channel><Variable name="channel"/></Channel>
-                        <Connection>
-                          <ConfigKey>[Channel<Variable name="channel"/>],end_of_track</ConfigKey>
-                          <BindProperty>highlight</BindProperty>
-                        </Connection>
-                      </NumberPos>
-                    </Children>
-                  </SizeAwareStack>
-                </Children>
-              </WidgetGroup>
-            </Children>
-          </WidgetGroup>
-          
-          <WidgetGroup>
-            <ObjectName>TrackBPMRangeContainer</ObjectName>
-            <Layout>vertical</Layout>
-            <SizePolicy>f,min</SizePolicy>
-            <MaximumSize>90,-1</MaximumSize>
-            <Align>top</Align> 
-            <Children> 
-              <Label>
-                <ObjectName>DeckTempoTitle</ObjectName> 
-                <Text>PITCH</Text>
-                <SizePolicy>me,min</SizePolicy>
-                <Size>-1,14p</Size> 
-                <Align>left</Align>
-              </Label>           
-              <WidgetGroup>
-                <ObjectName>DeckBPMRangePercent</ObjectName>
-                <Layout>horizontal</Layout>
-                <Size>15,16p</Size>
-                <MinimumSize>15,-1</MinimumSize>
-                <Children>
-                  <Label><ObjectName>BPMRangePlusMinus</ObjectName><Text>±</Text><SizePolicy>f,min</SizePolicy></Label>
-                  <RateRange>
-                    <ObjectName>RateDisplay</ObjectName>
-                    <SizePolicy>me,min</SizePolicy>
-                    <Channel><Variable name="channel" /></Channel>
-                    <Display>range</Display>
-                  </RateRange>
-                </Children>
-              </WidgetGroup>
-              <WidgetGroup>
-                <ObjectName>RateDisplay<Variable name="channel"/></ObjectName>
-                <Layout>horizontal</Layout>
-                <SizePolicy>me,min</SizePolicy>
-                <Children>
-                  <NumberRate>
-                    <SizePolicy>me,min</SizePolicy>
-                    <Channel><Variable name="channel"/></Channel>
-                    <NumberOfDigits>1</NumberOfDigits>
-                  </NumberRate>
-                  <Label><ObjectName>BPMPercent</ObjectName><Text>%</Text><SizePolicy>f,min</SizePolicy></Label>
-                </Children>
-              </WidgetGroup>
-            </Children>
-          </WidgetGroup>
 
-          <WidgetGroup>
-            <ObjectName>TrackBPMContainer</ObjectName>
-            <Layout>vertical</Layout>
-            <SizePolicy>f,min</SizePolicy>
-            <MaximumSize>90,-1</MaximumSize>
-            <Align>top</Align> 
-            <Children>
-              <Label>
-                <ObjectName>DeckTempoTitle</ObjectName>
-                <Text>TEMPO</Text> <SizePolicy>me,min</SizePolicy>
-                <Size>-1,14p</Size>
-                <Align>left</Align>
-              </Label>
-              <WidgetGroup>
-                <ObjectName>DeckBPMWrapper</ObjectName>
-                <Layout>vertical</Layout>
-                <SizePolicy>me,min</SizePolicy>
-                <Align>center</Align>
-                <Children>
-                  <NumberBpm>
-                    <ObjectName>DeckBPM</ObjectName>
-                    <TooltipId>visual_bpm</TooltipId>
-                    <SizePolicy>me,me</SizePolicy>
-                    <Channel><Variable name="channel"/></Channel>
-                    <Connection>
-                      <ConfigKey>[Channel<Variable name="channel"/>],visual_bpm</ConfigKey>
-                    </Connection>
-                  </NumberBpm>
                   <WidgetGroup>
-                    <ObjectName>DeckBPMTitleWrapper</ObjectName>
-                    <Layout>horizontal</Layout>
-                    <SizePolicy>me,min</SizePolicy>
+                    <ObjectName>TrackBPMContainer</ObjectName>
+                    <Layout>vertical</Layout>
+                    <SizePolicy>f,min</SizePolicy>
+                    <MaximumSize>90,-1</MaximumSize>
+                    <Align>top</Align> 
                     <Children>
                       <Label>
-                      <ObjectName>DeckBPMTitle</ObjectName>
-                      <Text>BPM</Text>
-                      <SizePolicy>me,min</SizePolicy>
-                      
-                    </Label>
+                        <ObjectName>DeckTempoTitle</ObjectName>
+                        <Text>TEMPO</Text> <SizePolicy>me,min</SizePolicy>
+                        <Size>-1,14p</Size>
+                        <Align>left</Align>
+                      </Label>
+                      <WidgetGroup>
+                        <ObjectName>DeckBPMWrapper</ObjectName>
+                        <Layout>vertical</Layout>
+                        <SizePolicy>me,min</SizePolicy>
+                        <Align>center</Align>
+                        <Children>
+                          <NumberBpm>
+                            <ObjectName>DeckBPM</ObjectName>
+                            <TooltipId>visual_bpm</TooltipId>
+                            <SizePolicy>me,me</SizePolicy>
+                            <Channel><Variable name="channel"/></Channel>
+                            <Connection>
+                              <ConfigKey>[Channel<Variable name="channel"/>],visual_bpm</ConfigKey>
+                            </Connection>
+                          </NumberBpm>
+                          <WidgetGroup>
+                            <ObjectName>DeckBPMTitleWrapper</ObjectName>
+                            <Layout>horizontal</Layout>
+                            <SizePolicy>me,min</SizePolicy>
+                            <Children>
+                              <Label>
+                              <ObjectName>DeckBPMTitle</ObjectName>
+                              <Text>BPM</Text>
+                              <SizePolicy>me,min</SizePolicy>
+                            </Label>
+                            </Children>
+                          </WidgetGroup>
+                        </Children>
+                      </WidgetGroup>
                     </Children>
                   </WidgetGroup>
+
+                </Children>
+              </WidgetGroup> 
+
+              <WidgetGroup>
+                <ObjectName>DeckOverviewContainer</ObjectName>
+                <Layout>vertical</Layout>
+                <SizePolicy>me,me</SizePolicy>
+                <MinimumSize>-1,20</MinimumSize>
+                <MaximumSize>-1,50</MaximumSize>
+                <Children>
+                  <Overview>
+                    <ObjectName>DeckOverview</ObjectName>
+                    <SizePolicy>me,me</SizePolicy>
+                    <Channel><Variable name="channel"/></Channel>
+                    <BgColor>#0F1116</BgColor>
+                    <SignalHighColor>#00FFFF</SignalHighColor>
+                    <SignalMidColor>#00FF44</SignalMidColor>
+                    <SignalLowColor>#FF0044</SignalLowColor>
+                    <PlayedOverlayColor>#40FFFFFF</PlayedOverlayColor>
+                    <PlayPosColor>#FFFFFF</PlayPosColor>
+                    <EndOfTrackColor>#EF4444</EndOfTrackColor>
+                    <Mark><Control>cue_point</Control><Color>#FF6B35</Color></Mark>
+                    <Mark><Control>hotcue_1_position</Control><Text>1</Text><Color>#00FFFF</Color></Mark>
+                    <Mark><Control>hotcue_2_position</Control><Text>2</Text><Color>#00FF44</Color></Mark>
+                    <Mark><Control>hotcue_3_position</Control><Text>3</Text><Color>#FF5500</Color></Mark>
+                    <Mark><Control>hotcue_4_position</Control><Text>4</Text><Color>#FFFF00</Color></Mark>
+                    <Mark><Control>hotcue_5_position</Control><Text>5</Text><Color>#9d4cfd</Color></Mark>
+                    <MarkRange>
+                      <StartControl>loop_start_position</StartControl>
+                      <EndControl>loop_end_position</EndControl>
+                      <EnabledControl>loop_enabled</EnabledControl>
+                      <Color>#10B981</Color>
+                      <Opacity>0.8</Opacity>
+                    </MarkRange>
+                  </Overview>
                 </Children>
               </WidgetGroup>
+
             </Children>
+            <Connection>
+              <ConfigKey>[Tab],overview</ConfigKey>
+              <BindProperty>visible</BindProperty>
+            </Connection>
           </WidgetGroup>
+          
         </Children>
-        <Connection>
-          <ConfigKey>[Tab],overview</ConfigKey>
-          <BindProperty>visible</BindProperty>
-        </Connection>
+        
       </WidgetGroup>
 
-      <WidgetGroup>
-        <ObjectName>DeckOverviewContainer</ObjectName>
-        <Layout>vertical</Layout>
-        <SizePolicy>me,me</SizePolicy>
-        <MinimumSize>-1,20</MinimumSize>
-        <MaximumSize>-1,50</MaximumSize>
-        <Children>
-          <Overview>
-            <ObjectName>DeckOverview</ObjectName>
-            <SizePolicy>me,me</SizePolicy>
-            <Channel><Variable name="channel"/></Channel>
-            <BgColor>#0F1116</BgColor>
-            <SignalHighColor>#00FFFF</SignalHighColor>
-            <SignalMidColor>#00FF44</SignalMidColor>
-            <SignalLowColor>#FF0044</SignalLowColor>
-            <PlayedOverlayColor>#40FFFFFF</PlayedOverlayColor>
-            <PlayPosColor>#FFFFFF</PlayPosColor>
-            <EndOfTrackColor>#EF4444</EndOfTrackColor>
-            <Mark><Control>cue_point</Control><Color>#FF6B35</Color></Mark>
-            <Mark><Control>hotcue_1_position</Control><Text>1</Text><Color>#00FFFF</Color></Mark>
-            <Mark><Control>hotcue_2_position</Control><Text>2</Text><Color>#00FF44</Color></Mark>
-            <Mark><Control>hotcue_3_position</Control><Text>3</Text><Color>#FF5500</Color></Mark>
-            <Mark><Control>hotcue_4_position</Control><Text>4</Text><Color>#FFFF00</Color></Mark>
-            <Mark><Control>hotcue_5_position</Control><Text>5</Text><Color>#9d4cfd</Color></Mark>
-            <MarkRange>
-              <StartControl>loop_start_position</StartControl>
-              <EndControl>loop_end_position</EndControl>
-              <EnabledControl>loop_enabled</EnabledControl>
-              <Color>#10B981</Color>
-              <Opacity>0.8</Opacity>
-            </MarkRange>
-          </Overview>
-        </Children>
-      </WidgetGroup>
     </Children>
   </WidgetGroup>
 </Template>
