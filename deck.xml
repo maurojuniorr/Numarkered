@@ -111,7 +111,6 @@
               </TrackProperty>
             </Children>
           </WidgetGroup>
-
         </Children>
       </WidgetGroup>
 
@@ -122,30 +121,9 @@
         <Children>
           <WidgetGroup><Size>1f,0me</Size><SizePolicy>f,me</SizePolicy></WidgetGroup>
 
-          <WidgetGroup>
-            <ObjectName>SpinnyContainer</ObjectName>
-            <Layout>vertical</Layout>
-            <SizePolicy>f,me</SizePolicy>
-            <Size>69f,69f</Size>
-            <MinimumSize>69,69</MinimumSize>
-            <MaximumSize>69,69</MaximumSize>
-            <Alignment>center</Alignment>
-            <Children>
-              <Spinny>
-                <ObjectName>DeckSpinny</ObjectName>
-                <Channel><Variable name="channel"/></Channel>
-                <Size>65f,65f</Size>
-                <MinimumSize>65,65</MinimumSize>
-                <MaximumSize>65,65</MaximumSize>
-                <SizePolicy>f,f</SizePolicy>
-                
-                <PathBackground scalemode="STRETCH_ASPECT">skin:icons/spinny_bg.svg</PathBackground>
-                <PathMask scalemode="STRETCH_ASPECT">skin:icons/spinny_mask.svg</PathMask>
-                <PathForeground>skin:icons/spinny_fg.svg</PathForeground>
-                <ShowCoverControl>[Skin],show_coverart</ShowCoverControl>
-              </Spinny>
-            </Children>
-          </WidgetGroup>
+          <Template src="skin:deck_spinny.xml">
+            <SetVariable name="channel"><Variable name="channel"/></SetVariable>
+          </Template>
 
           <WidgetGroup><Size>2f,0me</Size><SizePolicy>f,me</SizePolicy></WidgetGroup>
 
@@ -160,6 +138,7 @@
                 <Layout>horizontal</Layout>
                 <SizePolicy>me,min</SizePolicy>
                 <Children>
+                  
                   <WidgetGroup>
                     <ObjectName>TrackTimeContainer</ObjectName>
                     <Layout>vertical</Layout>
@@ -300,40 +279,9 @@
                 </Children>
               </WidgetGroup> 
 
-              <WidgetGroup>
-                <ObjectName>DeckOverviewContainer</ObjectName>
-                <Layout>vertical</Layout>
-                <SizePolicy>me,me</SizePolicy>
-                <MinimumSize>-1,20</MinimumSize>
-                <MaximumSize>-1,50</MaximumSize>
-                <Children>
-                  <Overview>
-                    <ObjectName>DeckOverview</ObjectName>
-                    <SizePolicy>me,me</SizePolicy>
-                    <Channel><Variable name="channel"/></Channel>
-                    <BgColor>#0F1116</BgColor>
-                    <SignalHighColor>#00FFFF</SignalHighColor>
-                    <SignalMidColor>#00FF44</SignalMidColor>
-                    <SignalLowColor>#FF0044</SignalLowColor>
-                    <PlayedOverlayColor>#40FFFFFF</PlayedOverlayColor>
-                    <PlayPosColor>#FFFFFF</PlayPosColor>
-                    <EndOfTrackColor>#EF4444</EndOfTrackColor>
-                    <Mark><Control>cue_point</Control><Color>#FF6B35</Color></Mark>
-                    <Mark><Control>hotcue_1_position</Control><Text>1</Text><Color>#00FFFF</Color></Mark>
-                    <Mark><Control>hotcue_2_position</Control><Text>2</Text><Color>#00FF44</Color></Mark>
-                    <Mark><Control>hotcue_3_position</Control><Text>3</Text><Color>#FF5500</Color></Mark>
-                    <Mark><Control>hotcue_4_position</Control><Text>4</Text><Color>#FFFF00</Color></Mark>
-                    <Mark><Control>hotcue_5_position</Control><Text>5</Text><Color>#9d4cfd</Color></Mark>
-                    <MarkRange>
-                      <StartControl>loop_start_position</StartControl>
-                      <EndControl>loop_end_position</EndControl>
-                      <EnabledControl>loop_enabled</EnabledControl>
-                      <Color>#10B981</Color>
-                      <Opacity>0.8</Opacity>
-                    </MarkRange>
-                  </Overview>
-                </Children>
-              </WidgetGroup>
+              <Template src="skin:deck_overview.xml">
+                <SetVariable name="channel"><Variable name="channel"/></SetVariable>
+              </Template>
 
             </Children>
             <Connection>
@@ -343,9 +291,7 @@
           </WidgetGroup>
           
         </Children>
-        
       </WidgetGroup>
-
     </Children>
   </WidgetGroup>
 </Template>

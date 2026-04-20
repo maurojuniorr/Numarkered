@@ -20,6 +20,7 @@
 			<attribute persist="true" config_key="[Skin],show_effects">0</attribute>
 		</attributes>
 	</manifest>
+	
 	<HotcueColorPalette>
 		<Color>#f44040</Color> 
 		<Color>#0ddcf2</Color> 
@@ -39,10 +40,8 @@
 
 	<LaunchImageStyle>
       QLabel {
-        /* O caminho para a sua nova logo (salve o SVG na pasta images da skin) */
         image: url(skin:/images/numarkered_logo.svg);
         
-        /* 🛡️ A Trava do VAR: Mantém a proporção exata 10:1 para não amassar a fonte */
         min-width: 220px;
         min-height: 22px;
         
@@ -55,7 +54,6 @@
       }
 
       QProgressBar::chunk {
-        /* Fundo atualizado para o Ciano da sua nova identidade visual! */
         background-color: #00FF44; 
       }
     </LaunchImageStyle>

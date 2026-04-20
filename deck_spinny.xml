@@ -1,0 +1,26 @@
+<Template>
+  <WidgetGroup>
+    <ObjectName>SpinnyContainer</ObjectName>
+    <Layout>vertical</Layout>
+    <SizePolicy>f,me</SizePolicy>
+    <Size>69f,69f</Size>
+    <MinimumSize>69,69</MinimumSize>
+    <MaximumSize>69,69</MaximumSize>
+    <Alignment>center</Alignment>
+    <Children>
+      <Spinny>
+        <ObjectName>DeckSpinny</ObjectName>
+        <Channel><Variable name="channel"/></Channel>
+        <Size>65f,65f</Size>
+        <MinimumSize>65,65</MinimumSize>
+        <MaximumSize>65,65</MaximumSize>
+        <SizePolicy>f,f</SizePolicy>
+        
+        <PathBackground scalemode="STRETCH_ASPECT">skin:icons/spinny_bg.svg</PathBackground>
+        <PathMask scalemode="STRETCH_ASPECT">skin:icons/spinny_mask.svg</PathMask>
+        <PathForeground>skin:icons/spinny_fg.svg</PathForeground>
+        <ShowCoverControl>[Skin],show_coverart</ShowCoverControl>
+      </Spinny>
+    </Children>
+  </WidgetGroup>
+</Template>

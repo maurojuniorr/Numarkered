@@ -18,9 +18,12 @@ Graphite/Dark Gray Backgrounds: #121417, #0B0D0F, #2A2D35
 }
 /* END */
 
+
 #Mixxx {
   background-color: #0B0D0F;
   /* Fundo base preto profundo */
+  border: 0px;
+  /* Sem bordas que possam atrasar o render */
   padding: 4px;
 }
 
